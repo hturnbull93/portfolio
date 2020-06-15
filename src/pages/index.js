@@ -1,5 +1,17 @@
 import React from "react"
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return (
+    <div>
+      <h1>Harry Turnbull</h1>
+      <h3>Software Developer</h3>
+      <p>
+        <a href="https://github.com/hturnbull93">Github</a>
+      </p>
+      <p>
+        <a href="https://www.linkedin.com/in/harry-turnbull/">LinkedIn</a>
+      </p>
+      <p>Rest of the site coming soon!</p>
+    </div>
+  )
 }
