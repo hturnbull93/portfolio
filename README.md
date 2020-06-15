@@ -1,99 +1,189 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+# Personal Portfolio
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+The site is built with [Gatsby], using React, and is deployed to [harryturnbull.com] via [Netlify].
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9f017ae6-45ae-466b-93c0-5936ffe13d7e/deploy-status)](https://app.netlify.com/sites/harryturnbull/deploys)
 
-## 🚀 Quick start
+## Tech Used
 
-1.  **Create a Gatsby site.**
+| Tech      | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| [Gatsby]  | Static site generator, uses React.                                   |
+| [Jest]    | Unit testing framework.                                              |
+| [Netlify] | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+## Development Journal
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
+Create for myself a portfolio site that does the following:
 
-1.  **Start developing.**
+- Tells visitors a bit about who I am
+- Tells visitors where they can follow me:
+  - CV
+  - Twitter
+  - LinkedIn
+  - GitHub
+  - Medium
+- Shows visitors information about my projects, for each:
+  - Link to where it is deployed (if applicable)
+  - Link to the GitHub repo
+  - Technologies used
+  - Brief explanation
+  - Screenshots
+- Shows visitors my blog posts, for each:
+  - Title
+  - Date
+  - Link to the medium post
+- Is styled well
 
-    Navigate into your new site’s directory and start it up.
+### User Stories
 
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+- [ ] 1
 
-1.  **Open the source code and start editing!**
+  > As a visitor,  
+  > So that I can read a bit about this developer,  
+  > I would like there to be an about section.
 
-    Your site is now running at `http://localhost:8000`!
+- [ ] 1.1
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+  > As a visitor,  
+  > So that I might hire this developer,  
+  > I would like a link to his CV.
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+- [ ] 1.2
 
-## 🧐 What's inside?
+  > As a visitor,  
+  > So that I might follow this developer on social media,  
+  > I would like a link to his Twitter.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+- [ ] 1.3
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+  > As a visitor,  
+  > So that I might follow this developer on social media,  
+  > I would like a link to his LinkedIn.
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+- [ ] 1.4
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+  > As a visitor,  
+  > So that I can explore the things this developer has built,  
+  > I would like a link to his GitHub.
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+- [ ] 1.5
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+  > As a visitor,  
+  > So that I can read what this developer has written about things,  
+  > I would like a link to his Medium blog.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+- [ ] 2
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+  > As a visitor,  
+  > So that I know what this developer has made,  
+  > I would like to see a summary of his projects.
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+- [ ] 2.1
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+  > As a visitor,  
+  > So that I can see the project in action,  
+  > I would like a link to where it is deployed.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+- [ ] 2.2
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+  > As a visitor,  
+  > So that I can inspect the project's source code,  
+  > I would like a link to it's GitHub repo.
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+- [ ] 2.3
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+  > As a visitor,  
+  > So that I can tell at a glance how the project was made,  
+  > I would like to see a part about the technologies used.
 
-## 🎓 Learning Gatsby
+- [ ] 2.4
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
+  > As a visitor,  
+  > So that I can understand why the project was made,  
+  > I would like to see a brief explanation.
 
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
+- [ ] 2.5
 
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+  > As a visitor,  
+  > So that I can see how the project looks at a glance,  
+  > I would like to see some screenshots.
 
-## 💫 Deploy
+- [ ] 3
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+  > As a visitor,  
+  > So that I can read what the developers has written about,  
+  > I would like to see a blog section.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
+- [ ] 3.1
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+  > As a visitor,  
+  > So that I can choose a blog post to read,  
+  > I would like to see each blog post's title.
+
+- [ ] 3.2
+
+  > As a visitor,  
+  > So that I can tell how up to date the blog posts are,  
+  > I would like to see each blog post's date.
+
+- [ ] 3.3
+
+  > As a visitor,  
+  > So that I can read the blog once I have chosen it,  
+  > I would like blog post to have a link to Medium.
+
+- [ ] 4
+
+  > As a visitor,  
+  > So that I am impressed by the site,  
+  > I would like it to be visually pleasing.
+
+### Gatsby Setup
+
+Gatsby initialised with the Hello World starter, using the following:
+
+```shell
+gatsby new portfolio https://github.com/gatsbyjs/gatsby-starter-hello-world
+```
+
+### Testing Setup
+
+Installed Jest and Gatsby's Babel dependencies as advised in the [Gatsby docs](https://www.gatsbyjs.org/docs/unit-testing/#1-installing-dependencies):
+
+```shell
+npm install --save-dev jest babel-jest react-test-renderer babel-preset-gatsby identity-obj-proxy
+```
+
+Configured Jest in `jest.config.js` and Babel config in `jest-preprocess.js`.
+
+Added a file mock in `__mocks__/file-mock.js`.
+
+Added `loadershim.js` to set the `global.___loader` object.
+
+I want to use Enzyme in testing also, so installed it and its dependencies with:
+
+```shell
+npm install --save-dev enzyme enzyme-adapter-react-16
+```
+
+Configured enzyme to use the adapter in `setupTests.js`, added this to the jest config to run after env is set up.
+
+Added a script in `package.json`, `test` runs `jest --watch`.
+
+Finally, wrote a test to check that the testing setup works. The Home page should include a h1 with "Harry Turnbull" in it.
+
+This passes.
+
+Added a snapshot test also.
+
+### Travis CI Setup
+
+Added `.travis.yml`.
+
+<!-- Links -->
+
+[harryturnbull.com]: https://harryturnbull.com/
+[gatsby]: https://www.gatsbyjs.org/
+[netlify]: https://www.netlify.com/
+[jest]: https://jestjs.io/
