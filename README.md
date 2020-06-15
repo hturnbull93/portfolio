@@ -167,6 +167,16 @@ I want to use Enzyme in testing also, so installed it and its dependencies with:
 npm install --save-dev enzyme enzyme-adapter-react-16
 ```
 
+Configured enzyme to use the adapter in `setupTests.js`, added this to the jest config to run after env is set up.
+
+Added a script in `package.json`, `test` runs `jest --watch`.
+
+Finally, wrote a test to check that the testing setup works. The Home page should include a h1 with "Harry Turnbull" in it.
+
+This passes.
+
+Added a snapshot test also.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
