@@ -9,6 +9,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 | Tech      | Description                                                          |
 | --------- | -------------------------------------------------------------------- |
 | [Gatsby]  | Static site generator, uses React.                                   |
+| [Jest]    | Unit testing framework.                                              |
 | [Netlify] | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
 ## Development Journal
@@ -143,7 +144,7 @@ Create for myself a portfolio site that does the following:
 Gatsby initialised with the Hello World starter, using the following:
 
 ```shell
-gatsby new portfolio https://github.com/gatsbyjs/gatsby-starter-hello-world 
+gatsby new portfolio https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
 ## Testing Setup
@@ -154,8 +155,21 @@ Installed Jest and Gatsby's Babel dependencies as advised in the [Gatsby docs](h
 npm install --save-dev jest babel-jest react-test-renderer babel-preset-gatsby identity-obj-proxy
 ```
 
+Configured Jest in `jest.config.js` and Babel config in `jest-preprocess.js`.
+
+Added a file mock in `__mocks__/file-mock.js`.
+
+Added `loadershim.js` to set the `global.___loader` object.
+
+I want to use Enzyme in testing also, so installed it and its dependencies with:
+
+```shell
+npm install --save-dev enzyme enzyme-adapter-react-16
+```
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
 [gatsby]: https://www.gatsbyjs.org/
 [netlify]: https://www.netlify.com/
+[jest]: https://jestjs.io/
