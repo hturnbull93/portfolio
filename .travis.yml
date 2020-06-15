@@ -4,4 +4,4 @@ before_script:
 node_js:
   - "stable"
 script:
-  - npm test
+  - npm test-travis
