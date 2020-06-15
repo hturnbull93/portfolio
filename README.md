@@ -10,6 +10,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 | --------- | -------------------------------------------------------------------- |
 | [Gatsby]  | Static site generator, uses React.                                   |
 | [Jest]    | Unit testing framework.                                              |
+| [Enzyme]  | Unit testing library for React.                                      |
 | [Netlify] | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
 ## Development Journal
@@ -161,7 +162,7 @@ Added a file mock in `__mocks__/file-mock.js`.
 
 Added `loadershim.js` to set the `global.___loader` object.
 
-I want to use Enzyme in testing also, so installed it and its dependencies with:
+I want to use [Enzyme] in testing also, so installed it and its dependencies with:
 
 ```shell
 npm install --save-dev enzyme enzyme-adapter-react-16
@@ -179,7 +180,7 @@ Added a snapshot test also.
 
 ### Travis CI Setup
 
-Added `.travis.yml`.
+Added `.travis.yml`, specifying to use stable node.js version, and to run tests with `npx jest`.
 
 <!-- Links -->
 
@@ -187,3 +188,4 @@ Added `.travis.yml`.
 [gatsby]: https://www.gatsbyjs.org/
 [netlify]: https://www.netlify.com/
 [jest]: https://jestjs.io/
+[enzyme]: https://enzymejs.github.io/enzyme/
