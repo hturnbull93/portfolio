@@ -139,7 +139,7 @@ Create for myself a portfolio site that does the following:
   > So that I am impressed by the site,  
   > I would like it to be visually pleasing.
 
-## Gatsby Setup
+### Gatsby Setup
 
 Gatsby initialised with the Hello World starter, using the following:
 
@@ -147,7 +147,7 @@ Gatsby initialised with the Hello World starter, using the following:
 gatsby new portfolio https://github.com/gatsbyjs/gatsby-starter-hello-world
 ```
 
-## Testing Setup
+### Testing Setup
 
 Installed Jest and Gatsby's Babel dependencies as advised in the [Gatsby docs](https://www.gatsbyjs.org/docs/unit-testing/#1-installing-dependencies):
 
@@ -176,6 +176,10 @@ Finally, wrote a test to check that the testing setup works. The Home page shoul
 This passes.
 
 Added a snapshot test also.
+
+### Travis CI Setup
+
+Added `.travis.yml`.
 
 <!-- Links -->
 
