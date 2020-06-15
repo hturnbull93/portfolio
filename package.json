@@ -11,7 +11,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "tst": "jest",
     "test": "jest --watch"
   },
   "dependencies": {
