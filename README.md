@@ -146,6 +146,14 @@ Gatsby initialised with the Hello World starter, using the following:
 gatsby new portfolio https://github.com/gatsbyjs/gatsby-starter-hello-world 
 ```
 
+## Testing Setup
+
+Installed Jest and Gatsby's Babel dependencies as advised in the [Gatsby docs](https://www.gatsbyjs.org/docs/unit-testing/#1-installing-dependencies):
+
+```shell
+npm install --save-dev jest babel-jest react-test-renderer babel-preset-gatsby identity-obj-proxy
+```
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
