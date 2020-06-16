@@ -248,6 +248,10 @@ Green.
 
 Wrote a test that Sidebar renders a link to my LinkedIn. Red.
 
+- Added another a tag linking to my LinkedIn.
+
+Green.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
