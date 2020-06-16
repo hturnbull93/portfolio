@@ -2,6 +2,33 @@
 
 exports[`Home matches snapshot 1`] = `
 <div>
+  <div>
+    <a
+      href="https://github.com/hturnbull93/cv"
+    >
+      CV
+    </a>
+    <a
+      href="https://twitter.com/hturnbull"
+    >
+      Twitter
+    </a>
+    <a
+      href="https://www.linkedin.com/in/harry-turnbull"
+    >
+      LinkedIn
+    </a>
+    <a
+      href="https://github.com/hturnbull93"
+    >
+      GitHub
+    </a>
+    <a
+      href="https://medium.com/@hturnbull93"
+    >
+      Medium Blog
+    </a>
+  </div>
   <h1>
     Harry Turnbull
   </h1>
