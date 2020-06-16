@@ -69,7 +69,7 @@ Create for myself a portfolio site that does the following:
   > So that I can explore the things this developer has built,  
   > I would like a link to his GitHub.
 
-- [ ] 2.5
+- [x] 2.5
 
   > As a visitor,  
   > So that I can read what this developer has written about things,  
@@ -264,7 +264,7 @@ Wrote a test that Sidebar renders a link to my GitHub. Red.
 
 Green.
 
-- [ ] 2.5
+- [x] 2.5
 
   > As a visitor,  
   > So that I can read what this developer has written about things,  
@@ -273,6 +273,18 @@ Green.
 Wrote a test that Sidebar renders a link to my Medium blog. Red.
 
 - Added another a tag linking to my Medium blog.
+
+Green.
+
+Now that the user stories are complete, The component can be added into the pages. For this I will use a Layout component.
+
+In `src/components/layout.spec.js`, wrote a test that the Layout component renders a Sidebar component. Red.
+
+In `src/components/layout.jsx`:
+
+- Wrote a stateless function component called Layout.
+- Imported Sidebar.
+- Layout renders a div that contains a Sidebar.
 
 Green.
 
