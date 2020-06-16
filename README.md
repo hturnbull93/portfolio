@@ -26,10 +26,11 @@ Create for myself a portfolio site that does the following:
   - Medium
 - Shows visitors information about my projects, for each:
   - Link to where it is deployed (if applicable)
-  - Link to the GitHub repo
+  - Link to the GitHub repo (if applicable)
   - Technologies used
   - Brief explanation
   - Screenshots
+  - If it is a personal project or commercial project
 - Shows visitors my blog posts, for each:
   - Title
   - Date
@@ -110,6 +111,12 @@ Create for myself a portfolio site that does the following:
   > So that I can see how the project looks at a glance,  
   > I would like to see some screenshots.
 
+- [ ] 2.6
+
+  > As a visitor,  
+  > So that I know the context of the project,  
+  > I would like it to be labelled as either personal or commercial.
+
 - [ ] 3
 
   > As a visitor,  
@@ -181,6 +188,28 @@ Added a snapshot test also.
 ### Travis CI Setup
 
 Added `.travis.yml`, specifying to use stable node.js version, and to run tests with `npx jest`.
+
+### User Story 1
+
+- [ ] 1
+
+  > As a visitor,  
+  > So that I can read a bit about this developer,  
+  > I would like there to be an about section.
+
+The About section is a separate page. In `src/pages/about.spec.js` wrote a test that the About component renders a div. Red.
+
+In `src/pages/about.jsx`:
+
+- Wrote a stateless function component that renders a div with a h1 containing "About".
+
+Green.
+
+Added some paragraphs about me.
+
+Added a snapshot test
+
+
 
 <!-- Links -->
 
