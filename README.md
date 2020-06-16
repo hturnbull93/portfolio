@@ -51,7 +51,7 @@ Create for myself a portfolio site that does the following:
   > So that I might hire this developer,  
   > I would like a link to his CV.
 
-- [ ] 2.2
+- [x] 2.2
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
@@ -228,7 +228,7 @@ In `src/components/sidebar.jsx`:
 
 Green.
 
-- [ ] 2.2
+- [x] 2.2
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
@@ -239,6 +239,14 @@ Wrote a test that Sidebar renders a link to my Twitter. Red.
 - Added another a tag linking to my Twitter.
 
 Green.
+
+- [ ] 2.3
+
+  > As a visitor,  
+  > So that I might follow this developer on social media,  
+  > I would like a link to his LinkedIn.
+
+Wrote a test that Sidebar renders a link to my LinkedIn. Red.
 
 <!-- Links -->
 

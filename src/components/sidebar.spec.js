@@ -15,4 +15,10 @@ describe("Sidebar", () => {
     const link = "a[href='https://twitter.com/hturnbull']"
     expect(wrapper.find(link).length).toEqual(1)
   })
+
+  it("renders a link to my LinkedIn", () => {
+    const wrapper = shallow(<Sidebar />)
+    const link = "a[href='https://www.linkedin.com/in/harry-turnbull/']"
+    expect(wrapper.find(link).length).toEqual(1)
+  })
 })
