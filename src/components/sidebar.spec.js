@@ -27,4 +27,10 @@ describe("Sidebar", () => {
     const link = "a[href='https://github.com/hturnbull93']"
     expect(wrapper.find(link).length).toEqual(1)
   })
+
+  it("renders a link to my Medium Blog", () => {
+    const wrapper = shallow(<Sidebar />)
+    const link = "a[href='https://medium.com/@hturnbull93']"
+    expect(wrapper.find(link).length).toEqual(1)
+  })
 })
