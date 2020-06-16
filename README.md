@@ -228,7 +228,13 @@ In `src/components/sidebar.jsx`:
 
 Green.
 
+- [ ] 2.2
 
+  > As a visitor,  
+  > So that I might follow this developer on social media,  
+  > I would like a link to his Twitter.
+
+Wrote a test that Sidebar renders a link to my Twitter. Red.
 
 
 <!-- Links -->
