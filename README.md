@@ -45,7 +45,7 @@ Create for myself a portfolio site that does the following:
   > So that I can read a bit about this developer,  
   > I would like there to be an about section.
 
-- [ ] 2.1
+- [x] 2.1
 
   > As a visitor,  
   > So that I might hire this developer,  
@@ -213,17 +213,22 @@ Added a snapshot test.
 
 The User stories in this section are all grouped based on links to resources. I would like these to be in a sidebar that appears on every page.
 
-In `src/components/sidebar.spec.js` wrote a test that the Sidebar Component renders a div. Red.
-
-In `src/components/sidebar.jsx`:
-
-- 
-
-- [ ] 2.1
+- [x] 2.1
 
   > As a visitor,  
   > So that I might hire this developer,  
   > I would like a link to his CV.
+
+In `src/components/sidebar.spec.js` wrote a test that the Sidebar Component renders a link to my CV. Red.
+
+In `src/components/sidebar.jsx`:
+
+- Wrote a stateless function component called Sidebar.
+- It renders a div, containing an a tag linking to my CV.
+
+Green.
+
+
 
 
 <!-- Links -->
