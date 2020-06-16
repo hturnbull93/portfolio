@@ -1,8 +1,9 @@
 import React from "react"
+import Layout from "../components/layout"
 
 const Home = () => {
   return (
-    <div>
+    <Layout>
       <h1>Harry Turnbull</h1>
       <h3>Software Developer</h3>
       <p>
@@ -12,7 +13,7 @@ const Home = () => {
         <a href="https://www.linkedin.com/in/harry-turnbull/">LinkedIn</a>
       </p>
       <p>Rest of the site coming soon!</p>
-    </div>
+    </Layout>
   )
 }
 

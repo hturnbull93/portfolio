@@ -302,7 +302,12 @@ Wrote a test that About renders the Layout component. Red.
 
 Green. Also updated the snapshot.
 
+Wrote a test that the Home renders the Layout component. Red.
 
+- Imported Layout.
+- Switched out the div rendered in Home for a Layout.
+
+Green. Also updated the snapshot.
 
 <!-- Links -->
 
