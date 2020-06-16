@@ -236,6 +236,9 @@ Green.
 
 Wrote a test that Sidebar renders a link to my Twitter. Red.
 
+- Added another a tag linking to my Twitter.
+
+Green.
 
 <!-- Links -->
 
