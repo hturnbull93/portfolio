@@ -260,6 +260,10 @@ Green.
 
 Wrote a test that Sidebar renders a link to my GitHub. Red.
 
+- Added another a tag linking to my GitHub.
+
+Green.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
