@@ -39,7 +39,7 @@ Create for myself a portfolio site that does the following:
 
 ### User Stories
 
-- [ ] 1
+- [x] 1
 
   > As a visitor,  
   > So that I can read a bit about this developer,  
@@ -191,7 +191,7 @@ Added `.travis.yml`, specifying to use stable node.js version, and to run tests 
 
 ### User Story 1
 
-- [ ] 1
+- [x] 1
 
   > As a visitor,  
   > So that I can read a bit about this developer,  
@@ -207,7 +207,7 @@ Green.
 
 Added some paragraphs about me.
 
-Added a snapshot test
+Added a snapshot test.
 
 
 
