@@ -9,4 +9,10 @@ describe('Layout', () => {
     const wrapper = shallow(<Layout />)
     expect(wrapper.containsMatchingElement(<Sidebar />)).toEqual(true)
   });
+
+  it('renders children', () => {
+    const child = <h1>Child</h1>
+    const wrapper = shallow(<Layout>{child}</Layout>)
+    expect(wrapper.find("h1").text()).toEqual("Child")
+  });
 });
