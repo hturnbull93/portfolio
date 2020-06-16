@@ -57,7 +57,7 @@ Create for myself a portfolio site that does the following:
   > So that I might follow this developer on social media,  
   > I would like a link to his Twitter.
 
-- [ ] 2.3
+- [x] 2.3
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
@@ -240,7 +240,7 @@ Wrote a test that Sidebar renders a link to my Twitter. Red.
 
 Green.
 
-- [ ] 2.3
+- [x] 2.3
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
@@ -251,6 +251,14 @@ Wrote a test that Sidebar renders a link to my LinkedIn. Red.
 - Added another a tag linking to my LinkedIn.
 
 Green.
+
+- [ ] 2.4
+
+  > As a visitor,  
+  > So that I can explore the things this developer has built,  
+  > I would like a link to his GitHub.
+
+Wrote a test that Sidebar renders a link to my GitHub. Red.
 
 <!-- Links -->
 

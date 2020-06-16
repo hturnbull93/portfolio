@@ -21,4 +21,10 @@ describe("Sidebar", () => {
     const link = "a[href='https://www.linkedin.com/in/harry-turnbull']"
     expect(wrapper.find(link).length).toEqual(1)
   })
+
+  it("renders a link to my GitHub", () => {
+    const wrapper = shallow(<Sidebar />)
+    const link = "a[href='https://github.com/hturnbull93']"
+    expect(wrapper.find(link).length).toEqual(1)
+  })
 })
