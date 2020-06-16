@@ -7,6 +7,7 @@ const Sidebar = () => {
       <a href="https://twitter.com/hturnbull">Twitter</a>
       <a href="https://www.linkedin.com/in/harry-turnbull">LinkedIn</a>
       <a href="https://github.com/hturnbull93">GitHub</a>
+      <a href="https://medium.com/@hturnbull93">Medium Blog</a>
     </div>
   )
 }

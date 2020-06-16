@@ -272,6 +272,10 @@ Green.
 
 Wrote a test that Sidebar renders a link to my Medium blog. Red.
 
+- Added another a tag linking to my Medium blog.
+
+Green.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
