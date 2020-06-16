@@ -1,8 +1,9 @@
 import React from "react"
+import Layout from "../components/layout"
 
 const About = () => {
   return (
-    <div>
+    <Layout>
       <h1>About</h1>
       <p>
         I am a Front End developer, looking for new opportunities to work with a
@@ -17,7 +18,7 @@ const About = () => {
         (London's leading programming bootcamp), to learn best practices, tools
         and methodologies, and become a professional Front End Developer.
       </p>
-    </div>
+    </Layout>
   )
 }
 

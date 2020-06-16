@@ -295,6 +295,15 @@ Wrote a test that Layout renders the children that are contained within it. Red.
 
 Green.
 
+Wrote a test that About renders the Layout component. Red.
+
+- Imported Layout.
+- Switched out the div rendered in About for a Layout.
+
+Green. Also updated the snapshot.
+
+
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
