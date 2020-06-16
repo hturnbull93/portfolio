@@ -45,103 +45,103 @@ Create for myself a portfolio site that does the following:
   > So that I can read a bit about this developer,  
   > I would like there to be an about section.
 
-- [ ] 1.1
+- [ ] 2.1
 
   > As a visitor,  
   > So that I might hire this developer,  
   > I would like a link to his CV.
 
-- [ ] 1.2
+- [ ] 2.2
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
   > I would like a link to his Twitter.
 
-- [ ] 1.3
+- [ ] 2.3
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
   > I would like a link to his LinkedIn.
 
-- [ ] 1.4
+- [ ] 2.4
 
   > As a visitor,  
   > So that I can explore the things this developer has built,  
   > I would like a link to his GitHub.
 
-- [ ] 1.5
+- [ ] 2.5
 
   > As a visitor,  
   > So that I can read what this developer has written about things,  
   > I would like a link to his Medium blog.
 
-- [ ] 2
+- [ ] 3
 
   > As a visitor,  
   > So that I know what this developer has made,  
   > I would like to see a summary of his projects.
 
-- [ ] 2.1
+- [ ] 3.1
 
   > As a visitor,  
   > So that I can see the project in action,  
   > I would like a link to where it is deployed.
 
-- [ ] 2.2
+- [ ] 3.2
 
   > As a visitor,  
   > So that I can inspect the project's source code,  
   > I would like a link to it's GitHub repo.
 
-- [ ] 2.3
+- [ ] 3.3
 
   > As a visitor,  
   > So that I can tell at a glance how the project was made,  
   > I would like to see a part about the technologies used.
 
-- [ ] 2.4
+- [ ] 3.4
 
   > As a visitor,  
   > So that I can understand why the project was made,  
   > I would like to see a brief explanation.
 
-- [ ] 2.5
+- [ ] 3.5
 
   > As a visitor,  
   > So that I can see how the project looks at a glance,  
   > I would like to see some screenshots.
 
-- [ ] 2.6
+- [ ] 3.6
 
   > As a visitor,  
   > So that I know the context of the project,  
   > I would like it to be labelled as either personal or commercial.
 
-- [ ] 3
+- [ ] 4
 
   > As a visitor,  
   > So that I can read what the developers has written about,  
   > I would like to see a blog section.
 
-- [ ] 3.1
+- [ ] 4.1
 
   > As a visitor,  
   > So that I can choose a blog post to read,  
   > I would like to see each blog post's title.
 
-- [ ] 3.2
+- [ ] 4.2
 
   > As a visitor,  
   > So that I can tell how up to date the blog posts are,  
   > I would like to see each blog post's date.
 
-- [ ] 3.3
+- [ ] 4.3
 
   > As a visitor,  
   > So that I can read the blog once I have chosen it,  
   > I would like blog post to have a link to Medium.
 
-- [ ] 4
+- [ ] 5
 
   > As a visitor,  
   > So that I am impressed by the site,  
@@ -189,7 +189,7 @@ Added a snapshot test also.
 
 Added `.travis.yml`, specifying to use stable node.js version, and to run tests with `npx jest`.
 
-### User Story 1
+### User Story 1 - About Section
 
 - [x] 1
 
@@ -209,6 +209,21 @@ Added some paragraphs about me.
 
 Added a snapshot test.
 
+### User Story 2 - Sidebar/Navigation
+
+The User stories in this section are all grouped based on links to resources. I would like these to be in a sidebar that appears on every page.
+
+In `src/components/sidebar.spec.js` wrote a test that the Sidebar Component renders a div. Red.
+
+In `src/components/sidebar.jsx`:
+
+- 
+
+- [ ] 2.1
+
+  > As a visitor,  
+  > So that I might hire this developer,  
+  > I would like a link to his CV.
 
 
 <!-- Links -->
