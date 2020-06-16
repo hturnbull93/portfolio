@@ -288,6 +288,13 @@ In `src/components/layout.jsx`:
 
 Green.
 
+Wrote a test that Layout renders the children that are contained within it. Red.
+
+- Passed children as a prop to Layout.
+- Rendered the children prop underneath the Sidebar.
+
+Green.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
