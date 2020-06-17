@@ -6,12 +6,13 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 
 ## Tech Used
 
-| Tech      | Description                                                          |
-| --------- | -------------------------------------------------------------------- |
-| [Gatsby]  | Static site generator, uses React.                                   |
-| [Jest]    | Unit testing framework.                                              |
-| [Enzyme]  | Unit testing library for React.                                      |
-| [Netlify] | Host, allows for CI/CD workflow, also provides free SSL certificate. |
+| Tech       | Description                                                          |
+| ---------- | -------------------------------------------------------------------- |
+| [Gatsby]   | Static site generator, uses React.                                   |
+| [Jest]     | Unit testing framework.                                              |
+| [Enzyme]   | Unit testing library for React.                                      |
+| [PaperCss] | Lightweight and simple CSS framework.                                |
+| [Netlify]  | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
 ## Development Journal
 
@@ -309,6 +310,18 @@ Wrote a test that the Home renders the Layout component. Red.
 
 Green. Also updated the snapshot.
 
+### Adding Basic Styling
+
+I have decided to add [PaperCss] as it is a simple and lightweight CSS framework, which requires little additional classes to apply its styling. Perfect for getting started with.
+
+PaperCss is installed with:
+
+```shell
+npm install --save papercss
+```
+
+To apply the styles across all pages, I imported the PaperCss minified css file into `gatsby-browser.js`.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
@@ -316,3 +329,4 @@ Green. Also updated the snapshot.
 [netlify]: https://www.netlify.com/
 [jest]: https://jestjs.io/
 [enzyme]: https://enzymejs.github.io/enzyme/
+[papercss]: https://www.getpapercss.com/
