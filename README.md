@@ -332,6 +332,33 @@ npm install --save node-sass gatsby-plugin-sass
 
 Added `src/index.scss` and imported it into `gatsby-browser.js`. This will serve as the global stylesheet for custom styling.
 
+In `src/index.scss`:
+
+- Increased line height of paragraphs to 1.6.
+
+In `src/components/sidebar.module.scss`:
+
+- Styled Sidebar to be sticky.
+- Tweaked style of Sidebar nav and ul.
+- Styled h3, and nested small
+
+In `src/components/sidebar.jsx`:
+
+- Formatted links as a nav containing a ul.
+- Added border class (from PaperCss).
+- Added h3 with my initials and role as a sort of logo.
+
+In `src/components/layout.module.scss`:
+
+- Added flexbox layout to position the Sidebar to the left of the content.
+- Justified the flex items to the center, and aligned them to the start (top).
+- Content has a max-width so it doesn't stretch across to far.
+
+In `src/components/layout.jsx`:
+
+- const `borderChoice` is assigned with a random integer between 2 and 6.
+- This is used to randomize the border that is used for the content section.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
