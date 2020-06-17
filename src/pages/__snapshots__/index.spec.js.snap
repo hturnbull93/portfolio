@@ -62,31 +62,23 @@ exports[`Home matches snapshot 1`] = `
     </nav>
   </div>
   <section
-    className="content"
+    className="content border border-2"
   >
     <h1>
-      Harry Turnbull
+      Hi! I'm Harry Turnbull
     </h1>
     <h3>
-      Software Developer
+      A Full Stack Developer based in London
     </h3>
     <p>
-      <a
-        href="https://github.com/hturnbull93"
-      >
-        Github
-      </a>
+      This site is still in development as we speak (as you read?), but feel free to take a look around.
     </p>
     <p>
-      <a
-        href="https://www.linkedin.com/in/harry-turnbull/"
-      >
-        LinkedIn
-      </a>
-    </p>
-    <p>
-      Rest of the site coming soon!
+      There are also a bunch of handy links in the sidebar too!
     </p>
   </section>
+  <div
+    className="bg"
+  />
 </div>
 `;
