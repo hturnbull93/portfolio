@@ -322,6 +322,16 @@ npm install --save papercss
 
 To apply the styles across all pages, I imported the PaperCss minified css file into `gatsby-browser.js`.
 
+For general styling I want to use SASS, which Gatsby helpfully provides a plugin for, installed with:
+
+```shell
+npm install --save node-sass gatsby-plugin-sass
+```
+
+`gatsby-plugin-sass` is registered as a plugin in `gatsby-config.js
+
+Added `src/index.scss` and imported it into `gatsby-browser.js`. This will serve as the global stylesheet for custom styling.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
