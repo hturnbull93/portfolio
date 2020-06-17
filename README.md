@@ -362,6 +362,12 @@ In `src/components/layout.jsx`:
 - This is used to randomize the border that is used for the content section.
 - Added a div with the class of "bg".
 
+### Stubbing Math.random
+
+I thought it would be fun for the content to be surrounded by a random choice of PaperCss's borders. However this randomness is causing the snapshot tests to fail.
+
+In the snapshot tests I have used the jest `spyOn` and `mockImplementation` methods to stub the value that `Math.random` returns to 0.5.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
