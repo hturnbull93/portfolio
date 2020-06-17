@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
     <div className={style.layout}>
       <Sidebar />
       <section className={`${style.content} border border-${borderChoice}`}>{children}</section>
+      <div className={style.bg}></div>
     </div>
   )
 }
