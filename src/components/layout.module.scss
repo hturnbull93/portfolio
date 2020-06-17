@@ -1,9 +1,13 @@
 .layout {
+  margin: 2em;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 .content {
+  width: 100%;
   max-width: 600px;
+  padding: 0 2em;
+  margin-left: 2em;
 }
