@@ -6,8 +6,8 @@ const About = () => {
     <Layout>
       <h1>About</h1>
       <p>
-        I am a Front End developer, looking for new opportunities to work with a
-        team of passionate, smart people, working to build useful apps that
+        I am a Full Stack developer, looking for new opportunities to work with
+        a team of passionate, smart people, working to build useful apps that
         consumers enjoy using.
       </p>
       <p>
