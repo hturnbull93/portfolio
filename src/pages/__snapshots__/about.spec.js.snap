@@ -62,7 +62,7 @@ exports[`About matches snapshot 1`] = `
     </nav>
   </div>
   <section
-    className="content"
+    className="content border border-4"
   >
     <h1>
       About
@@ -81,5 +81,8 @@ exports[`About matches snapshot 1`] = `
        (London's leading programming bootcamp), to learn best practices, tools and methodologies, and become a professional Front End Developer.
     </p>
   </section>
+  <div
+    className="bg"
+  />
 </div>
 `;

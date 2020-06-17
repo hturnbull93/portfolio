@@ -62,7 +62,7 @@ exports[`Home matches snapshot 1`] = `
     </nav>
   </div>
   <section
-    className="content border border-2"
+    className="content border border-4"
   >
     <h1>
       Hi! I'm Harry Turnbull
