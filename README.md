@@ -6,12 +6,13 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 
 ## Tech Used
 
-| Tech      | Description                                                          |
-| --------- | -------------------------------------------------------------------- |
-| [Gatsby]  | Static site generator, uses React.                                   |
-| [Jest]    | Unit testing framework.                                              |
-| [Enzyme]  | Unit testing library for React.                                      |
-| [Netlify] | Host, allows for CI/CD workflow, also provides free SSL certificate. |
+| Tech       | Description                                                          |
+| ---------- | -------------------------------------------------------------------- |
+| [Gatsby]   | Static site generator, uses React.                                   |
+| [Jest]     | Unit testing framework.                                              |
+| [Enzyme]   | Unit testing library for React.                                      |
+| [PaperCss] | Lightweight and simple CSS framework.                                |
+| [Netlify]  | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
 ## Development Journal
 
@@ -45,103 +46,103 @@ Create for myself a portfolio site that does the following:
   > So that I can read a bit about this developer,  
   > I would like there to be an about section.
 
-- [ ] 1.1
+- [x] 2.1
 
   > As a visitor,  
   > So that I might hire this developer,  
   > I would like a link to his CV.
 
-- [ ] 1.2
+- [x] 2.2
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
   > I would like a link to his Twitter.
 
-- [ ] 1.3
+- [x] 2.3
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
   > I would like a link to his LinkedIn.
 
-- [ ] 1.4
+- [x] 2.4
 
   > As a visitor,  
   > So that I can explore the things this developer has built,  
   > I would like a link to his GitHub.
 
-- [ ] 1.5
+- [x] 2.5
 
   > As a visitor,  
   > So that I can read what this developer has written about things,  
   > I would like a link to his Medium blog.
 
-- [ ] 2
+- [ ] 3
 
   > As a visitor,  
   > So that I know what this developer has made,  
   > I would like to see a summary of his projects.
 
-- [ ] 2.1
+- [ ] 3.1
 
   > As a visitor,  
   > So that I can see the project in action,  
   > I would like a link to where it is deployed.
 
-- [ ] 2.2
+- [ ] 3.2
 
   > As a visitor,  
   > So that I can inspect the project's source code,  
   > I would like a link to it's GitHub repo.
 
-- [ ] 2.3
+- [ ] 3.3
 
   > As a visitor,  
   > So that I can tell at a glance how the project was made,  
   > I would like to see a part about the technologies used.
 
-- [ ] 2.4
+- [ ] 3.4
 
   > As a visitor,  
   > So that I can understand why the project was made,  
   > I would like to see a brief explanation.
 
-- [ ] 2.5
+- [ ] 3.5
 
   > As a visitor,  
   > So that I can see how the project looks at a glance,  
   > I would like to see some screenshots.
 
-- [ ] 2.6
+- [ ] 3.6
 
   > As a visitor,  
   > So that I know the context of the project,  
   > I would like it to be labelled as either personal or commercial.
 
-- [ ] 3
+- [ ] 4
 
   > As a visitor,  
   > So that I can read what the developers has written about,  
   > I would like to see a blog section.
 
-- [ ] 3.1
+- [ ] 4.1
 
   > As a visitor,  
   > So that I can choose a blog post to read,  
   > I would like to see each blog post's title.
 
-- [ ] 3.2
+- [ ] 4.2
 
   > As a visitor,  
   > So that I can tell how up to date the blog posts are,  
   > I would like to see each blog post's date.
 
-- [ ] 3.3
+- [ ] 4.3
 
   > As a visitor,  
   > So that I can read the blog once I have chosen it,  
   > I would like blog post to have a link to Medium.
 
-- [ ] 4
+- [ ] 5
 
   > As a visitor,  
   > So that I am impressed by the site,  
@@ -189,7 +190,7 @@ Added a snapshot test also.
 
 Added `.travis.yml`, specifying to use stable node.js version, and to run tests with `npx jest`.
 
-### User Story 1
+### User Story 1 - About Section
 
 - [x] 1
 
@@ -209,7 +210,163 @@ Added some paragraphs about me.
 
 Added a snapshot test.
 
+### User Story 2 - Sidebar/Navigation
 
+The User stories in this section are all grouped based on links to resources. I would like these to be in a sidebar that appears on every page.
+
+- [x] 2.1
+
+  > As a visitor,  
+  > So that I might hire this developer,  
+  > I would like a link to his CV.
+
+In `src/components/sidebar.spec.js` wrote a test that the Sidebar Component renders a link to my CV. Red.
+
+In `src/components/sidebar.jsx`:
+
+- Wrote a stateless function component called Sidebar.
+- It renders a div, containing an a tag linking to my CV.
+
+Green.
+
+- [x] 2.2
+
+  > As a visitor,  
+  > So that I might follow this developer on social media,  
+  > I would like a link to his Twitter.
+
+Wrote a test that Sidebar renders a link to my Twitter. Red.
+
+- Added another a tag linking to my Twitter.
+
+Green.
+
+- [x] 2.3
+
+  > As a visitor,  
+  > So that I might follow this developer on social media,  
+  > I would like a link to his LinkedIn.
+
+Wrote a test that Sidebar renders a link to my LinkedIn. Red.
+
+- Added another a tag linking to my LinkedIn.
+
+Green.
+
+- [x] 2.4
+
+  > As a visitor,  
+  > So that I can explore the things this developer has built,  
+  > I would like a link to his GitHub.
+
+Wrote a test that Sidebar renders a link to my GitHub. Red.
+
+- Added another a tag linking to my GitHub.
+
+Green.
+
+- [x] 2.5
+
+  > As a visitor,  
+  > So that I can read what this developer has written about things,  
+  > I would like a link to his Medium blog.
+
+Wrote a test that Sidebar renders a link to my Medium blog. Red.
+
+- Added another a tag linking to my Medium blog.
+
+Green.
+
+Now that the user stories are complete, The component can be added into the pages. For this I will use a Layout component.
+
+In `src/components/layout.spec.js`, wrote a test that the Layout component renders a Sidebar component. Red.
+
+In `src/components/layout.jsx`:
+
+- Wrote a stateless function component called Layout.
+- Imported Sidebar.
+- Layout renders a div that contains a Sidebar.
+
+Green.
+
+Wrote a test that Layout renders the children that are contained within it. Red.
+
+- Passed children as a prop to Layout.
+- Rendered the children prop underneath the Sidebar.
+
+Green.
+
+Wrote a test that About renders the Layout component. Red.
+
+- Imported Layout.
+- Switched out the div rendered in About for a Layout.
+
+Green. Also updated the snapshot.
+
+Wrote a test that the Home renders the Layout component. Red.
+
+- Imported Layout.
+- Switched out the div rendered in Home for a Layout.
+
+Green. Also updated the snapshot.
+
+### Adding Basic Styling
+
+I have decided to add [PaperCss] as it is a simple and lightweight CSS framework, which requires little additional classes to apply its styling. Perfect for getting started with.
+
+PaperCss is installed with:
+
+```shell
+npm install --save papercss
+```
+
+To apply the styles across all pages, I imported the PaperCss minified css file into `gatsby-browser.js`.
+
+For general styling I want to use SASS, which Gatsby helpfully provides a plugin for, installed with:
+
+```shell
+npm install --save node-sass gatsby-plugin-sass
+```
+
+`gatsby-plugin-sass` is registered as a plugin in `gatsby-config.js
+
+Added `src/index.scss` and imported it into `gatsby-browser.js`. This will serve as the global stylesheet for custom styling.
+
+In `src/index.scss`:
+
+- Increased line height of paragraphs to 1.6.
+
+In `src/components/sidebar.module.scss`:
+
+- Styled Sidebar to be sticky.
+- Tweaked style of Sidebar nav and ul.
+- Styled h3, and nested small
+
+In `src/components/sidebar.jsx`:
+
+- Formatted links as a nav containing a ul.
+- Added border class (from PaperCss).
+- Added h3 with my initials and role as a sort of logo.
+
+In `src/components/layout.module.scss`:
+
+- Added flexbox layout to position the Sidebar to the left of the content.
+- Justified the flex items to the center, and aligned them to the start (top).
+- Content has a max-width so it doesn't stretch across to far.
+- Layouts children have a white background.
+- Created a "bg" class for a full screen background.
+
+In `src/components/layout.jsx`:
+
+- const `borderChoice` is assigned with a random integer between 2 and 6.
+- This is used to randomize the border that is used for the content section.
+- Added a div with the class of "bg".
+
+### Stubbing Math.random
+
+I thought it would be fun for the content to be surrounded by a random choice of PaperCss's borders. However this randomness is causing the snapshot tests to fail.
+
+In the snapshot tests I have used the jest `spyOn` and `mockImplementation` methods to stub the value that `Math.random` returns to 0.5.
 
 <!-- Links -->
 
@@ -218,3 +375,4 @@ Added a snapshot test.
 [netlify]: https://www.netlify.com/
 [jest]: https://jestjs.io/
 [enzyme]: https://enzymejs.github.io/enzyme/
+[papercss]: https://www.getpapercss.com/

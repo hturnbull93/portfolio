@@ -1,18 +1,14 @@
 import React from "react"
+import Layout from "../components/layout"
 
 const Home = () => {
   return (
-    <div>
-      <h1>Harry Turnbull</h1>
-      <h3>Software Developer</h3>
-      <p>
-        <a href="https://github.com/hturnbull93">Github</a>
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/in/harry-turnbull/">LinkedIn</a>
-      </p>
-      <p>Rest of the site coming soon!</p>
-    </div>
+    <Layout>
+      <h1>Hi! I'm Harry Turnbull</h1>
+      <h3>A Full Stack Developer based in London</h3>
+      <p>This site is still in development as we speak (as you read?), but feel free to take a look around.</p>
+      <p>There are also a bunch of handy links in the sidebar too!</p>
+    </Layout>
   )
 }
 
