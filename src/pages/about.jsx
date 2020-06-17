@@ -13,10 +13,10 @@ const About = () => {
       <p>
         I am self-trained and have been working as a freelancer web designer for
         the past three years. I'm passionate about the intersection of
-        technology and creativity. This led me to train at
-        <a href="https://makers.tech/">Makers Academy</a>
-        (London's leading programming bootcamp), to learn best practices, tools
-        and methodologies, and become a professional Front End Developer.
+        technology and creativity. This led me to train at{" "}
+        <a href="https://makers.tech/">Makers Academy</a> (London's leading
+        programming bootcamp), to learn best practices, tools and methodologies,
+        and become a professional Front End Developer.
       </p>
     </Layout>
   )
