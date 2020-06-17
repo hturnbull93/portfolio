@@ -1,9 +1,9 @@
 import React from "react"
-import style from "./sidebar.scss"
+import style from "./sidebar.module.scss"
 
 const Sidebar = () => {
   return (
-    <div className="sidebar border">
+    <div className={`${style.sidebar} border`}>
       <h3>
         Harry Turnbull <small>Full Stack Developer</small>
       </h3>
