@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div className={`${style.sidebar} border`}>
       <h3>
-        Harry Turnbull <small>Full Stack Developer</small>
+        <span>HT</span> <small>Full Stack Developer</small>
       </h3>
       <nav>
         <section>
