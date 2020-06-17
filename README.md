@@ -353,11 +353,14 @@ In `src/components/layout.module.scss`:
 - Added flexbox layout to position the Sidebar to the left of the content.
 - Justified the flex items to the center, and aligned them to the start (top).
 - Content has a max-width so it doesn't stretch across to far.
+- Layouts children have a white background.
+- Created a "bg" class for a full screen background.
 
 In `src/components/layout.jsx`:
 
 - const `borderChoice` is assigned with a random integer between 2 and 6.
 - This is used to randomize the border that is used for the content section.
+- Added a div with the class of "bg".
 
 <!-- Links -->
 
