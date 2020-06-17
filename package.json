@@ -14,7 +14,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
-    "gatsby": "^2.22.15",
+    "gatsby": "^2.23.4",
     "gatsby-plugin-sass": "^2.3.4",
     "node-sass": "^4.14.1",
     "papercss": "^1.6.1",
