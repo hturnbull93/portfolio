@@ -8,7 +8,10 @@ exports[`Home matches snapshot 1`] = `
     className="sidebar border"
   >
     <h3>
-      Harry Turnbull 
+      <span>
+        HT
+      </span>
+       
       <small>
         Full Stack Developer
       </small>
