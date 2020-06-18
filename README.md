@@ -370,7 +370,7 @@ In the snapshot tests I have used the jest `spyOn` and `mockImplementation` meth
 
 ### Adding a Favicon
 
-I generated a Favicon and added it to the `static` directory.
+I generated a Favicon and added it to the `static` directory. Also kept a copy of the icon too.
 
 <!-- Links -->
 
