@@ -368,6 +368,10 @@ I thought it would be fun for the content to be surrounded by a random choice of
 
 In the snapshot tests I have used the jest `spyOn` and `mockImplementation` methods to stub the value that `Math.random` returns to 0.5.
 
+### Adding a Favicon
+
+I generated a Favicon and added it to the `static` directory.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
