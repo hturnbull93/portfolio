@@ -5,7 +5,9 @@ import About from "./about"
 
 describe("About", () => {
   it("matches snapshot", () => {
-    const mathStub = jest.spyOn(global.Math, "random").mockImplementation(() => 0.5)
+    const mathStub = jest
+      .spyOn(global.Math, "random")
+      .mockImplementation(() => 0.5)
     const tree = renderer.create(<About />).toJSON()
     expect(tree).toMatchSnapshot()
     mathStub.mockRestore()

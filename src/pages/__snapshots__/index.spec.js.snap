@@ -19,6 +19,27 @@ exports[`Home matches snapshot 1`] = `
     <nav>
       <section>
         <h4>
+          Sections
+        </h4>
+        <ul>
+          <li>
+            <a
+              href="/"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/about"
+            >
+              About
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h4>
           Links
         </h4>
         <ul>
