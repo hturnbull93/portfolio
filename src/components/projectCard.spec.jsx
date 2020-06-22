@@ -39,4 +39,10 @@ describe("ProjectCard", () => {
     const link = "a[href='https://example-deploy-link.com']"
     expect(wrapper.find(link).length).toEqual(1)
   })
+
+  it("renders an img with src of the prop img", () => {
+    const wrapper = shallow(<ProjectCard details={props} />)
+    const img = "img[src='/test-image.png']"
+    expect(wrapper.find(img).length).toEqual(1)
+  })
 })
