@@ -5,11 +5,11 @@ import ProjectCard from "./projectCard"
 
 const props = {
   title: "Test Title",
-  repoLink: "https://github.com/hturnbull93/instagram-challenge",
-  deployLink: "https://neo-gram.herokuapp.com",
-  tech: "Ruby on Rails",
-  img: "/icon.png",
-  description: "A social media web app, inspired by Instagram and Neomorphism",
+  repoLink: "https://github.com/hturnbull93/example",
+  deployLink: "https://example-deploy-link.com",
+  tech: "Test tech",
+  img: "/test-image.png",
+  description: "Test description",
 }
 
 describe("ProjectCard", () => {
@@ -20,13 +20,11 @@ describe("ProjectCard", () => {
 
   it("renders a h5 containing the prop tech", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    expect(wrapper.find("h5").text()).toEqual("Ruby on Rails")
+    expect(wrapper.find("h5").text()).toEqual("Test tech")
   })
 
   it("renders a p containing the prop description", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    const description =
-      "A social media web app, inspired by Instagram and Neomorphism"
-    expect(wrapper.find("p").text()).toEqual(description)
+    expect(wrapper.find("p").text()).toEqual("Test description")
   })
 })
