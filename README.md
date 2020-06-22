@@ -426,6 +426,10 @@ In `src/pages/projects.jsx`:
 
 Green.
 
+Wrote a test that the Project page renders a h1 containing "Projects". Red.
+
+- Added a h1 within the Layout with the text "Projects".
+
 
 <!-- Links -->
 
