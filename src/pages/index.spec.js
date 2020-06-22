@@ -5,7 +5,9 @@ import Home from "./index"
 
 describe("Home", () => {
   it("matches snapshot", () => {
-    const mathStub = jest.spyOn(global.Math, "random").mockImplementation(() => 0.5)
+    const mathStub = jest
+      .spyOn(global.Math, "random")
+      .mockImplementation(() => 0.5)
     const tree = renderer.create(<Home />).toJSON()
     expect(tree).toMatchSnapshot()
     mathStub.mockRestore()
