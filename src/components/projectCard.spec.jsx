@@ -17,4 +17,9 @@ describe("ProjectCard", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
     expect(wrapper.find("h4").text()).toEqual("Test Title")
   })
+
+  it("renders a h5 containing the prop tech", () => {
+    const wrapper = shallow(<ProjectCard details={props} />)
+    expect(wrapper.find("h5").text()).toEqual("Ruby on Rails")
+  })
 })
