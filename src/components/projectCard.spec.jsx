@@ -28,9 +28,15 @@ describe("ProjectCard", () => {
     expect(wrapper.find("p").text()).toEqual("Test description")
   })
 
-  it("renders a link to the prop repolink", () => {
+  it("renders a link to the prop repoLink", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
     const link = "a[href='https://github.com/hturnbull93/example']"
+    expect(wrapper.find(link).length).toEqual(1)
+  })
+
+  it("renders a link to the prop deployLink", () => {
+    const wrapper = shallow(<ProjectCard details={props} />)
+    const link = "a[href='https://example-deploy-link.com']"
     expect(wrapper.find(link).length).toEqual(1)
   })
 })
