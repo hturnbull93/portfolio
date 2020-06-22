@@ -372,6 +372,24 @@ In the snapshot tests I have used the jest `spyOn` and `mockImplementation` meth
 
 I generated a Favicon and added it to the `static` directory. Also kept a copy of the icon too.
 
+### Linking Pages
+
+Wrote a test that the Sidebar should contain a Link component to the About page. Red.
+
+For this I needed to add a mock for Gatsby's Link component, in `__mocks__/gatsby.js`.
+
+- Added a Link element in Sidebar, with a `to` prop of "/about".
+
+Green.
+
+Wrote a test that the Sidebar should contain a Link component to the Home page. Red.
+
+- Added a Link element in Sidebar, with a `to` prop of "/about".
+
+Green.
+
+Updated the snapshots for About and Index.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
