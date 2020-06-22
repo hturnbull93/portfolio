@@ -1,0 +1,11 @@
+import React from "react"
+import { shallow } from "enzyme"
+import renderer from "react-test-renderer"
+import Projects from "./projects"
+
+describe("Projects", () => {
+  it("renders a Layout", () => {
+    const wrapper = shallow(<Projects />)
+    expect(wrapper.find("Layout").length).toEqual(1)
+  })
+})
