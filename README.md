@@ -390,6 +390,26 @@ Green.
 
 Updated the snapshots for About and Index.
 
+### Project Summaries
+
+- [ ] 3
+
+  > As a visitor,  
+  > So that I know what this developer has made,  
+  > I would like to see a summary of his projects.
+
+For this I want to generate project pages from markdown documents.
+
+For that I'll need the `gatsby-source-filesystem` plugin, installed with:
+
+```shell
+npm install --save gatsby-source-filesystem
+```
+
+This plugin allows Gatsby to access the local filesystem in graphql queries.
+
+Added configuration in `gatsby-config.js`.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
