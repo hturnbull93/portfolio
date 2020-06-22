@@ -473,6 +473,10 @@ Wrote a test that ProjectCard renders a link to the prop repoLink. Red.
 
 Green.
 
+Wrote a test that ProjectCard renders a link to the prop deployLink. Red.
+
+- Added an a tag with href to the prop deployLink.
+
 
 <!-- Links -->
 

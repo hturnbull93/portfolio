@@ -7,6 +7,7 @@ const ProjectCard = ({ details }) => {
       <h5>{details.tech}</h5>
       <p>{details.description}</p>
       <a href={details.repoLink}>GitHub Repo</a>
+      <a href={details.deployLink}>See it live</a>
     </div>
   )
 }
