@@ -45,4 +45,19 @@ describe("ProjectCard", () => {
     const img = "img[src='/test-image.png']"
     expect(wrapper.find(img).length).toEqual(1)
   })
+
+  it("renders okay with no links in props", () => {
+    const noLinkProps = {
+      title: "Test Title",
+      tech: "Test tech",
+      img: "/test-image.png",
+      description: "Test description",
+    }
+    const wrapper = shallow(<ProjectCard details={noLinkProps} />)
+
+    expect(wrapper.find("h4").text()).toEqual("Test Title")
+    expect(wrapper.find("h5").text()).toEqual("Test tech")
+    expect(wrapper.find("p").text()).toEqual("Test description")
+    expect(wrapper.find("img[src='/test-image.png']").length).toEqual(1)
+  })
 })
