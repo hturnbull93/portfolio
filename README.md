@@ -410,6 +410,13 @@ This plugin allows Gatsby to access the local filesystem in graphql queries.
 
 Added configuration in `gatsby-config.js`.
 
+I'll also need `gatsby-transformer-remark` to parse markdown files and convert them to HTML, installed with:
+
+```shell
+npm install --save gatsby-transformer-remark
+```
+
+And added to `gatsby-config.js`.
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
