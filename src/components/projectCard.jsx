@@ -1,6 +1,14 @@
 import React from "react"
 
 const ProjectCard = ({ details }) => {
+  let repoLink, deployLink
+  if (details.repoLink) {
+    repoLink = <a href={details.repoLink}>GitHub Repo</a>
+  }
+  if (details.deployLink) {
+    deployLink = <a href={details.deployLink}>See it live</a>
+  }
+
   return (
     <div>
       <img src={details.img} alt={details.title} />
@@ -8,8 +16,8 @@ const ProjectCard = ({ details }) => {
         <h4>{details.title}</h4>
         <h5>{details.tech}</h5>
         <p>{details.description}</p>
-        <a href={details.repoLink}>GitHub Repo</a>
-        <a href={details.deployLink}>See it live</a>
+        {repoLink}
+        {deployLink}
       </div>
     </div>
   )

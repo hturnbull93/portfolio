@@ -486,6 +486,10 @@ Wrote a test that ProjectCard renders an img, src of the prop img. Red.
 
 Green.
 
+Not all project of mine are deployed, and not all have associated GitHub repos.
+
+Wrote a test that the ProjectCard renders okay if there are no links in the props. Red.
+
 
 <!-- Links -->
 
