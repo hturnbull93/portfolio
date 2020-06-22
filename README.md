@@ -448,6 +448,18 @@ It makes sense to have a component that is responsible for rendering each of the
 
 In `src/components/projectCard.spec.jsx`, wrote a test that the ProjectCard renders a h4 containing the prop title. Red.
 
+In `src/components/projectCard.jsx`:
+
+- Added a stateless functional component that takes a prop called details.
+- It renders a h4 containing the details' title.
+
+Green.
+
+Wrote a test that ProjectCard renders a h5 containing the prop tech. Red.
+
+- ProjectCard renders a div containing the h4, and also a h5 containing the prop tech.
+
+Green.
 
 <!-- Links -->
 
