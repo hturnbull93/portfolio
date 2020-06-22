@@ -22,4 +22,11 @@ describe("ProjectCard", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
     expect(wrapper.find("h5").text()).toEqual("Ruby on Rails")
   })
+
+  it("renders a p containing the prop description", () => {
+    const wrapper = shallow(<ProjectCard details={props} />)
+    const description =
+      "A social media web app, inspired by Instagram and Neomorphism"
+    expect(wrapper.find("p").text()).toEqual(description)
+  })
 })

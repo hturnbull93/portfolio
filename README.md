@@ -461,6 +461,9 @@ Wrote a test that ProjectCard renders a h5 containing the prop tech. Red.
 
 Green.
 
+Wrote a test that ProjectCard renders a p containing the prop description. Red.
+
+- 
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
