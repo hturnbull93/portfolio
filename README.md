@@ -451,7 +451,7 @@ In `src/components/projectCard.spec.jsx`, wrote a test that the ProjectCard rend
 In `src/components/projectCard.jsx`:
 
 - Added a stateless functional component that takes a prop called details.
-- It renders a h4 containing the details' title.
+- It renders a h4 containing the details title.
 
 Green.
 
@@ -463,19 +463,28 @@ Green.
 
 Wrote a test that ProjectCard renders a p containing the prop description. Red.
 
-- Added a p tag that contains the prop description.
+- Added a p tag that contains the details description.
 
 Green.
 
 Wrote a test that ProjectCard renders a link to the prop repoLink. Red.
 
-- Added an a tag with href to the prop repoLink.
+- Added an a tag with href to the details repoLink.
 
 Green.
 
 Wrote a test that ProjectCard renders a link to the prop deployLink. Red.
 
-- Added an a tag with href to the prop deployLink.
+- Added an a tag with href to the details deployLink.
+
+Green.
+
+Wrote a test that ProjectCard renders an img, src of the prop img. Red.
+
+- Added a img tag with the src as details img.
+- Also added an alt of the details title.
+
+Green.
 
 
 <!-- Links -->
