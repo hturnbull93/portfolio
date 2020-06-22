@@ -11,6 +11,12 @@ describe("Sidebar", () => {
       const link = <Link to="/about">About</Link>
       expect(wrapper.containsMatchingElement(link)).toEqual(true)
     })
+
+    it("renders Link to home", () => {
+      const wrapper = shallow(<Sidebar />)
+      const link = <Link to="/">Home</Link>
+      expect(wrapper.containsMatchingElement(link)).toEqual(true)
+    })
   })
   describe("external links", () => {
     it("renders a link to my cv", () => {
