@@ -1,7 +1,7 @@
 import React from "react"
 import { shallow } from "enzyme"
 import renderer from "react-test-renderer"
-import Projects from "./projects"
+import Projects from "."
 
 describe("Projects", () => {
   it("renders a Layout", () => {

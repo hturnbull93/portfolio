@@ -418,9 +418,9 @@ npm install --save gatsby-transformer-remark
 
 And added to `gatsby-config.js`.
 
-In `src/pages/projects.spec.js`, wrote a test that the Project page renders a Layout. Red.
+In `src/pages/projects/index.spec.js`, wrote a test that the Project page renders a Layout. Red.
 
-In `src/pages/projects.jsx`:
+In `src/pages/projects/index.jsx`:
 
 - Added a stateless functional component, Projects, that returns a Layout component.
 
@@ -429,6 +429,19 @@ Green.
 Wrote a test that the Project page renders a h1 containing "Projects". Red.
 
 - Added a h1 within the Layout with the text "Projects".
+
+Green.
+
+For this page I intend for there to be a series of cards, one for each project. The cards will have:
+
+- Project name.
+- Very brief description.
+- Link to where it is deployed (if applicable).
+- Link to the GitHub repo (if applicable).
+- Technologies used.
+- An image.
+
+As these pages will be part of the projects path, I moved `projects.jsx` and its test file to a directory `src/pages/projects`, and renamed it as `index.jsx`.
 
 
 <!-- Links -->
