@@ -436,12 +436,17 @@ For this page I intend for there to be a series of cards, one for each project. 
 
 - Project name.
 - Very brief description.
+- An image.
+- Technologies used.
 - Link to where it is deployed (if applicable).
 - Link to the GitHub repo (if applicable).
-- Technologies used.
-- An image.
+- Link to the project page.
 
 As these pages will be part of the projects path, I moved `projects.jsx` and its test file to a directory `src/pages/projects`, and renamed it as `index.jsx`.
+
+It makes sense to have a component that is responsible for rendering each of the project cards.
+
+In `src/components/projectCard.spec.jsx`, wrote a test that the ProjectCard renders a h4 containing the prop title. Red.
 
 
 <!-- Links -->
