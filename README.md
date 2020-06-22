@@ -463,7 +463,17 @@ Green.
 
 Wrote a test that ProjectCard renders a p containing the prop description. Red.
 
-- 
+- Added a p tag that contains the prop description.
+
+Green.
+
+Wrote a test that ProjectCard renders a link to the prop repoLink. Red.
+
+- Added an a tag with href to the prop repoLink.
+
+Green.
+
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
