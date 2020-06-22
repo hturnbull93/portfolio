@@ -417,6 +417,16 @@ npm install --save gatsby-transformer-remark
 ```
 
 And added to `gatsby-config.js`.
+
+In `src/pages/projects.spec.js`, wrote a test that the Project page renders a Layout. Red.
+
+In `src/pages/projects.jsx`:
+
+- Added a stateless functional component, Projects, that returns a Layout component.
+
+Green.
+
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
