@@ -1,5 +1,6 @@
 import React from "react"
 import style from "./sidebar.module.scss"
+import { Link } from "gatsby"
 
 const Sidebar = () => {
   return (
@@ -8,6 +9,14 @@ const Sidebar = () => {
         <span>HT</span> <small>Full Stack Developer</small>
       </h3>
       <nav>
+      <section>
+          <h4>Sections</h4>
+          <ul>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </section>
         <section>
           <h4>Links</h4>
           <ul>
