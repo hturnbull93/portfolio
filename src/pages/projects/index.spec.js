@@ -20,13 +20,6 @@ describe("Projects", () => {
     const id = "1"
     const details = {
       title: "Test Title",
-      repoLink: "https://github.com/hturnbull93/example",
-      deployLink: "https://example-deploy-link.com",
-      tech: "Test tech",
-      img: "/test-image.png",
-      description: "Test description",
-      link: "/projects/example-project",
-      label: "Personal",
     }
     const projectCard = <ProjectCard key={id} details={details} />
 
@@ -43,13 +36,6 @@ const shallowWithData = () => {
             id: "1",
             frontmatter: {
               title: "Test Title",
-              repoLink: "https://github.com/hturnbull93/example",
-              deployLink: "https://example-deploy-link.com",
-              tech: "Test tech",
-              img: "/test-image.png",
-              description: "Test description",
-              link: "/projects/example-project",
-              label: "Personal",
             },
           },
         },
