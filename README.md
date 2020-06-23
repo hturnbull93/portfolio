@@ -437,6 +437,7 @@ For this page I intend for there to be a series of cards, one for each project. 
 - Project name.
 - Very brief description.
 - An image.
+- Labelled as either personal or commercial.
 - Technologies used.
 - Link to where it is deployed (if applicable).
 - Link to the GitHub repo (if applicable).
@@ -500,6 +501,15 @@ Wrote a test that ProjectCard renders a Link to the page of the project. Red.
 - Added a Link component with a to prop of details link.
 
 Green.
+
+Wrote a test that ProjectCard renders a commercial/personal label. Red.
+
+- Added another h5 with contents of the details label.
+- Distinguished the tech and label h5s with class names.
+- Updated tests that had failed due to ambiguity on h5s.
+
+Green.
+
 
 <!-- Links -->
 

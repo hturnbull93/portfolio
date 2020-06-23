@@ -15,7 +15,8 @@ const ProjectCard = ({ details }) => {
       <img src={details.img} alt={details.title} />
       <div>
         <h4>{details.title}</h4>
-        <h5>{details.tech}</h5>
+        <h5 className="tech">{details.tech}</h5>
+        <h5 className="label">{details.label}</h5>
         <p>{details.description}</p>
         {repoLink}
         {deployLink}
