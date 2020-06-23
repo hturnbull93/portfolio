@@ -490,6 +490,12 @@ Not all project of mine are deployed, and not all have associated GitHub repos.
 
 Wrote a test that the ProjectCard renders okay if there are no links in the props. Red.
 
+- Extracted the a tags to variables.
+- These are assigned conditionally based on the existence of repoLink and deployLink, which are then rendered.
+
+Green.
+
+
 
 <!-- Links -->
 
