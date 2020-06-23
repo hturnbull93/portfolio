@@ -5,6 +5,8 @@ deployLink: "https://neo-gram.herokuapp.com"
 tech: "Ruby on Rails"
 img: "/icon.png"
 description: "A social media web app, inspired by Instagram and Neomorphism"
+label: "Personal"
+link: "/projects/neogram"
 ---
 
 Here I will talk about my neogram project. It is a cool project.
