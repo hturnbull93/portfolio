@@ -443,9 +443,9 @@ For this page I intend for there to be a series of cards, one for each project. 
 - Link to the GitHub repo (if applicable).
 - Link to the project page.
 
-As these pages will be part of the projects path, I moved `projects.jsx` and its test file to a directory `src/pages/projects`, and renamed it as `index.jsx`.
-
 It makes sense to have a component that is responsible for rendering each of the project cards.
+
+### Project Cards
 
 In `src/components/projectCard.spec.jsx`, wrote a test that the ProjectCard renders a h4 containing the prop title. Red.
 
@@ -510,6 +510,24 @@ Wrote a test that ProjectCard renders a commercial/personal label. Red.
 
 Green.
 
+### Back to Project Summaries
+
+In `src/pages/projects/index.spec.js`, wrote a test that Projects renders a ProjectCard for each project. Red.
+
+In this test some mock data is passed manually to the Project component, however in production this will be provided by a graphql query.
+
+In `src/pages/projects/index.jsx`:
+
+- Passed data in as a prop to the Projects component.
+- Export a query getting all markdown remark, eddges, nodes, their id and frontmatter.
+- Declare constant cards.
+- cards is assigned by mapping through the data's edges, and for each node:
+  - Return a ProjectCard.
+  - The ProjectCard has a key prop of the node's id.
+  - The ProjectCard has a details prop of the node's frontmatter.
+- The cards array is rendered within the Project's render.
+
+Green.
 
 <!-- Links -->
 
