@@ -12,6 +12,7 @@ const props = {
   img: "/test-image.png",
   description: "Test description",
   link: "/projects/example-project",
+  label: "Personal"
 }
 
 describe("ProjectCard", () => {
@@ -22,8 +23,14 @@ describe("ProjectCard", () => {
 
   it("renders a h5 containing the prop tech", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    expect(wrapper.find("h5").text()).toEqual("Test tech")
+    expect(wrapper.find("h5.tech").text()).toEqual("Test tech")
   })
+
+  it("renders a h5 containing the prop label", () => {
+    const wrapper = shallow(<ProjectCard details={props} />)
+    expect(wrapper.find("h5.label").text()).toEqual("Personal")
+  })
+
 
   it("renders a p containing the prop description", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
@@ -54,11 +61,13 @@ describe("ProjectCard", () => {
       tech: "Test tech",
       img: "/test-image.png",
       description: "Test description",
+      label: "Personal"
     }
     const wrapper = shallow(<ProjectCard details={noLinkProps} />)
 
     expect(wrapper.find("h4").text()).toEqual("Test Title")
-    expect(wrapper.find("h5").text()).toEqual("Test tech")
+    expect(wrapper.find("h5.tech").text()).toEqual("Test tech")
+    expect(wrapper.find("h5.label").text()).toEqual("Personal")
     expect(wrapper.find("p").text()).toEqual("Test description")
     expect(wrapper.find("img[src='/test-image.png']").length).toEqual(1)
   })
