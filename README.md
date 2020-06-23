@@ -495,7 +495,11 @@ Wrote a test that the ProjectCard renders okay if there are no links in the prop
 
 Green.
 
+Wrote a test that ProjectCard renders a Link to the page of the project. Red.
 
+- Added a Link component with a to prop of details link.
+
+Green.
 
 <!-- Links -->
 

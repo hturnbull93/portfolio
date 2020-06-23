@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 const ProjectCard = ({ details }) => {
   let repoLink, deployLink
@@ -18,6 +19,7 @@ const ProjectCard = ({ details }) => {
         <p>{details.description}</p>
         {repoLink}
         {deployLink}
+        <Link to={details.link}>Read more</Link>
       </div>
     </div>
   )
