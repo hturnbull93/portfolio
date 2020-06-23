@@ -2,6 +2,7 @@ import React from "react"
 import { shallow } from "enzyme"
 import renderer from "react-test-renderer"
 import ProjectCard from "./projectCard"
+import { Link } from "gatsby"
 
 const props = {
   title: "Test Title",
@@ -10,6 +11,7 @@ const props = {
   tech: "Test tech",
   img: "/test-image.png",
   description: "Test description",
+  link: "/projects/example-project",
 }
 
 describe("ProjectCard", () => {
@@ -59,5 +61,11 @@ describe("ProjectCard", () => {
     expect(wrapper.find("h5").text()).toEqual("Test tech")
     expect(wrapper.find("p").text()).toEqual("Test description")
     expect(wrapper.find("img[src='/test-image.png']").length).toEqual(1)
+  })
+
+  it("renders a Link to the page of the project", () => {
+    const wrapper = shallow(<ProjectCard details={props} />)
+    const link = <Link to="/projects/example-project">Read more</Link>
+    expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
 })
