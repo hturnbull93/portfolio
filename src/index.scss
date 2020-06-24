@@ -1,3 +1,27 @@
-// p {
-//   line-height: 1.6;
-// }
+// Variables
+
+// Fonts
+$heading-font: "b612 mono";
+$body-font: "montserrat";
+
+// Colours
+$dark: #000000;
+$main-dark: #9d9d9d;
+$main-med: #c4c4c4;
+$main-light: #efefef;
+$off-white: #fafafa;
+
+html {
+  background-color: $off-white;
+}
+
+* {
+  font-family: $heading-font;
+  font-weight: 400;
+  color: $dark;
+}
+
+p {
+  font-family: $body-font;
+  line-height: 1.6;
+}
