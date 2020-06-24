@@ -529,6 +529,19 @@ In `src/pages/projects/index.jsx`:
 
 Green.
 
+### Restyling
+
+On reflection, PaperCss is unique and full of character, but it doesn't have the professionalism I want to portray. I have decided to create the styling from scratch with SASS.
+
+First task is to uninstall PaperCss:
+
+```shell
+npm uninstall papercss --save
+```
+
+And remove its import from `gatsby-browser.js`. Also removed the paper background. and commented out the styling in the various scss files.
+
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
