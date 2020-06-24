@@ -1,16 +1,15 @@
-// Variables
-
-// Fonts
+// Font Variables
 $heading-font: "b612 mono";
 $body-font: "montserrat";
 
-// Colours
+// Colour Variables
 $dark: #000000;
 $main-dark: #9d9d9d;
 $main-med: #c4c4c4;
 $main-light: #efefef;
 $off-white: #fafafa;
 
+// Global resets
 html {
   background-color: $off-white;
 }
@@ -21,7 +20,41 @@ html {
   color: $dark;
 }
 
+// Font scaling
+body {
+  font-size: clamp(0.6em, 3vw, 1.2em);
+}
+
+// Heading resets
+@for $i from 1 through 6 {
+  h#{$i}{
+    text-transform: lowercase;
+    span {
+      display: block;
+    }
+  }
+}
+
+// Headings
+h1 {
+  font-size: 4em;
+  span {
+    color: $main-dark;
+  }
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+// Paragraph
 p {
+  font-size: 1rem;
   font-family: $body-font;
   line-height: 1.6;
+  max-width: 70ch;
 }
