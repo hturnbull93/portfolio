@@ -531,7 +531,7 @@ Green.
 
 ### Restyling
 
-On reflection, PaperCss is unique and full of character, but it doesn't have the professionalism I want to portray. I have decided to create the styling from scratch with SASS.
+On reflection, PaperCss is unique and full of character, but it doesn't have the professionalism I want to portray. I have decided to create the styling from scratch with SASS. The new design I have drawn up will also allow me to build much more easily with a mobile first perspective. 
 
 First task is to uninstall PaperCss:
 
@@ -549,6 +549,26 @@ npm install --save typeface-b612-mono typeface-montserrat
 
 And import them in `gatsby-browser.js`.
 
+In `src/index.scss`:
+
+- Added some SASS variables for font and colours.
+- Styled all elements font to b612 mono, font-weight, and color.
+- Set html's background color.
+- Set paragraph's font to Montserrat and line height to 1.6.
+
+### Refactoring Sidebar
+
+In the new design there is a navbar instead of a sidebar, which also only contains internal navigation.
+
+- Renamed the Sidebar component (and its files) to Navbar.
+- Removed external links (and tests for these).
+- Updated test that Navbar renders Link to home/about page (as these will be merged).
+
+In `src/components/layout.jsx`:
+
+- Switched import from Sidebar to Navbar.
+- Removed content section.
+- Removed bg div.
 
 <!-- Links -->
 
