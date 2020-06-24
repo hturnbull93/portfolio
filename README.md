@@ -552,7 +552,7 @@ And import them in `gatsby-browser.js`.
 In `src/index.scss`:
 
 - Added some SASS variables for font and colours.
-- Styled all elements font to b612 mono, font-weight, and color.
+- Added global resets for font to b612 mono, font-weight, and color.
 - Set html's background color.
 - Set paragraph's font to Montserrat and line height to 1.6.
 
@@ -571,6 +571,23 @@ In `src/components/layout.jsx`:
 - Switched import from Sidebar to Navbar.
 - Removed content section.
 - Removed bg div.
+
+### Merging Home and About
+
+In the new design the home page serves as an about page. Given that neither really have much content so far, I deleted the about page and started work on the home page.
+
+### More Restyling
+
+In `src/index.scss`:
+
+- Added font scaling with clamp.
+- Added Headings reset.
+- Added individual headings styling (size mainly).
+- Added max width and absolute font size to paragraphs.
+
+In `src/components/navbar.module.scss`:
+
+- Added standard pattern of flex row for an unordered list within the nav.
 
 <!-- Links -->
 
