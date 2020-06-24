@@ -3,9 +3,8 @@ import Navbar from "./navbar"
 import style from "./layout.module.scss"
 
 const Layout = ({ children }) => {
-  const borderChoice = Math.floor(Math.random() * 6 + 1)
   return (
-    <div className={style.layout}>
+    <div>
       <Navbar />
       {children}
     </div>
