@@ -536,10 +536,18 @@ On reflection, PaperCss is unique and full of character, but it doesn't have the
 First task is to uninstall PaperCss:
 
 ```shell
-npm uninstall papercss --save
+npm uninstall --save papercss
 ```
 
 And remove its import from `gatsby-browser.js`. Also removed the paper background. and commented out the styling in the various scss files.
+
+The fonts I want to use are both available via the Typeface plugin, so I installed them with:
+
+```shell
+npm install --save typeface-b612-mono typeface-montserrat
+```
+
+And import them in `gatsby-browser.js`.
 
 
 <!-- Links -->
