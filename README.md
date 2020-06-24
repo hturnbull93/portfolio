@@ -556,6 +556,8 @@ In `src/index.scss`:
 - Set html's background color.
 - Set paragraph's font to Montserrat and line height to 1.6.
 
+Also, as the border on the layout is no longer randomly chosen, removed the Math.random stub in snapshot tests.
+
 ### Refactoring Sidebar
 
 In the new design there is a navbar instead of a sidebar, which also only contains internal navigation.
