@@ -4,25 +4,33 @@ import Layout from "../components/layout"
 const Home = () => {
   return (
     <Layout>
-      <h1>Harry <span>Turnbull.</span></h1>
+      <h1>
+        Harry <span>Turnbull.</span>
+      </h1>
       <h3>
-        Full Stack Developer.
-        Based in London UK.
+        <span>Full Stack Developer. </span>
+        <span>Based in London UK.</span>
       </h3>
-      <h2>About</h2>
-      <p>
-        I am a Full Stack developer, looking for new opportunities to work with
-        a team of passionate, smart people, working to build useful apps that
-        consumers enjoy using.
-      </p>
-      <p>
-        I am self-trained and have been working as a freelancer web designer for
-        the past three years. I'm passionate about the intersection of
-        technology and creativity. This led me to train at{" "}
-        <a href="https://makers.tech/">Makers Academy</a> (London's leading
-        programming bootcamp), to learn best practices, tools and methodologies,
-        and become a professional Front End Developer.
-      </p>
+      <section>
+        <h2>About.</h2>
+        <p>
+          I am a Full Stack developer, looking for opportunities to continue to
+          learn, challenge myself and work with great people to build useful
+          apps that consumers enjoy using.
+        </p>
+        <p>
+          I'm passionate about the intersection of technology and creativity. I
+          am self-taught and have been working as a Web Designer for the past
+          three years, which has allowed me to gain skills in Front-End design
+          and implementation, as well as UI/UX design.
+        </p>
+        <p>
+          I have recently completed training at{" "}
+          <a href="https://makers.tech/">Makers Academy</a> (London's leading
+          programming bootcamp), to learn best practices, tools and
+          methodologies.
+        </p>
+      </section>
     </Layout>
   )
 }
