@@ -16,6 +16,6 @@ describe("Home", () => {
 
   it("has a h1 containing Harry Turnbull", () => {
     const wrapper = shallow(<Home />)
-    expect(wrapper.find("h1").text()).toEqual("Hi! I'm Harry Turnbull")
+    expect(wrapper.find("h1").text()).toEqual("Harry Turnbull.")
   })
 })
