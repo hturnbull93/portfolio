@@ -4,15 +4,13 @@ import { Link } from "gatsby"
 
 const Navbar = () => {
   return (
-    <div className={`${style.sidebar} border`}>
-      <nav>
+      <nav className={style.navbar}>
         <ul>
           <li>
             <Link to="/">About</Link>
           </li>
         </ul>
       </nav>
-    </div>
   )
 }
 
