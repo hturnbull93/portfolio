@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className={style.navbar}>
       <ul>
         <li>
-          <Link to="/">About</Link>
+          <Link activeClassName={style.active} to="/">About</Link>
         </li>
       </ul>
     </nav>
