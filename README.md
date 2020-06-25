@@ -390,6 +390,212 @@ Green.
 
 Updated the snapshots for About and Index.
 
+### Project Summaries
+
+- [ ] 3
+
+  > As a visitor,  
+  > So that I know what this developer has made,  
+  > I would like to see a summary of his projects.
+
+For this I want to generate project pages from markdown documents.
+
+For that I'll need the `gatsby-source-filesystem` plugin, installed with:
+
+```shell
+npm install --save gatsby-source-filesystem
+```
+
+This plugin allows Gatsby to access the local filesystem in graphql queries.
+
+Added configuration in `gatsby-config.js`.
+
+I'll also need `gatsby-transformer-remark` to parse markdown files and convert them to HTML, installed with:
+
+```shell
+npm install --save gatsby-transformer-remark
+```
+
+And added to `gatsby-config.js`.
+
+In `src/pages/projects/index.spec.js`, wrote a test that the Project page renders a Layout. Red.
+
+In `src/pages/projects/index.jsx`:
+
+- Added a stateless functional component, Projects, that returns a Layout component.
+
+Green.
+
+Wrote a test that the Project page renders a h1 containing "Projects". Red.
+
+- Added a h1 within the Layout with the text "Projects".
+
+Green.
+
+For this page I intend for there to be a series of cards, one for each project. The cards will have:
+
+- Project name.
+- Very brief description.
+- An image.
+- Labelled as either personal or commercial.
+- Technologies used.
+- Link to where it is deployed (if applicable).
+- Link to the GitHub repo (if applicable).
+- Link to the project page.
+
+It makes sense to have a component that is responsible for rendering each of the project cards.
+
+### Project Cards
+
+In `src/components/projectCard.spec.jsx`, wrote a test that the ProjectCard renders a h4 containing the prop title. Red.
+
+In `src/components/projectCard.jsx`:
+
+- Added a stateless functional component that takes a prop called details.
+- It renders a h4 containing the details title.
+
+Green.
+
+Wrote a test that ProjectCard renders a h5 containing the prop tech. Red.
+
+- ProjectCard renders a div containing the h4, and also a h5 containing the prop tech.
+
+Green.
+
+Wrote a test that ProjectCard renders a p containing the prop description. Red.
+
+- Added a p tag that contains the details description.
+
+Green.
+
+Wrote a test that ProjectCard renders a link to the prop repoLink. Red.
+
+- Added an a tag with href to the details repoLink.
+
+Green.
+
+Wrote a test that ProjectCard renders a link to the prop deployLink. Red.
+
+- Added an a tag with href to the details deployLink.
+
+Green.
+
+Wrote a test that ProjectCard renders an img, src of the prop img. Red.
+
+- Added a img tag with the src as details img.
+- Also added an alt of the details title.
+
+Green.
+
+Not all project of mine are deployed, and not all have associated GitHub repos.
+
+Wrote a test that the ProjectCard renders okay if there are no links in the props. Red.
+
+- Extracted the a tags to variables.
+- These are assigned conditionally based on the existence of repoLink and deployLink, which are then rendered.
+
+Green.
+
+Wrote a test that ProjectCard renders a Link to the page of the project. Red.
+
+- Added a Link component with a to prop of details link.
+
+Green.
+
+Wrote a test that ProjectCard renders a commercial/personal label. Red.
+
+- Added another h5 with contents of the details label.
+- Distinguished the tech and label h5s with class names.
+- Updated tests that had failed due to ambiguity on h5s.
+
+Green.
+
+### Back to Project Summaries
+
+In `src/pages/projects.spec.js`, wrote a test that Projects renders a ProjectCard for each project. Red.
+
+In this test some mock data is passed manually to the Project component, however in production this will be provided by a graphql query.
+
+In `src/pages/projects.jsx`:
+
+- Passed data in as a prop to the Projects component.
+- Export a query getting all markdown remark, eddges, nodes, their id and frontmatter.
+- Declare constant cards.
+- cards is assigned by mapping through the data's edges, and for each node:
+  - Return a ProjectCard.
+  - The ProjectCard has a key prop of the node's id.
+  - The ProjectCard has a details prop of the node's frontmatter.
+- The cards array is rendered within the Project's render.
+
+Green.
+
+### Restyling
+
+On reflection, PaperCss is unique and full of character, but it doesn't have the professionalism I want to portray. I have decided to create the styling from scratch with SASS. The new design I have drawn up will also allow me to build much more easily with a mobile first perspective. 
+
+First task is to uninstall PaperCss:
+
+```shell
+npm uninstall --save papercss
+```
+
+And remove its import from `gatsby-browser.js`. Also removed the paper background. and commented out the styling in the various scss files.
+
+The fonts I want to use are both available via the Typeface plugin, so I installed them with:
+
+```shell
+npm install --save typeface-b612-mono typeface-montserrat
+```
+
+And import them in `gatsby-browser.js`.
+
+In `src/index.scss`:
+
+- Added some SASS variables for font and colours.
+- Added global resets for font to b612 mono, font-weight, and color.
+- Set html's background color.
+- Set paragraph's font to Montserrat and line height to 1.6.
+
+Also, as the border on the layout is no longer randomly chosen, removed the Math.random stub in snapshot tests.
+
+### Refactoring Sidebar
+
+In the new design there is a navbar instead of a sidebar, which also only contains internal navigation.
+
+- Renamed the Sidebar component (and its files) to Navbar.
+- Removed external links (and tests for these).
+- Updated test that Navbar renders Link to home/about page (as these will be merged).
+
+In `src/components/layout.jsx`:
+
+- Switched import from Sidebar to Navbar.
+- Removed content section.
+- Removed bg div.
+
+### Merging Home and About
+
+In the new design the home page serves as an about page. Given that neither really have much content so far, I deleted the about page and started work on the home page.
+
+### More Restyling
+
+In `src/index.scss`:
+
+- Switched to css variables on root to allow these to be easily accessed elsewhere.
+- Added Headings reset.
+- Added individual headings font scaling with clamp.
+- Added max width and absolute font size to paragraphs.
+
+In `src/components/navbar.jsx`:
+
+- Added activeClassName prop to Link to style the active links.
+
+In `src/components/navbar.module.scss`:
+
+- Added standard pattern of flex row for an unordered list within the nav.
+- Flex end to push it to the right.
+- Added link hover styling.
+- Added style for the active links.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/

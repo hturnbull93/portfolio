@@ -2,12 +2,12 @@ import React from "react"
 import { shallow } from "enzyme"
 import renderer from "react-test-renderer"
 import Layout from "./layout"
-import Sidebar from "./sidebar"
+import Navbar from "./navbar"
 
 describe('Layout', () => {
-  it('renders a Sidebar component', () => {
+  it('renders a Navbar component', () => {
     const wrapper = shallow(<Layout />)
-    expect(wrapper.containsMatchingElement(<Sidebar />)).toEqual(true)
+    expect(wrapper.containsMatchingElement(<Navbar />)).toEqual(true)
   });
 
   it('renders children', () => {

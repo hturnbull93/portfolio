@@ -4,10 +4,33 @@ import Layout from "../components/layout"
 const Home = () => {
   return (
     <Layout>
-      <h1>Hi! I'm Harry Turnbull</h1>
-      <h3>A Full Stack Developer based in London</h3>
-      <p>This site is still in development as we speak (as you read?), but feel free to take a look around.</p>
-      <p>There are also a bunch of handy links in the sidebar too!</p>
+      <h1>
+        Harry <span>Turnbull.</span>
+      </h1>
+      <h3>
+        <span>Full Stack Developer. </span>
+        <span>Based in London UK.</span>
+      </h3>
+      <section>
+        <h2>About.</h2>
+        <p>
+          I am a Full Stack developer, looking for opportunities to continue to
+          learn, challenge myself and work with great people to build useful
+          apps that consumers enjoy using.
+        </p>
+        <p>
+          I'm passionate about the intersection of technology and creativity. I
+          am self-taught and have been working as a Web Designer for the past
+          three years, which has allowed me to gain skills in Front-End design
+          and implementation, as well as UI/UX design.
+        </p>
+        <p>
+          I have recently completed training at{" "}
+          <a href="https://makers.tech/">Makers Academy</a> (London's leading
+          programming bootcamp), to learn best practices, tools and
+          methodologies.
+        </p>
+      </section>
     </Layout>
   )
 }

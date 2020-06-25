@@ -1,3 +1,66 @@
+:root {
+  // Font Variables
+  --heading-font: "b612 mono";
+  --body-font: "montserrat";
+
+  // Colour Variables
+  --dark: #000000;
+  --main-dark: #9d9d9d;
+  --main-med: #c4c4c4;
+  --main-light: #efefef;
+  --off-white: #fafafa;
+}
+
+
+// Global resets
+html {
+  background-color: var(--off-white);
+}
+
+* {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  color: var(--dark);
+}
+
+// Global Font scaling
+// body {
+  // font-size: clamp(0.6em, 3vw, 1.2em);
+// }
+
+// Heading resets
+@for $i from 1 through 6 {
+  h#{$i} {
+    text-transform: lowercase;
+    span {
+      display: block;
+    }
+  }
+}
+
+// Headings
+h1 {
+  font-size: clamp(2.5em, 6vw, 5em);
+  // font-size: 4em;
+  span {
+    color: var(--main-dark);
+  }
+}
+
+h2 {
+  font-size: clamp(2.5em, 6vw, 5em);
+  // font-size: 4em;
+}
+
+h3 {
+  font-size: clamp(1.2em, 2.9vw, 2em);
+  // font-size: 2em;
+}
+
+// Paragraph
 p {
+  font-size: 1rem;
+  font-family: var(--body-font);
   line-height: 1.6;
+  max-width: 70ch;
 }

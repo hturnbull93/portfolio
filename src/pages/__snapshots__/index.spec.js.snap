@@ -1,105 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home matches snapshot 1`] = `
-<div
-  className="layout"
->
-  <div
-    className="sidebar border"
+<div>
+  <nav
+    className="navbar"
   >
-    <h3>
-      <span>
-        HT
-      </span>
-       
-      <small>
-        Full Stack Developer
-      </small>
-    </h3>
-    <nav>
-      <section>
-        <h4>
-          Sections
-        </h4>
-        <ul>
-          <li>
-            <a
-              href="/"
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="/about"
-            >
-              About
-            </a>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h4>
-          Links
-        </h4>
-        <ul>
-          <li>
-            <a
-              href="https://github.com/hturnbull93/cv"
-            >
-              GitHub CV
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/hturnbull"
-            >
-              Twitter
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/harry-turnbull"
-            >
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/hturnbull93"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://medium.com/@hturnbull93"
-            >
-              Medium Blog
-            </a>
-          </li>
-        </ul>
-      </section>
-    </nav>
-  </div>
-  <section
-    className="content border border-4"
-  >
-    <h1>
-      Hi! I'm Harry Turnbull
-    </h1>
-    <h3>
-      A Full Stack Developer based in London
-    </h3>
+    <ul>
+      <li>
+        <a
+          href="/"
+        >
+          About
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <h1>
+    Harry 
+    <span>
+      Turnbull.
+    </span>
+  </h1>
+  <h3>
+    <span>
+      Full Stack Developer. 
+    </span>
+    <span>
+      Based in London UK.
+    </span>
+  </h3>
+  <section>
+    <h2>
+      About.
+    </h2>
     <p>
-      This site is still in development as we speak (as you read?), but feel free to take a look around.
+      I am a Full Stack developer, looking for opportunities to continue to learn, challenge myself and work with great people to build useful apps that consumers enjoy using.
     </p>
     <p>
-      There are also a bunch of handy links in the sidebar too!
+      I'm passionate about the intersection of technology and creativity. I am self-taught and have been working as a Web Designer for the past three years, which has allowed me to gain skills in Front-End design and implementation, as well as UI/UX design.
+    </p>
+    <p>
+      I have recently completed training at
+       
+      <a
+        href="https://makers.tech/"
+      >
+        Makers Academy
+      </a>
+       (London's leading programming bootcamp), to learn best practices, tools and methodologies.
     </p>
   </section>
-  <div
-    className="bg"
-  />
 </div>
 `;

@@ -1,2 +1,3 @@
-import "./node_modules/papercss/dist/paper.min.css"
+import "typeface-b612-mono"
+import "typeface-montserrat"
 import "./src/index.scss"
