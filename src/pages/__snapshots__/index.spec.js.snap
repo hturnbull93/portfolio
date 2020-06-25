@@ -2,19 +2,19 @@
 
 exports[`Home matches snapshot 1`] = `
 <div>
-  <div>
-    <nav>
-      <ul>
-        <li>
-          <a
-            href="/"
-          >
-            About
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav
+    className="navbar"
+  >
+    <ul>
+      <li>
+        <a
+          href="/"
+        >
+          About
+        </a>
+      </li>
+    </ul>
+  </nav>
   <h1>
     Harry 
     <span>
