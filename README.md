@@ -580,14 +580,21 @@ In the new design the home page serves as an about page. Given that neither real
 
 In `src/index.scss`:
 
+- Switched to css variables on root to allow these to be easily accessed elsewhere.
 - Added Headings reset.
 - Added individual headings font scaling with clamp.
 - Added max width and absolute font size to paragraphs.
+
+In `src/components/navbar.jsx`:
+
+- Added activeClassName prop to Link to style the active links.
 
 In `src/components/navbar.module.scss`:
 
 - Added standard pattern of flex row for an unordered list within the nav.
 - Flex end to push it to the right.
+- Added link hover styling.
+- Added style for the active links.
 
 <!-- Links -->
 
