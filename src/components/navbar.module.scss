@@ -8,14 +8,17 @@
       margin-left: 1ch;
       &::after {
         content: ".";
-        text-decoration: none;
       }
       a {
         text-decoration: none;
-        :active {
-          text-decoration: underline;
+        &:hover {
+          border-bottom: var(--main-dark) 2px solid;
         }
       }
     }
   }
+}
+
+.active {
+  border-bottom: var(--dark) 2px solid;
 }
