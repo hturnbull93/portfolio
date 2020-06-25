@@ -1,7 +1,7 @@
 import React from "react"
-import Layout from "../../components/layout"
+import Layout from "../components/layout"
 import { graphql } from "gatsby"
-import ProjectCard from "../../components/projectCard"
+import ProjectCard from "../components/projectCard"
 
 const Projects = ({ data }) => {
   const cards = data.allMarkdownRemark.edges.map(edge => (

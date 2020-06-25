@@ -1,8 +1,8 @@
 import React from "react"
 import { shallow } from "enzyme"
 import renderer from "react-test-renderer"
-import Projects from "."
-import ProjectCard from "../../components/projectCard"
+import Projects from "./projects"
+import ProjectCard from "../components/projectCard"
 
 describe("Projects", () => {
   it("renders a Layout", () => {
