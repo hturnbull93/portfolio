@@ -20,14 +20,14 @@ html {
   color: $dark;
 }
 
-// Font scaling
+// Global Font scaling
 body {
-  font-size: clamp(0.6em, 3vw, 1.2em);
+  // font-size: clamp(0.6em, 3vw, 1.2em);
 }
 
 // Heading resets
 @for $i from 1 through 6 {
-  h#{$i}{
+  h#{$i} {
     text-transform: lowercase;
     span {
       display: block;
@@ -37,18 +37,21 @@ body {
 
 // Headings
 h1 {
-  font-size: 4em;
+  font-size: clamp(2.5em, 6vw, 5em);
+  // font-size: 4em;
   span {
     color: $main-dark;
   }
 }
 
 h2 {
-  font-size: 4em;
+  font-size: clamp(2.5em, 6vw, 5em);
+  // font-size: 4em;
 }
 
 h3 {
-  font-size: 2em;
+  font-size: clamp(1.2em, 2.9vw, 2em);
+  // font-size: 2em;
 }
 
 // Paragraph

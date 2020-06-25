@@ -580,9 +580,8 @@ In the new design the home page serves as an about page. Given that neither real
 
 In `src/index.scss`:
 
-- Added font scaling with clamp.
 - Added Headings reset.
-- Added individual headings styling (size mainly).
+- Added individual headings font scaling with clamp.
 - Added max width and absolute font size to paragraphs.
 
 In `src/components/navbar.module.scss`:
