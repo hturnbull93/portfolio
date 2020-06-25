@@ -512,11 +512,11 @@ Green.
 
 ### Back to Project Summaries
 
-In `src/pages/projects/index.spec.js`, wrote a test that Projects renders a ProjectCard for each project. Red.
+In `src/pages/projects.spec.js`, wrote a test that Projects renders a ProjectCard for each project. Red.
 
 In this test some mock data is passed manually to the Project component, however in production this will be provided by a graphql query.
 
-In `src/pages/projects/index.jsx`:
+In `src/pages/projects.jsx`:
 
 - Passed data in as a prop to the Projects component.
 - Export a query getting all markdown remark, eddges, nodes, their id and frontmatter.
@@ -588,6 +588,7 @@ In `src/index.scss`:
 In `src/components/navbar.module.scss`:
 
 - Added standard pattern of flex row for an unordered list within the nav.
+- Flex end to push it to the right.
 
 <!-- Links -->
 
