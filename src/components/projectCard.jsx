@@ -1,26 +1,29 @@
 import React from "react"
-import { Link } from "gatsby"
+import style from "./projectCard.module.scss"
+import SmartLink from "./smartLink"
 
 const ProjectCard = ({ details }) => {
   let repoLink, deployLink
   if (details.repoLink) {
-    repoLink = <a href={details.repoLink}>GitHub Repo</a>
+    repoLink = <SmartLink href={details.repoLink}>GitHub Repo</SmartLink>
   }
   if (details.deployLink) {
-    deployLink = <a href={details.deployLink}>See it live</a>
+    deployLink = <SmartLink href={details.deployLink}>See it live</SmartLink>
   }
 
   return (
-    <div>
+    <div className={style.card}>
       <img src={details.img} alt={details.title} />
-      <div>
-        <h4>{details.title}</h4>
-        <h5 className="tech">{details.tech}</h5>
-        <h5 className="label">{details.label}</h5>
+      <div className={style.card_content}>
+        <h3 className="title">{details.title}</h3>
+        <h4 className="tech">{details.tech}</h4>
+        <h4 className="label">{details.label}</h4>
         <p>{details.description}</p>
-        {repoLink}
-        {deployLink}
-        <Link to={details.link}>Read more</Link>
+        <div className={style.card_links}>
+          {deployLink}
+          {repoLink}
+          <SmartLink to={details.link}>Read more</SmartLink>
+        </div>
       </div>
     </div>
   )
