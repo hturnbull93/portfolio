@@ -596,6 +596,10 @@ In `src/components/navbar.module.scss`:
 - Added link hover styling.
 - Added style for the active links.
 
+### ProjectCard Styling
+
+To get the ProjectCards looking good, I updated the project markdown files with routes to webp files (better quality, smaller file sizes).
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
