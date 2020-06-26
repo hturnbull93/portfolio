@@ -9,11 +9,13 @@
     top: unset;
     bottom: 0;
   }
-  background-color: var(--off-white);
+  display: flex;
+  justify-content: flex-end;
   ul {
+    background-color: var(--off-white);
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-end;
+    flex-wrap: wrap;
     line-height: 1.6;
     margin: 0;
     padding: 1em;
