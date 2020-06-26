@@ -24,7 +24,7 @@ const ProjectCard = ({ details }) => {
         <div className={style.card_links}>
           {deployLink}
           {repoLink}
-          <SmartLink to={details.link}>Read more</SmartLink>
+          {/* <SmartLink to={details.link}>Read more</SmartLink> */}
         </div>
       </div>
     </div>
