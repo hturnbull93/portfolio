@@ -614,6 +614,13 @@ In `src/pages/projects.module.scss`:
 - projectsGrid is a css grid.
 - It auto-fits columns with max width of 500px.
 
+In `src/components/projectCard.module.scss`:
+
+- Added a subtle background colour to the card.
+- Stretch the image to 100% width.
+- Add some padding for the text content.
+- Display the links section as inline block to prevent them wrapping, and add some margin.
+
 ### SmartLink Component
 
 Part of the styling is that links have a "." after them, but the underline does not extend past the end of the text. The simplest way I have found to wrap a link in a span and have the link containing the text, and a "." outside of the link tag.
@@ -638,6 +645,8 @@ Wrote a test that SmartLink renders an a tag when passed a href prop. Red.
 Green.
 
 I refactored the guard statements to assign a variable link. The link variable is then wrapped with a span and the "." in the return statement.
+
+Went through and replaced a tags and Link components with SmartLinks where appropriate. This broke some tests so fixed those.
 
 <!-- Links -->
 
