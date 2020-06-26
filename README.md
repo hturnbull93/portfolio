@@ -593,6 +593,9 @@ In `src/components/navbar.jsx`:
 In `src/components/navbar.module.scss`:
 
 - Added standard pattern of flex row for an unordered list within the nav.
+- Position is fixed.
+- Used a pointer coarse media query to place it at the bottom for touch screens.
+- Added some font scaling to keep it hopefully on the screen on smaller viewports like old phones.
 - Flex end to push it to the right.
 - Added link hover styling.
 - Added style for the active links.
