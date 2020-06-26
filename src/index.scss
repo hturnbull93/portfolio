@@ -7,7 +7,7 @@
   --dark: #000000;
   --main-dark: #9d9d9d;
   --main-med: #c4c4c4;
-  --main-light: #efefef;
+  --main-light: #f3f3f3;
   --off-white: #fafafa;
 }
 
@@ -63,4 +63,14 @@ p {
   font-family: var(--body-font);
   line-height: 1.6;
   max-width: 70ch;
+}
+
+// Links
+
+a {
+  text-decoration: none;
+  border-bottom: var(--main-dark) 2px solid;
+  &:hover {
+    border-bottom: var(--dark) 2px solid;
+  }
 }
