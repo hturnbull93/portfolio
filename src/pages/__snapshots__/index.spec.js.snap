@@ -15,6 +15,13 @@ exports[`Home matches snapshot 1`] = `
           About
         </a>
       </li>
+      <li>
+        <a
+          href="/projects"
+        >
+          Projects
+        </a>
+      </li>
     </ul>
   </nav>
   <h1>
