@@ -1,0 +1,6 @@
+.projectsGrid {
+  display: grid;
+  grid-gap: 3em;
+  grid-template-columns: repeat(auto-fit, minmax(0px, 500px));
+  align-items: stretch;
+}
