@@ -584,6 +584,7 @@ In `src/index.scss`:
 - Added Headings reset.
 - Added individual headings font scaling with clamp.
 - Added max width and absolute font size to paragraphs.
+- Added bottom border and hover to a tags
 
 In `src/components/navbar.jsx`:
 
@@ -596,9 +597,38 @@ In `src/components/navbar.module.scss`:
 - Added link hover styling.
 - Added style for the active links.
 
-### ProjectCard Styling
+In `src/components/layout.jsx`:
 
-To get the ProjectCards looking good, I updated the project markdown files with routes to webp files (better quality, smaller file sizes).
+- Added className of container.
+
+In `src/components/layout.module.scss`:
+
+- container class has a max width, and side margins to auto.
+
+In `src/pages/projects.jsx`:
+
+- Wrapped the cards in a section with className projectsGrid.
+
+In `src/pages/projects.module.scss`:
+
+- projectsGrid is a css grid
+- It auto-fits columns with max width of 500px.
+
+### SmartLink Component
+
+Part of the styling is that links have a "." after them, but the underline does not extend past the end of the text. The simplest way I have found to wrap a link in a span and have the link containing the text, and a "." outside of the link tag.
+
+Doing this all over place isn't very dry, so there should a component for it. This element should be able to work with regular a tags, and Gatsby Link components.
+
+In `src/components/smartLink.spec.js`, wrote a test that the SmartLink should render a Link when passed a to prop. Red.
+
+In `src/components/smartLink.spec.js`:
+
+- Added a stateless functional component SmartLink.
+- It returns a Link, passing through the to prop
+- It also takes a children prop and renders them within the Link.
+
+Green.
 
 <!-- Links -->
 
