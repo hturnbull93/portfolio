@@ -1,0 +1,13 @@
+.card {
+  background-color: var(--main-light);
+  img {
+    width: 100%;
+  }
+  .card_content {
+    padding: 0 2em 2em 2em;
+    .card_links > * {
+      display: inline-block;
+      margin: 1em 1em 0 0;
+    }
+  }
+}
