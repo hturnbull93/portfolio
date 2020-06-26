@@ -611,7 +611,7 @@ In `src/pages/projects.jsx`:
 
 In `src/pages/projects.module.scss`:
 
-- projectsGrid is a css grid
+- projectsGrid is a css grid.
 - It auto-fits columns with max width of 500px.
 
 ### SmartLink Component
@@ -620,7 +620,7 @@ Part of the styling is that links have a "." after them, but the underline does 
 
 Doing this all over place isn't very dry, so there should a component for it. This element should be able to work with regular a tags, and Gatsby Link components.
 
-In `src/components/smartLink.spec.js`, wrote a test that the SmartLink should render a Link when passed a to prop. Red.
+In `src/components/smartLink.spec.js`, wrote a test that the SmartLink renders a Link when passed a to prop. Red.
 
 In `src/components/smartLink.spec.js`:
 
@@ -629,6 +629,15 @@ In `src/components/smartLink.spec.js`:
 - It also takes a children prop and renders them within the Link.
 
 Green.
+
+Wrote a test that SmartLink renders an a tag when passed a href prop. Red.
+
+- Added a guard clause to return the Link if the to prop is passed.
+- Added a guard clause to return an a tag with href of the href prop if href is passed.
+
+Green.
+
+I refactored the guard statements to assign a variable link. The link variable is then wrapped with a span and the "." in the return statement.
 
 <!-- Links -->
 

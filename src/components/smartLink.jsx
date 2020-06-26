@@ -2,8 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 
 const SmartLink = ({ to, href, children }) => {
-  if (to) return <Link to={to}>{children}</Link>
-  if (href) return <a href={href}>{children}</a>
+  let link
+  if (to) link = <Link to={to}>{children}</Link>
+  if (href) link = <a href={href}>{children}</a>
+  return <span>{link}.</span>
 }
 
 export default SmartLink
