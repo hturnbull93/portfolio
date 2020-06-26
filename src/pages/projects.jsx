@@ -10,7 +10,7 @@ const Projects = ({ data }) => {
   ))
   return (
     <Layout>
-      <h1>Projects</h1>
+      <h1>Projects.</h1>
       <section className={style.projectsGrid}>{cards}</section>
     </Layout>
   )

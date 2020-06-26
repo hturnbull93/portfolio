@@ -12,7 +12,7 @@ describe("Projects", () => {
 
   it("has a h1 containing Projects", () => {
     const wrapper = shallowWithData()
-    expect(wrapper.find("h1").text()).toEqual("Projects")
+    expect(wrapper.find("h1").text()).toEqual("Projects.")
   })
 
   it("renders a ProjectCard for each project", () => {

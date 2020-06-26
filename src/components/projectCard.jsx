@@ -15,7 +15,7 @@ const ProjectCard = ({ details }) => {
     <div className={style.card}>
       <img src={details.img} alt={details.title} />
       <div className={style.card_content}>
-        <h3 className={style.title}>{details.title}</h3>
+        <h3 className={style.title}>{details.title}.</h3>
         <div className={style.labels}>
           <h4 className="tech">{details.tech}</h4> /{" "}
           <h4 className="label">{details.label}</h4>

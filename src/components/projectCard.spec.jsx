@@ -18,7 +18,7 @@ const props = {
 describe("ProjectCard", () => {
   it("renders a heading containing the prop title", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    expect(wrapper.find("h3").text()).toEqual("Test Title")
+    expect(wrapper.find("h3").text()).toEqual("Test Title.")
   })
 
   it("renders a heading containing the prop tech", () => {
@@ -65,7 +65,7 @@ describe("ProjectCard", () => {
     }
     const wrapper = shallow(<ProjectCard details={noLinkProps} />)
 
-    expect(wrapper.find(".title").text()).toEqual("Test Title")
+    expect(wrapper.find(".title").text()).toEqual("Test Title.")
     expect(wrapper.find(".tech").text()).toEqual("Test tech")
     expect(wrapper.find(".label").text()).toEqual("Personal")
     expect(wrapper.find("p").text()).toEqual("Test description")
