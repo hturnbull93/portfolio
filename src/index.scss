@@ -11,10 +11,14 @@
   --off-white: #fafafa;
 }
 
-
 // Global resets
 html {
   background-color: var(--off-white);
+}
+
+body {
+  margin-bottom: 4em;
+  padding: 0 0.5em;
 }
 
 * {
@@ -25,7 +29,7 @@ html {
 
 // Global Font scaling
 // body {
-  // font-size: clamp(0.6em, 3vw, 1.2em);
+// font-size: clamp(0.6em, 3vw, 1.2em);
 // }
 
 // Heading resets
