@@ -1,10 +1,11 @@
 .navbar {
   text-transform: lowercase;
-  position: fixed;
+  position: sticky;
   right: 0;
   top: 0;
   bottom: unset;
   @media (pointer: coarse) {
+    position: fixed;
     top: unset;
     bottom: 0;
   }
