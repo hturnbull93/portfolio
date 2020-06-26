@@ -619,7 +619,8 @@ In `src/components/projectCard.module.scss`:
 - Added a subtle background colour to the card.
 - Stretch the image to 100% width.
 - Add some padding for the text content.
-- Display the links section as inline block to prevent them wrapping, and add some margin.
+- Display the links as inline block to prevent them wrapping, and add some margin.
+- Display the labels as inline so they appear as one line that wraps.
 
 ### SmartLink Component
 
