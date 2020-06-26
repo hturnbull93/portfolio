@@ -652,6 +652,16 @@ I refactored the guard statements to assign a variable link. The link variable i
 
 Went through and replaced a tags and Link components with SmartLinks where appropriate. This broke some tests so fixed those.
 
+### Linking to Projects
+
+Wrote a test that Navbar should render a Link to Projects. Red.
+
+- Added a Link to Projects.
+
+Green.
+
+For now, as the individual project pages are not yet implemented, I removed the link to read more and suspended the test. Also updated the snapshots.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/
