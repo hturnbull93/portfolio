@@ -10,4 +10,12 @@ describe("SmartLink", () => {
     const link = <Link to="/">About</Link>
     expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
+
+  it("renders a tag when passed a href prop", () => {
+    const wrapper = shallow(
+      <SmartLink href="https://example.com">Example</SmartLink>
+    )
+    const link = <a href="https://example.com">Example</a>
+    expect(wrapper.containsMatchingElement(link)).toEqual(true)
+  })
 })
