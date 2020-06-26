@@ -4,7 +4,7 @@ import style from "./layout.module.scss"
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className={style.container}>
       <Navbar />
       {children}
     </div>

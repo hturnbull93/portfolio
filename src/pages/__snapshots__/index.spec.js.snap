@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home matches snapshot 1`] = `
-<div>
+<div
+  className="container"
+>
   <nav
     className="navbar"
   >
@@ -11,6 +13,13 @@ exports[`Home matches snapshot 1`] = `
           href="/"
         >
           About
+        </a>
+      </li>
+      <li>
+        <a
+          href="/projects"
+        >
+          Projects
         </a>
       </li>
     </ul>

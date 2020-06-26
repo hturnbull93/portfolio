@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import ProjectCard from "../components/projectCard"
+import style from "./projects.module.scss"
 
 const Projects = ({ data }) => {
   const cards = data.allMarkdownRemark.edges.map(edge => (
@@ -9,8 +10,8 @@ const Projects = ({ data }) => {
   ))
   return (
     <Layout>
-      <h1>Projects</h1>
-      {cards}
+      <h1>Projects.</h1>
+      <section className={style.projectsGrid}>{cards}</section>
     </Layout>
   )
 }

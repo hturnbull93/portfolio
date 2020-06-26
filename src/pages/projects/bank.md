@@ -2,7 +2,7 @@
 title: "Bank"
 repoLink: "https://github.com/hturnbull93/bank"
 tech: "Ruby, JS, Python"
-img: "/icon.png"
+img: "/bank-sample.webp"
 description: "A tech test, showcasing test driven development in three languages"
 label: "Personal"
 link: "/projects/bank"

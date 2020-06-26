@@ -584,6 +584,7 @@ In `src/index.scss`:
 - Added Headings reset.
 - Added individual headings font scaling with clamp.
 - Added max width and absolute font size to paragraphs.
+- Added bottom border and hover to a tags
 
 In `src/components/navbar.jsx`:
 
@@ -592,9 +593,74 @@ In `src/components/navbar.jsx`:
 In `src/components/navbar.module.scss`:
 
 - Added standard pattern of flex row for an unordered list within the nav.
+- Position is fixed.
+- Used a pointer coarse media query to place it at the bottom for touch screens.
+- Added some font scaling to keep it hopefully on the screen on smaller viewports like old phones.
 - Flex end to push it to the right.
 - Added link hover styling.
 - Added style for the active links.
+
+In `src/components/layout.jsx`:
+
+- Added className of container.
+
+In `src/components/layout.module.scss`:
+
+- container class has a max width, and side margins to auto.
+
+In `src/pages/projects.jsx`:
+
+- Wrapped the cards in a section with className projectsGrid.
+
+In `src/pages/projects.module.scss`:
+
+- projectsGrid is a css grid.
+- It auto-fits columns with max width of 500px.
+
+In `src/components/projectCard.module.scss`:
+
+- Added a subtle background colour to the card.
+- Stretch the image to 100% width.
+- Add some padding for the text content.
+- Display the links as inline block to prevent them wrapping, and add some margin.
+- Display the labels as inline so they appear as one line that wraps.
+
+### SmartLink Component
+
+Part of the styling is that links have a "." after them, but the underline does not extend past the end of the text. The simplest way I have found to wrap a link in a span and have the link containing the text, and a "." outside of the link tag.
+
+Doing this all over place isn't very dry, so there should a component for it. This element should be able to work with regular a tags, and Gatsby Link components.
+
+In `src/components/smartLink.spec.js`, wrote a test that the SmartLink renders a Link when passed a to prop. Red.
+
+In `src/components/smartLink.spec.js`:
+
+- Added a stateless functional component SmartLink.
+- It returns a Link, passing through the to prop
+- It also takes a children prop and renders them within the Link.
+
+Green.
+
+Wrote a test that SmartLink renders an a tag when passed a href prop. Red.
+
+- Added a guard clause to return the Link if the to prop is passed.
+- Added a guard clause to return an a tag with href of the href prop if href is passed.
+
+Green.
+
+I refactored the guard statements to assign a variable link. The link variable is then wrapped with a span and the "." in the return statement.
+
+Went through and replaced a tags and Link components with SmartLinks where appropriate. This broke some tests so fixed those.
+
+### Linking to Projects
+
+Wrote a test that Navbar should render a Link to Projects. Red.
+
+- Added a Link to Projects.
+
+Green.
+
+For now, as the individual project pages are not yet implemented, I removed the link to read more and suspended the test. Also updated the snapshots.
 
 <!-- Links -->
 

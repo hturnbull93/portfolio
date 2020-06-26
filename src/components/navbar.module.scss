@@ -1,16 +1,31 @@
 .navbar {
   text-transform: lowercase;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: unset;
+  @media (pointer: coarse) {
+    top: unset;
+    bottom: 0;
+  }
+  background-color: var(--off-white);
   ul {
-    list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
+    line-height: 1.6;
+    margin: 0;
+    padding: 1em;
+    list-style-type: none;
     li {
-      margin-left: 1ch;
+      font-size: clamp(0.8em, 2vw, 1em);
+      margin-right: 1ch;
       &::after {
         content: ".";
       }
       a {
         text-decoration: none;
+        border-bottom: none;
         &:hover {
           border-bottom: var(--main-dark) 2px solid;
         }
@@ -20,5 +35,5 @@
 }
 
 .active {
-  border-bottom: var(--dark) 2px solid;
+  border-bottom: var(--dark) 2px solid !important;
 }

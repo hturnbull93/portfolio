@@ -2,7 +2,7 @@ import React from "react"
 import { shallow } from "enzyme"
 import renderer from "react-test-renderer"
 import ProjectCard from "./projectCard"
-import { Link } from "gatsby"
+import SmartLink from "./smartLink"
 
 const props = {
   title: "Test Title",
@@ -16,19 +16,19 @@ const props = {
 }
 
 describe("ProjectCard", () => {
-  it("renders a h4 containing the prop title", () => {
+  it("renders a heading containing the prop title", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    expect(wrapper.find("h4").text()).toEqual("Test Title")
+    expect(wrapper.find("h3").text()).toEqual("Test Title.")
   })
 
-  it("renders a h5 containing the prop tech", () => {
+  it("renders a heading containing the prop tech", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    expect(wrapper.find("h5.tech").text()).toEqual("Test tech")
+    expect(wrapper.find(".tech").text()).toEqual("Test tech")
   })
 
-  it("renders a h5 containing the prop label", () => {
+  it("renders a heading containing the prop label", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    expect(wrapper.find("h5.label").text()).toEqual("Personal")
+    expect(wrapper.find(".label").text()).toEqual("Personal")
   })
 
 
@@ -37,16 +37,16 @@ describe("ProjectCard", () => {
     expect(wrapper.find("p").text()).toEqual("Test description")
   })
 
-  it("renders a link to the prop repoLink", () => {
+  it("renders a SmartLink to the prop repoLink", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    const link = "a[href='https://github.com/hturnbull93/example']"
-    expect(wrapper.find(link).length).toEqual(1)
+    const link = <SmartLink href="https://github.com/hturnbull93/example">GitHub Repo</SmartLink>
+    expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
 
-  it("renders a link to the prop deployLink", () => {
+  it("renders a SmartLink to the prop deployLink", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    const link = "a[href='https://example-deploy-link.com']"
-    expect(wrapper.find(link).length).toEqual(1)
+    const link = <SmartLink href="https://example-deploy-link.com">See it live</SmartLink>
+    expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
 
   it("renders an img with src of the prop img", () => {
@@ -65,16 +65,16 @@ describe("ProjectCard", () => {
     }
     const wrapper = shallow(<ProjectCard details={noLinkProps} />)
 
-    expect(wrapper.find("h4").text()).toEqual("Test Title")
-    expect(wrapper.find("h5.tech").text()).toEqual("Test tech")
-    expect(wrapper.find("h5.label").text()).toEqual("Personal")
+    expect(wrapper.find(".title").text()).toEqual("Test Title.")
+    expect(wrapper.find(".tech").text()).toEqual("Test tech")
+    expect(wrapper.find(".label").text()).toEqual("Personal")
     expect(wrapper.find("p").text()).toEqual("Test description")
     expect(wrapper.find("img[src='/test-image.png']").length).toEqual(1)
   })
 
-  it("renders a Link to the page of the project", () => {
+  xit("renders a SmartLink to the page of the project", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    const link = <Link to="/projects/example-project">Read more</Link>
+    const link = <SmartLink to="/projects/example-project">Read more</SmartLink>
     expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
 })

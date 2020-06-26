@@ -7,14 +7,18 @@
   --dark: #000000;
   --main-dark: #9d9d9d;
   --main-med: #c4c4c4;
-  --main-light: #efefef;
+  --main-light: #f3f3f3;
   --off-white: #fafafa;
 }
-
 
 // Global resets
 html {
   background-color: var(--off-white);
+}
+
+body {
+  margin-bottom: 4em;
+  padding: 0 0.5em;
 }
 
 * {
@@ -25,7 +29,7 @@ html {
 
 // Global Font scaling
 // body {
-  // font-size: clamp(0.6em, 3vw, 1.2em);
+// font-size: clamp(0.6em, 3vw, 1.2em);
 // }
 
 // Heading resets
@@ -53,7 +57,7 @@ h2 {
 }
 
 h3 {
-  font-size: clamp(1.2em, 2.9vw, 2em);
+  font-size: clamp(1.4em, 3.2vw, 2em);
   // font-size: 2em;
 }
 
@@ -63,4 +67,13 @@ p {
   font-family: var(--body-font);
   line-height: 1.6;
   max-width: 70ch;
+}
+
+// Links
+a {
+  text-decoration: none;
+  border-bottom: var(--main-dark) 2px solid;
+  &:hover {
+    border-bottom: var(--dark) 2px solid;
+  }
 }
