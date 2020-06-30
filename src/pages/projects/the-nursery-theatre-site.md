@@ -3,7 +3,7 @@ title: "The Nursery Theatre Site"
 deployLink: "https://thenurserytheatre.com/"
 tech: "WordPress, JS, PHP, HTML, CSS"
 img: "/the-nursery-theatre.webp"
-description: "An immersive bowling scorecard, based on the classic coding kata, design inspired by The Big Lebowski."
+description: "A redevelopment of the UK's leading improvised theatre charity."
 label: "Commercial"
 link: "/projects/the-nursery-theatre-site"
 ---
