@@ -102,7 +102,7 @@ Create for myself a portfolio site that does the following:
   > So that I can read what this developer has written about things,  
   > I would like a link to his Medium blog.
 
-- [ ] 3
+- [x] 3
 
   > As a visitor,  
   > So that I know what this developer has made,  
@@ -418,7 +418,7 @@ Updated the snapshots for About and Index.
 
 ### Project Summaries
 
-- [ ] 3
+- [x] 3
 
   > As a visitor,  
   > So that I know what this developer has made,  
