@@ -662,6 +662,12 @@ Green.
 
 For now, as the individual project pages are not yet implemented, I removed the link to read more and suspended the test. Also updated the snapshots.
 
+### Adding More Projects
+
+I added more Markdown files for 6 projects, adding copy.
+
+I also restructured the location of the images, in the frontmatter the image filename and extension is specified, and the projectCard component constructs the path to the image in the projects directory.
+
 <!-- Links -->
 
 [harryturnbull.com]: https://harryturnbull.com/

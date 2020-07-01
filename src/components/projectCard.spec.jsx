@@ -9,7 +9,7 @@ const props = {
   repoLink: "https://github.com/hturnbull93/example",
   deployLink: "https://example-deploy-link.com",
   tech: "Test tech",
-  img: "/test-image.png",
+  img: "test-image.png",
   description: "Test description",
   link: "/projects/example-project",
   label: "Personal"
@@ -49,9 +49,9 @@ describe("ProjectCard", () => {
     expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
 
-  it("renders an img with src of the prop img", () => {
+  it("renders an img with src of the prop img in the projects dir", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    const img = "img[src='/test-image.png']"
+    const img = "img[src='/projects/test-image.png']"
     expect(wrapper.find(img).length).toEqual(1)
   })
 
@@ -59,7 +59,7 @@ describe("ProjectCard", () => {
     const noLinkProps = {
       title: "Test Title",
       tech: "Test tech",
-      img: "/test-image.png",
+      img: "test-image.png",
       description: "Test description",
       label: "Personal"
     }
@@ -69,7 +69,7 @@ describe("ProjectCard", () => {
     expect(wrapper.find(".tech").text()).toEqual("Test tech")
     expect(wrapper.find(".label").text()).toEqual("Personal")
     expect(wrapper.find("p").text()).toEqual("Test description")
-    expect(wrapper.find("img[src='/test-image.png']").length).toEqual(1)
+    expect(wrapper.find("img[src='/projects/test-image.png']").length).toEqual(1)
   })
 
   xit("renders a SmartLink to the page of the project", () => {

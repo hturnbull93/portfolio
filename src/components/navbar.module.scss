@@ -1,25 +1,28 @@
 .navbar {
   text-transform: lowercase;
-  position: fixed;
+  position: sticky;
   right: 0;
   top: 0;
   bottom: unset;
   @media (pointer: coarse) {
+    position: fixed;
     top: unset;
     bottom: 0;
   }
-  background-color: var(--off-white);
+  display: flex;
+  justify-content: flex-end;
   ul {
+    background-color: var(--off-white);
     display: flex;
-    flex-wrap: wrap;
     justify-content: flex-end;
+    flex-wrap: wrap;
     line-height: 1.6;
     margin: 0;
     padding: 1em;
     list-style-type: none;
     li {
       font-size: clamp(0.8em, 2vw, 1em);
-      margin-right: 1ch;
+      margin: 0 .5ch;
       &::after {
         content: ".";
       }
