@@ -10,10 +10,11 @@ const ProjectCard = ({ details }) => {
   if (details.deployLink) {
     deployLink = <SmartLink href={details.deployLink}>See it live</SmartLink>
   }
+  const imgSrc = "/projects/" + details.img
 
   return (
     <div className={style.card}>
-      <img src={details.img} alt={details.title} />
+      <img src={imgSrc} alt={details.title} />
       <div className={style.card_content}>
         <h3 className={style.title}>{details.title}.</h3>
         <div className={style.labels}>
