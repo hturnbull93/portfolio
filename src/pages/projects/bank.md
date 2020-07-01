@@ -5,7 +5,6 @@ tech: "Ruby, JS, Python"
 img: "bank.png"
 description: "A CLI program emulating a bank account, showcasing test driven development in 3 languages.	"
 label: "Personal"
-link: "/projects/bank"
 ---
 
 These are a series of Tech Tests, demonstrating best practices in Test Driven Development, Object Oriented Design principles, and Agile/XP methods.

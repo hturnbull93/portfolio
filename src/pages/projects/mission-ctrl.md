@@ -6,7 +6,6 @@ tech: "MERN stack"
 img: "mission-ctrl.png"
 description: "Group project. An arcade style game to learn VSCode shortcuts."
 label: "Personal"
-link: "/projects/mission-ctrl"
 ---
 
 This was my final project at Makers Academy. The focus of the project was to take on a completely new tech stack and showcase our ability to follow Agile processes and TDD when faced with such challenges.
