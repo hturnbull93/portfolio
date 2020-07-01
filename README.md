@@ -29,6 +29,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [SmartLink Component](#smartlink-component)
   - [Linking to Projects](#linking-to-projects)
   - [Adding More Projects](#adding-more-projects)
+  - [Project Page Slugs](#project-page-slugs)
   - [To Do](#to-do)
 
 ## Tech Used
@@ -693,6 +694,17 @@ For now, as the individual project pages are not yet implemented, I removed the 
 I added more Markdown files for 6 projects, adding copy.
 
 I also restructured the location of the images, in the frontmatter the image filename and extension is specified, and the projectCard component constructs the path to the image in the projects directory.
+
+### Project Page Slugs
+
+For the project pages to be accessed, they need to be created as pages, each with its own slug.
+
+In `gatsby-node.js`:
+
+- Used Gatsby's `onCreateNode` API to create a function that will process the GraphQL nodes as they are built.
+- Check each node's internal type is MarkdownRemark (i.e. one of the project pages).
+- If so, create a slug using the `createFilePath` API passing the node, getNode, and a base path of "pages".
+- `createNodeField` is destructured from actions, and is used to create a field on the node called slug, with the value of the created slug.
 
 ### To Do
 
