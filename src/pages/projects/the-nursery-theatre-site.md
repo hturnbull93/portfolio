@@ -1,11 +1,11 @@
 ---
-title: "The Nursery Theatre Site"
+title: "The Nursery Theatre"
 deployLink: "https://thenurserytheatre.com/"
 tech: "WordPress, JS, PHP, HTML, CSS"
-img: "/the-nursery-theatre.webp"
+img: "the-nursery-theatre.png"
 description: "A redevelopment of the UK's leading improvised theatre charity."
 label: "Commercial"
-link: "/projects/the-nursery-theatre-site"
+link: "/projects/the-nursery-theatre"
 ---
 
 This is a commercial project for The Nursery Theatre Ltd.

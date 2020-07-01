@@ -2,7 +2,7 @@
 title: "Bank"
 repoLink: "https://github.com/hturnbull93/bank"
 tech: "Ruby, JS, Python"
-img: "/bank.webp"
+img: "bank.png"
 description: "A CLI program emulating a bank account, showcasing test driven development in 3 languages.	"
 label: "Personal"
 link: "/projects/bank"
@@ -16,4 +16,4 @@ I completed four separate implementations, in three languages, over the course o
 
 Implementations are in [Ruby](https://github.com/hturnbull93/bank), [JavaScript for the browser](https://github.com/hturnbull93/bank-js), [Node.js](https://github.com/hturnbull93/bank-node), and [Python](https://github.com/hturnbull93/bank-py).
 
-The specific requirements, instructions, and full documentation of the development process is available in the READMEs of these projects. 
+The specific requirements, instructions, and full documentation of the development process is available in the READMEs of these projects.
