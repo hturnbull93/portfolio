@@ -706,6 +706,10 @@ In `gatsby-node.js`:
 - If so, create a slug using the `createFilePath` API passing the node, getNode, and a base path of "pages".
 - `createNodeField` is destructured from actions, and is used to create a field on the node called slug, with the value of the created slug.
 
+Now that the slug is generated and added in GraphQL, the Project pages no longer need the link path in their frontmatter.
+
+Also, the ProjectCard and Project components and associated tests are updated to use the slug rather than the link in frontmatter.
+
 ### To Do
 
 - Use React Helmet to add metadata to the head.
