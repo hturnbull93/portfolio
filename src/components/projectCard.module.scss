@@ -20,9 +20,12 @@
         display: inline;
       }
     }
-    .card_links > * {
-      display: inline-block;
-      margin: 1em 1em 0 0;
+    .card_links {
+      margin-top: auto;
+      > * {
+        display: inline-block;
+        margin: 1em 1em 0 0;
+      }
     }
   }
 }
