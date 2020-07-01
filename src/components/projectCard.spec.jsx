@@ -5,14 +5,19 @@ import ProjectCard from "./projectCard"
 import SmartLink from "./smartLink"
 
 const props = {
-  title: "Test Title",
-  repoLink: "https://github.com/hturnbull93/example",
-  deployLink: "https://example-deploy-link.com",
-  tech: "Test tech",
-  img: "test-image.png",
-  description: "Test description",
-  link: "/projects/example-project",
-  label: "Personal"
+  id: "1",
+  frontmatter: {
+    title: "Test Title",
+    repoLink: "https://github.com/hturnbull93/example",
+    deployLink: "https://example-deploy-link.com",
+    tech: "Test tech",
+    img: "test-image.png",
+    description: "Test description",
+    label: "Personal"
+    },
+  fields: {
+    slug: "/projects/bank/",
+  }
 }
 
 describe("ProjectCard", () => {
@@ -57,11 +62,17 @@ describe("ProjectCard", () => {
 
   it("renders okay with no links in props", () => {
     const noLinkProps = {
-      title: "Test Title",
-      tech: "Test tech",
-      img: "test-image.png",
-      description: "Test description",
-      label: "Personal"
+      id: "1",
+      frontmatter: {
+        title: "Test Title",
+        tech: "Test tech",
+        img: "test-image.png",
+        description: "Test description",
+        label: "Personal"
+        },
+      fields: {
+        slug: "/projects/bank/",
+      }
     }
     const wrapper = shallow(<ProjectCard details={noLinkProps} />)
 
