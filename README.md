@@ -1,8 +1,35 @@
+<!-- omit in toc -->
 # Personal Portfolio
 
 The site is built with [Gatsby], using React, and is deployed to [harryturnbull.com] via [Netlify].
 
 [![Build Status](https://travis-ci.com/hturnbull93/portfolio.svg?branch=master)](https://travis-ci.com/hturnbull93/portfolio) [![Netlify Status](https://api.netlify.com/api/v1/badges/9f017ae6-45ae-466b-93c0-5936ffe13d7e/deploy-status)](https://app.netlify.com/sites/harryturnbull/deploys)
+
+<!-- omit in toc -->
+## Table of Contents
+- [Tech Used](#tech-used)
+- [Development Journal](#development-journal)
+  - [User Stories](#user-stories)
+  - [Gatsby Setup](#gatsby-setup)
+  - [Testing Setup](#testing-setup)
+  - [Travis CI Setup](#travis-ci-setup)
+  - [User Story 1 - About Section](#user-story-1---about-section)
+  - [User Story 2 - Sidebar/Navigation](#user-story-2---sidebarnavigation)
+  - [Adding Basic Styling](#adding-basic-styling)
+  - [Stubbing Math.random](#stubbing-mathrandom)
+  - [Adding a Favicon](#adding-a-favicon)
+  - [Linking Pages](#linking-pages)
+  - [Project Summaries](#project-summaries)
+  - [Project Cards](#project-cards)
+  - [Back to Project Summaries](#back-to-project-summaries)
+  - [Restyling](#restyling)
+  - [Refactoring Sidebar](#refactoring-sidebar)
+  - [Merging Home and About](#merging-home-and-about)
+  - [More Restyling](#more-restyling)
+  - [SmartLink Component](#smartlink-component)
+  - [Linking to Projects](#linking-to-projects)
+  - [Adding More Projects](#adding-more-projects)
+  - [To Do](#to-do)
 
 ## Tech Used
 
@@ -11,7 +38,6 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 | [Gatsby]   | Static site generator, uses React.                                   |
 | [Jest]     | Unit testing framework.                                              |
 | [Enzyme]   | Unit testing library for React.                                      |
-| [PaperCss] | Lightweight and simple CSS framework.                                |
 | [Netlify]  | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
 ## Development Journal
@@ -667,6 +693,13 @@ For now, as the individual project pages are not yet implemented, I removed the 
 I added more Markdown files for 6 projects, adding copy.
 
 I also restructured the location of the images, in the frontmatter the image filename and extension is specified, and the projectCard component constructs the path to the image in the projects directory.
+
+### To Do
+
+- Use React Helmet to add metadata to the head.
+- Add project pages.
+- Add blog list page.
+- Add contact page.
 
 <!-- Links -->
 
