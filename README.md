@@ -724,9 +724,15 @@ In `gatsby-node.js`:
 
 Now to write the component that the routes render into.
 
-In: `src/templates/project.spec.js`, wrote a test that
+In: `src/templates/project.spec.js`, wrote a test that the Project component renders a Layout component. For this test, the props that would be used from the node are stubbed.
 
-In: `src/templates/project.jsx`
+In: `src/templates/project.jsx`:
+
+- Import Layout, render it in a stateless functional component named Project.
+
+Green.  
+
+A graphql query for markdownRemark where the slug is equal to the slug passed when generating the pages returns the node's html and frontmatter.
 
 ### To Do
 
