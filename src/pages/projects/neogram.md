@@ -6,7 +6,6 @@ tech: "Ruby on Rails"
 img: "neogram.png"
 description: "A social media photo sharing web-app, inspired by Instagram and the Neomorphism design trend."
 label: "Personal"
-link: "/projects/neogram"
 ---
 
 I constructed this web app over the course of a weekend in order to bolster my knowledge of Ruby on Rails.

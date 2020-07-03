@@ -3,29 +3,34 @@ import style from "./projectCard.module.scss"
 import SmartLink from "./smartLink"
 
 const ProjectCard = ({ details }) => {
+  const { frontmatter, fields } = details
+
   let repoLink, deployLink
-  if (details.repoLink) {
-    repoLink = <SmartLink href={details.repoLink}>GitHub Repo</SmartLink>
+  if (frontmatter.repoLink) {
+    repoLink = <SmartLink href={frontmatter.repoLink}>GitHub Repo</SmartLink>
   }
-  if (details.deployLink) {
-    deployLink = <SmartLink href={details.deployLink}>See it live</SmartLink>
+  if (frontmatter.deployLink) {
+    deployLink = (
+      <SmartLink href={frontmatter.deployLink}>See it live</SmartLink>
+    )
   }
-  const imgSrc = "/projects/" + details.img
+
+  const imgSrc = "/projects/" + frontmatter.img
 
   return (
     <div className={style.card}>
-      <img src={imgSrc} alt={details.title} />
+      <img src={imgSrc} alt={frontmatter.title} />
       <div className={style.card_content}>
-        <h3 className={style.title}>{details.title}.</h3>
+        <h3 className={style.title}>{frontmatter.title}.</h3>
         <div className={style.labels}>
-          <h4 className="tech">{details.tech}</h4> /{" "}
-          <h4 className="label">{details.label}</h4>
+          <h4 className="tech">{frontmatter.tech}</h4> /{" "}
+          <h4 className="label">{frontmatter.label}</h4>
         </div>
-        <p>{details.description}</p>
+        <p>{frontmatter.description}</p>
         <div className={style.card_links}>
           {deployLink}
           {repoLink}
-          {/* <SmartLink to={details.link}>Read more</SmartLink> */}
+          <SmartLink to={fields.slug}>Read more</SmartLink>
         </div>
       </div>
     </div>

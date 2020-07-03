@@ -6,7 +6,6 @@ tech: "JS, jQery, HTML, CSS"
 img: "immersive-bowling-scorecard.jpg"
 description: "An immersive bowling scorecard, based on the classic coding kata, design inspired by The Big Lebowski."
 label: "Personal"
-link: "/projects/bowling-scorecard"
 ---
 
 An immersive bowling scorecard, based on the classic coding kata, completed over the course of a weekend.

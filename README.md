@@ -1,8 +1,38 @@
+<!-- omit in toc -->
 # Personal Portfolio
 
 The site is built with [Gatsby], using React, and is deployed to [harryturnbull.com] via [Netlify].
 
 [![Build Status](https://travis-ci.com/hturnbull93/portfolio.svg?branch=master)](https://travis-ci.com/hturnbull93/portfolio) [![Netlify Status](https://api.netlify.com/api/v1/badges/9f017ae6-45ae-466b-93c0-5936ffe13d7e/deploy-status)](https://app.netlify.com/sites/harryturnbull/deploys)
+
+<!-- omit in toc -->
+## Table of Contents
+- [Tech Used](#tech-used)
+- [Development Journal](#development-journal)
+  - [User Stories](#user-stories)
+  - [Gatsby Setup](#gatsby-setup)
+  - [Testing Setup](#testing-setup)
+  - [Travis CI Setup](#travis-ci-setup)
+  - [User Story 1 - About Section](#user-story-1---about-section)
+  - [User Story 2 - Sidebar/Navigation](#user-story-2---sidebarnavigation)
+  - [Adding Basic Styling](#adding-basic-styling)
+  - [Stubbing Math.random](#stubbing-mathrandom)
+  - [Adding a Favicon](#adding-a-favicon)
+  - [Linking Pages](#linking-pages)
+  - [Project Summaries](#project-summaries)
+  - [Project Cards](#project-cards)
+  - [Back to Project Summaries](#back-to-project-summaries)
+  - [Restyling](#restyling)
+  - [Refactoring Sidebar](#refactoring-sidebar)
+  - [Merging Home and About](#merging-home-and-about)
+  - [More Restyling](#more-restyling)
+  - [SmartLink Component](#smartlink-component)
+  - [Linking to Projects](#linking-to-projects)
+  - [Adding More Projects](#adding-more-projects)
+  - [Project Page Slugs](#project-page-slugs)
+  - [Project Pages](#project-pages)
+  - [Styling Project Pages](#styling-project-pages)
+  - [To Do](#to-do)
 
 ## Tech Used
 
@@ -11,7 +41,6 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 | [Gatsby]   | Static site generator, uses React.                                   |
 | [Jest]     | Unit testing framework.                                              |
 | [Enzyme]   | Unit testing library for React.                                      |
-| [PaperCss] | Lightweight and simple CSS framework.                                |
 | [Netlify]  | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
 ## Development Journal
@@ -76,31 +105,31 @@ Create for myself a portfolio site that does the following:
   > So that I can read what this developer has written about things,  
   > I would like a link to his Medium blog.
 
-- [ ] 3
+- [x] 3
 
   > As a visitor,  
   > So that I know what this developer has made,  
   > I would like to see a summary of his projects.
 
-- [ ] 3.1
+- [x] 3.1
 
   > As a visitor,  
   > So that I can see the project in action,  
   > I would like a link to where it is deployed.
 
-- [ ] 3.2
+- [x] 3.2
 
   > As a visitor,  
   > So that I can inspect the project's source code,  
   > I would like a link to it's GitHub repo.
 
-- [ ] 3.3
+- [x] 3.3
 
   > As a visitor,  
   > So that I can tell at a glance how the project was made,  
   > I would like to see a part about the technologies used.
 
-- [ ] 3.4
+- [x] 3.4
 
   > As a visitor,  
   > So that I can understand why the project was made,  
@@ -392,7 +421,7 @@ Updated the snapshots for About and Index.
 
 ### Project Summaries
 
-- [ ] 3
+- [x] 3
 
   > As a visitor,  
   > So that I know what this developer has made,  
@@ -667,6 +696,107 @@ For now, as the individual project pages are not yet implemented, I removed the 
 I added more Markdown files for 6 projects, adding copy.
 
 I also restructured the location of the images, in the frontmatter the image filename and extension is specified, and the projectCard component constructs the path to the image in the projects directory.
+
+### Project Page Slugs
+
+For the project pages to be accessed, they need to be created as pages, each with its own slug.
+
+In `gatsby-node.js`:
+
+- Used Gatsby's `onCreateNode` API to create a function that will process the GraphQL nodes as they are built.
+- Check each node's internal type is MarkdownRemark (i.e. one of the project pages).
+- If so, create a slug using the `createFilePath` API passing the node, getNode, and a base path of "pages".
+- `createNodeField` is destructured from actions, and is used to create a field on the node called slug, with the value of the created slug.
+
+Now that the slug is generated and added in GraphQL, the Project pages no longer need the link path in their frontmatter.
+
+Also, the ProjectCard and Project components and associated tests are updated to use the slug rather than the link in frontmatter.
+
+### Project Pages
+
+Now the slugs are generated, each page needs to be rendered into a template.
+
+In `gatsby-node.js`:
+
+- Export a `createPages` function, (one of Gatsby's APIs).
+- It is async, as it must await the result graphql query for the MarkdownRemark nodes returning their slugs.
+- `createPage` is destructured from actions.
+- For each of the nodes returned in the query `createPage` is called, passing in an object with the path as the node's slug, component (template to render into) with the Node path module resolving the path to a new file `src/templates/project.jsx`, and the context object with a slug property passing the node's slug.
+
+Now to write the component that the routes render into.
+
+In: `src/templates/project.spec.js`, wrote a test that the Project component renders a Layout component. For this test, the props that would be used from the node are stubbed. Red.
+
+In: `src/templates/project.jsx`:
+
+- Import Layout, render it in a stateless functional component named Project.
+
+Green.  
+
+A graphql query for markdownRemark where the slug is equal to the slug passed when generating the pages returns the node's html and frontmatter.
+
+Wrote a test that Project should contain the html from the node. Red.
+
+- Added a div and used the `dangerouslySetInnerHTML` prop passing an object with `__html` property of the project's html.
+
+Green.
+
+Wrote a test that Project renders a heading containing the title. Red.
+
+- Added an h1 rendering the title from the frontmatter.
+
+Green.
+
+Wrote a test that Project renders a heading containing the tech stack. Red.
+
+- Added a h3 element that renders the tech from the frontmatter.
+
+Green.
+
+Wrote a test that Project renders a heading containing the label. Red.
+
+- Added a h3 element that renders the label from the frontmatter.
+
+Green.
+
+Wrote a test that Project renders a SmartLink to the repoLink. Red.
+
+- Added SmartLink component with href prop of the repoLink from the frontmatter.
+
+Green.
+
+Wrote a test that Project renders a SmartLink to the deployLink. Red.
+
+- Added SmartLink component with href prop of the deployLink from the frontmatter.
+
+Green.
+
+Wrote a test that Project renders okay with no links. Red.
+
+- Conditionally rendered the SmartLinks based on their presence in the frontmatter.
+
+Green.
+
+Now that the project pages are implemented, I reactivated the ProjectCard test for the link to the project's page.
+
+### Styling Project Pages
+
+The Project page template is already styled quite well, just a few tweaks needed:
+
+In `src/templates/project.module.scss`:
+
+- Wrap the labels and tech stack headings in a div with class name labels.
+- Display its children as inline.
+- Anything that is not the last child of the div has a after pseudo-element with content "/" as a separator.
+- Wrap the links in a div with class name links.
+- Display the immediate children as inline-block and give each a bit of margin to space them out.
+
+### To Do
+
+- Add project pages.
+- Use React Helmet to add metadata to the head.
+- Add blog list page.
+- Add contact page.
 
 <!-- Links -->
 

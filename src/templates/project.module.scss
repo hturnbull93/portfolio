@@ -1,0 +1,17 @@
+.labels {
+  * {
+    display: inline;
+    &:not(:last-child) {
+      &::after {
+        content: " / ";
+      }
+    }
+  }
+}
+
+.links {
+  > * {
+    display: inline-block;
+    margin: 1em 1em 0 0;
+  }
+}

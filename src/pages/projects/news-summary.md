@@ -6,7 +6,6 @@ tech: "JS, HTML, CSS"
 img: "news-summary.png"
 description: "A vanilla JS single page web app, using AJAX to consume the Guardian API."
 label: "Personal"
-link: "/projects/news-summary"
 ---
 
 This project was completed in a weekend and helped me practice Single page web apps AJAX requests using vanilla JavaScript, HTML, and CSS.

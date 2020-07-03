@@ -6,7 +6,7 @@ import style from "./projects.module.scss"
 
 const Projects = ({ data }) => {
   const cards = data.allMarkdownRemark.edges.map(edge => (
-    <ProjectCard key={edge.node.id} details={edge.node.frontmatter} />
+    <ProjectCard key={edge.node.id} details={edge.node} />
   ))
   return (
     <Layout>
@@ -29,8 +29,10 @@ export const query = graphql`
             title
             description
             img
-            link
             label
+          }
+          fields {
+            slug
           }
         }
       }

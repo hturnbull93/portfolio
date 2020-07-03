@@ -18,10 +18,16 @@ describe("Projects", () => {
   it("renders a ProjectCard for each project", () => {
     const wrapper = shallowWithData()
     const id = "1"
-    const details = {
-      title: "Test Title",
+    const node = {
+      id: "1",
+      frontmatter: {
+        title: "Test Title",
+      },
+      fields: {
+        slug: "/projects/bank/",
+      },
     }
-    const projectCard = <ProjectCard key={id} details={details} />
+    const projectCard = <ProjectCard key={id} details={node} />
 
     expect(wrapper.containsMatchingElement(projectCard)).toEqual(true)
   })
@@ -36,6 +42,9 @@ const shallowWithData = () => {
             id: "1",
             frontmatter: {
               title: "Test Title",
+            },
+            fields: {
+              slug: "/projects/bank/",
             },
           },
         },
