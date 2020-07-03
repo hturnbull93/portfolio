@@ -748,7 +748,13 @@ Green.
 
 Wrote a test that Project renders a heading containing the tech stack. Red.
 
-- Added a h2 element that renders the tech from the frontmatter.
+- Added a h3 element that renders the tech from the frontmatter.
+
+Green.
+
+Wrote a test that Project renders a heading containing the label. Red.
+
+- Added a h3 element that renders the label from the frontmatter.
 
 Green.
 
