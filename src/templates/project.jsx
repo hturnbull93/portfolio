@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SmartLink from "../components/smartLink"
+import style from "./project.module.scss"
 
 const Project = ({ data }) => {
   const project = data.markdownRemark
@@ -21,11 +22,11 @@ const Project = ({ data }) => {
   return (
     <Layout>
       <h1>{project.frontmatter.title}.</h1>
-      <div>
-        <h3 className="tech">{project.frontmatter.tech}</h3> /{" "}
+      <div className={style.labels}>
+        <h3 className="tech">{project.frontmatter.tech}</h3>
         <h3 className="label">{project.frontmatter.label}</h3>
       </div>
-      <div>
+      <div className={style.links}>
         {repoLink}
         {deployLink}
       </div>
