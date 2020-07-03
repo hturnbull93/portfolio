@@ -770,6 +770,12 @@ Wrote a test that Project renders a SmartLink to the deployLink. Red.
 
 Green.
 
+Wrote a test that Project renders okay with no links. Red.
+
+- Conditionally rendered the SmartLinks based on their presence in the frontmatter.
+
+Green.
+
 ### To Do
 
 - Add project pages.
