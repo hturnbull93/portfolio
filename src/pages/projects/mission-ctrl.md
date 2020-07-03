@@ -10,7 +10,7 @@ label: "Personal"
 
 This was my final project at Makers Academy. The focus of the project was to take on a completely new tech stack and showcase our ability to follow Agile processes and TDD when faced with such challenges.
 
-I learned a lot during this project, and I've [written about it in this blog post](https://blog.makersacademy.com/lessons-learned-from-my-makers-final-project-44165d45108d).
+I learned a lot during this project, and I've written about it in [this blog post](https://blog.makersacademy.com/lessons-learned-from-my-makers-final-project-44165d45108d).
 
 The project was completed over the course of two weeks.
 
@@ -21,18 +21,3 @@ MongoDB allows for flexibility in the case that we want to expand the project to
 Express works well for our simple routes, there's little overhead to get it up and running.
 
 React made implementing relatively complex game logic much easier than vanilla JavaScript.
-
-
-| Purpose                      | Technology         |
-| ---------------------------- | ------------------ |
-| Front end framework          | React              |
-| Server framework             | Express            |
-| ORM                          | Mongoose           |
-| Language                     | Javascript         |
-| CI/CD                        | Travis             |
-| Hosting                      | Heroku, Surge      |
-| Databases                    | MongoDB            |
-| Styling                      | Sass, CSS          |
-| Front end testing frameworks | Jest, Enzyme       |
-| API testing frameworks       | Mocha, Chai, Sinon |
-| Code Coverage                | Jest               |
