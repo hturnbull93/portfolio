@@ -2,6 +2,7 @@ import React from "react"
 import { shallow, render } from "enzyme"
 import renderer from "react-test-renderer"
 import Project from "./project"
+import SmartLink from "../components/smartLink"
 
 describe("Project", () => {
   it("renders a Layout", () => {
@@ -28,6 +29,22 @@ describe("Project", () => {
   it("renders a heading containing the label", () => {
     const wrapper = shallowWithData()
     expect(wrapper.find(".label").text()).toEqual("Test Label")
+  })
+
+  it("renders a SmartLink to the repoLink", () => {
+    const wrapper = shallowWithData()
+    const link = (
+      <SmartLink href="https://github.com/hturnbull93/example">
+        GitHub Repo
+      </SmartLink>
+    )
+    expect(wrapper.containsMatchingElement(link)).toEqual(true)
+  })
+
+  it("renders a SmartLink to the deployLink", () => {
+    const wrapper = shallowWithData()
+    const link = <SmartLink href="https://example.com">See it live</SmartLink>
+    expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
 })
 
