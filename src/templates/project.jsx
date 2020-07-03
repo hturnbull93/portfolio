@@ -3,7 +3,15 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
 const Project = ({ data }) => {
-  return <Layout></Layout>
+  const project = data.markdownRemark
+  return (
+    <Layout>
+      <section
+        className="content"
+        dangerouslySetInnerHTML={{ __html: project.html }}
+      />
+    </Layout>
+  )
 }
 
 export default Project
