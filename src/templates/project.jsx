@@ -7,6 +7,7 @@ const Project = ({ data }) => {
   return (
     <Layout>
       <h1>{project.frontmatter.title}.</h1>
+      <h3 className="tech">{project.frontmatter.tech}</h3>
       <section
         className="content"
         dangerouslySetInnerHTML={{ __html: project.html }}

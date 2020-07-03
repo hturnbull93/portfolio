@@ -740,12 +740,17 @@ Wrote a test that Project should contain the html from the node. Red.
 
 Green.
 
-Wrote a test that the Project renders a heading containing the title. Red.
+Wrote a test that Project renders a heading containing the title. Red.
 
 - Added an h1 rendering the title from the frontmatter.
 
 Green.
 
+Wrote a test that Project renders a heading containing the tech stack. Red.
+
+- Added a h2 element that renders the tech from the frontmatter.
+
+Green.
 
 ### To Do
 
