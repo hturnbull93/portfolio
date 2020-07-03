@@ -30,6 +30,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Linking to Projects](#linking-to-projects)
   - [Adding More Projects](#adding-more-projects)
   - [Project Page Slugs](#project-page-slugs)
+  - [Project Pages](#project-pages)
   - [To Do](#to-do)
 
 ## Tech Used
@@ -710,10 +711,27 @@ Now that the slug is generated and added in GraphQL, the Project pages no longer
 
 Also, the ProjectCard and Project components and associated tests are updated to use the slug rather than the link in frontmatter.
 
+### Project Pages
+
+Now the slugs are generated, each page needs to be rendered into a template.
+
+In `gatsby-node.js`:
+
+- Export a `createPages` function, (one of Gatsby's APIs).
+- It is async, as it must await the result graphql query for the MarkdownRemark nodes returning their slugs.
+- `createPage` is destructured from actions.
+- For each of the nodes returned in the query `createPage` is called, passing in an object with the path as the node's slug, component (template to render into) with the Node path module resolving the path to a new file `src/templates/project.jsx`, and the context object with a slug property passing the node's slug.
+
+Now to write the component that the routes render into.
+
+In: `src/templates/project.spec.js`, wrote a test that
+
+In: `src/templates/project.jsx`
+
 ### To Do
 
-- Use React Helmet to add metadata to the head.
 - Add project pages.
+- Use React Helmet to add metadata to the head.
 - Add blog list page.
 - Add contact page.
 
