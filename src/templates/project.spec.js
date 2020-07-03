@@ -24,6 +24,11 @@ describe("Project", () => {
     const wrapper = shallowWithData()
     expect(wrapper.find(".tech").text()).toEqual("Example Tech")
   })
+
+  it("renders a heading containing the prop label", () => {
+    const wrapper = shallowWithData()
+    expect(wrapper.find(".label").text()).toEqual("Test Label")
+  })
 })
 
 const shallowWithData = () => {
