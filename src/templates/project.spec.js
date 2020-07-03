@@ -14,6 +14,11 @@ describe("Project", () => {
     const render = wrapper.render()
     expect(render.find(".content").html()).toEqual("<p>Test HTML content</p>")
   })
+
+  it("renders a heading containing the title", () => {
+    const wrapper = shallowWithData()
+    expect(wrapper.find("h1").text()).toEqual("Test Title.")
+  })
 })
 
 const shallowWithData = () => {
