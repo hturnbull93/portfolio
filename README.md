@@ -31,6 +31,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Adding More Projects](#adding-more-projects)
   - [Project Page Slugs](#project-page-slugs)
   - [Project Pages](#project-pages)
+  - [Styling Project Pages](#styling-project-pages)
   - [To Do](#to-do)
 
 ## Tech Used
@@ -110,25 +111,25 @@ Create for myself a portfolio site that does the following:
   > So that I know what this developer has made,  
   > I would like to see a summary of his projects.
 
-- [ ] 3.1
+- [x] 3.1
 
   > As a visitor,  
   > So that I can see the project in action,  
   > I would like a link to where it is deployed.
 
-- [ ] 3.2
+- [x] 3.2
 
   > As a visitor,  
   > So that I can inspect the project's source code,  
   > I would like a link to it's GitHub repo.
 
-- [ ] 3.3
+- [x] 3.3
 
   > As a visitor,  
   > So that I can tell at a glance how the project was made,  
   > I would like to see a part about the technologies used.
 
-- [ ] 3.4
+- [x] 3.4
 
   > As a visitor,  
   > So that I can understand why the project was made,  
@@ -777,6 +778,18 @@ Wrote a test that Project renders okay with no links. Red.
 Green.
 
 Now that the project pages are implemented, I reactivated the ProjectCard test for the link to the project's page.
+
+### Styling Project Pages
+
+The Project page template is already styled quite well, just a few tweaks needed:
+
+In `src/templates/project.module.scss`:
+
+- Wrap the labels and tech stack headings in a div with class name labels.
+- Display its children as inline.
+- Anything that is not the last child of the div has a after pseudo-element with content "/" as a separator.
+- Wrap the links in a div with class name links.
+- Display the immediate children as inline-block and give each a bit of margin to space them out.
 
 ### To Do
 
