@@ -9,15 +9,15 @@ const props = {
   frontmatter: {
     title: "Test Title",
     repoLink: "https://github.com/hturnbull93/example",
-    deployLink: "https://example-deploy-link.com",
+    deployLink: "https://example.com",
     tech: "Test tech",
-    img: "test-image.png",
+    img: "image.png",
     description: "Test description",
-    label: "Personal"
-    },
+    label: "Personal",
+  },
   fields: {
     slug: "/projects/bank/",
-  }
+  },
 }
 
 describe("ProjectCard", () => {
@@ -36,7 +36,6 @@ describe("ProjectCard", () => {
     expect(wrapper.find(".label").text()).toEqual("Personal")
   })
 
-
   it("renders a p containing the prop description", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
     expect(wrapper.find("p").text()).toEqual("Test description")
@@ -44,19 +43,23 @@ describe("ProjectCard", () => {
 
   it("renders a SmartLink to the prop repoLink", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    const link = <SmartLink href="https://github.com/hturnbull93/example">GitHub Repo</SmartLink>
+    const link = (
+      <SmartLink href="https://github.com/hturnbull93/example">
+        GitHub Repo
+      </SmartLink>
+    )
     expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
 
   it("renders a SmartLink to the prop deployLink", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    const link = <SmartLink href="https://example-deploy-link.com">See it live</SmartLink>
+    const link = <SmartLink href="https://example.com">See it live</SmartLink>
     expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
 
   it("renders an img with src of the prop img in the projects dir", () => {
     const wrapper = shallow(<ProjectCard details={props} />)
-    const img = "img[src='/projects/test-image.png']"
+    const img = "img[src='/projects/image.png']"
     expect(wrapper.find(img).length).toEqual(1)
   })
 
@@ -66,13 +69,13 @@ describe("ProjectCard", () => {
       frontmatter: {
         title: "Test Title",
         tech: "Test tech",
-        img: "test-image.png",
+        img: "image.png",
         description: "Test description",
-        label: "Personal"
-        },
+        label: "Personal",
+      },
       fields: {
         slug: "/projects/bank/",
-      }
+      },
     }
     const wrapper = shallow(<ProjectCard details={noLinkProps} />)
 
@@ -80,7 +83,7 @@ describe("ProjectCard", () => {
     expect(wrapper.find(".tech").text()).toEqual("Test tech")
     expect(wrapper.find(".label").text()).toEqual("Personal")
     expect(wrapper.find("p").text()).toEqual("Test description")
-    expect(wrapper.find("img[src='/projects/test-image.png']").length).toEqual(1)
+    expect(wrapper.find("img[src='/projects/image.png']").length).toEqual(1)
   })
 
   xit("renders a SmartLink to the page of the project", () => {
