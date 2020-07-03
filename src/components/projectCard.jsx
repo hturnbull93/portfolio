@@ -30,7 +30,7 @@ const ProjectCard = ({ details }) => {
         <div className={style.card_links}>
           {deployLink}
           {repoLink}
-          {/* <SmartLink to={fields.slug}>Read more</SmartLink> */}
+          <SmartLink to={fields.slug}>Read more</SmartLink>
         </div>
       </div>
     </div>

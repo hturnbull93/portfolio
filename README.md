@@ -776,6 +776,8 @@ Wrote a test that Project renders okay with no links. Red.
 
 Green.
 
+Now that the project pages are implemented, I reactivated the ProjectCard test for the link to the project's page.
+
 ### To Do
 
 - Add project pages.
