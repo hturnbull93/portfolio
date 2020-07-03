@@ -758,6 +758,18 @@ Wrote a test that Project renders a heading containing the label. Red.
 
 Green.
 
+Wrote a test that Project renders a SmartLink to the repoLink. Red.
+
+- Added SmartLink component with href prop of the repoLink from the frontmatter.
+
+Green.
+
+Wrote a test that Project renders a SmartLink to the deployLink. Red.
+
+- Added SmartLink component with href prop of the deployLink from the frontmatter.
+
+Green.
+
 ### To Do
 
 - Add project pages.
