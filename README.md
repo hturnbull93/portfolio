@@ -724,7 +724,7 @@ In `gatsby-node.js`:
 
 Now to write the component that the routes render into.
 
-In: `src/templates/project.spec.js`, wrote a test that the Project component renders a Layout component. For this test, the props that would be used from the node are stubbed.
+In: `src/templates/project.spec.js`, wrote a test that the Project component renders a Layout component. For this test, the props that would be used from the node are stubbed. Red.
 
 In: `src/templates/project.jsx`:
 
@@ -733,6 +733,12 @@ In: `src/templates/project.jsx`:
 Green.  
 
 A graphql query for markdownRemark where the slug is equal to the slug passed when generating the pages returns the node's html and frontmatter.
+
+Wrote a test that Project should contain the html from the node. Red.
+
+- Added a div and used the `dangerouslySetInnerHTML` prop passing an object with `__html` property of the project's html.
+
+Green.
 
 ### To Do
 

@@ -1,5 +1,5 @@
 import React from "react"
-import { shallow } from "enzyme"
+import { shallow, render } from "enzyme"
 import renderer from "react-test-renderer"
 import Project from "./project"
 
@@ -8,12 +8,18 @@ describe("Project", () => {
     const wrapper = shallowWithData()
     expect(wrapper.find("Layout").length).toEqual(1)
   })
+
+  it("renders the html converted from md", () => {
+    const wrapper = shallowWithData()
+    const render = wrapper.render()
+    expect(render.find(".content").html()).toEqual("<p>Test HTML content</p>")
+  })
 })
 
 const shallowWithData = () => {
   const data = {
     markdownRemark: {
-      html: "<p>Test HTML content</p><p>Another paragraph</p>",
+      html: "<p>Test HTML content</p>",
       frontmatter: {
         deployLink: "https://example.com",
         repoLink: "https://github.com/hturnbull93/example",
