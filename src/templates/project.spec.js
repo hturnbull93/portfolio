@@ -46,6 +46,24 @@ describe("Project", () => {
     const link = <SmartLink href="https://example.com">See it live</SmartLink>
     expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
+
+  it("renders okay with no links in props", () => {
+    const data = {
+      markdownRemark: {
+        html: "<p>Test HTML content</p>",
+        frontmatter: {
+          tech: "Example Tech",
+          title: "Test Title",
+          description: "An example description",
+          img: "example.png",
+          label: "Test Label",
+        },
+      },
+    }
+    const wrapper = shallow(<Project data={data} />)
+
+    expect(wrapper.find("SmartLink").length).toEqual(0)
+  })
 })
 
 const shallowWithData = () => {
