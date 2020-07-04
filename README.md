@@ -1,4 +1,5 @@
 <!-- omit in toc -->
+
 # Personal Portfolio
 
 The site is built with [Gatsby], using React, and is deployed to [harryturnbull.com] via [Netlify].
@@ -6,7 +7,9 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 [![Build Status](https://travis-ci.com/hturnbull93/portfolio.svg?branch=master)](https://travis-ci.com/hturnbull93/portfolio) [![Netlify Status](https://api.netlify.com/api/v1/badges/9f017ae6-45ae-466b-93c0-5936ffe13d7e/deploy-status)](https://app.netlify.com/sites/harryturnbull/deploys)
 
 <!-- omit in toc -->
+
 ## Table of Contents
+
 - [Tech Used](#tech-used)
 - [Development Journal](#development-journal)
   - [User Stories](#user-stories)
@@ -39,12 +42,12 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 
 ## Tech Used
 
-| Tech       | Description                                                          |
-| ---------- | -------------------------------------------------------------------- |
-| [Gatsby]   | Static site generator, uses React.                                   |
-| [Jest]     | Unit testing framework.                                              |
-| [Enzyme]   | Unit testing library for React.                                      |
-| [Netlify]  | Host, allows for CI/CD workflow, also provides free SSL certificate. |
+| Tech      | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| [Gatsby]  | Static site generator, uses React.                                   |
+| [Jest]    | Unit testing framework.                                              |
+| [Enzyme]  | Unit testing library for React.                                      |
+| [Netlify] | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
 ## Development Journal
 
@@ -563,7 +566,7 @@ Green.
 
 ### Restyling
 
-On reflection, PaperCss is unique and full of character, but it doesn't have the professionalism I want to portray. I have decided to create the styling from scratch with SASS. The new design I have drawn up will also allow me to build much more easily with a mobile first perspective. 
+On reflection, PaperCss is unique and full of character, but it doesn't have the professionalism I want to portray. I have decided to create the styling from scratch with SASS. The new design I have drawn up will also allow me to build much more easily with a mobile first perspective.
 
 First task is to uninstall PaperCss:
 
@@ -734,7 +737,7 @@ In: `src/templates/project.jsx`:
 
 - Import Layout, render it in a stateless functional component named Project.
 
-Green.  
+Green.
 
 A graphql query for markdownRemark where the slug is equal to the slug passed when generating the pages returns the node's html and frontmatter.
 
@@ -852,10 +855,10 @@ Green.
 Twitter expects meta tags in the following format:
 
 ```html
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Example Title ">
-<meta name="twitter:description" content="Example description.">
-<meta name="twitter:image" content=" http://example.com/thumbnail.jpg">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Example Title " />
+<meta name="twitter:description" content="Example description." />
+<meta name="twitter:image" content=" http://example.com/thumbnail.jpg" />
 ```
 
 Wrote a test that SEO renders a twitter:card metatag. Red.
@@ -915,9 +918,19 @@ In `src/pages/projects.spec.js`, wrote a test that Projects renders an SEO compo
 
 In `src/pages/projects.jsx`:
 
+- Imported and rendered an SEO component, passing a title and description.
+
+Green.
+
+In `src/templates/project.spec.js`, wrote a test that Projects renders an SEO component. Red.
+
+In `src/templates/project.jsx`:
+
 - Imported and rendered an SEO component.
 
 Green.
+
+Again, the snapshot test now fails, as useStaticQuery needs to be stubbed, updated the test.
 
 ### To Do
 
