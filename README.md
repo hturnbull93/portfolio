@@ -869,7 +869,15 @@ Wrote a test that SEO renders a twitter:title metatag. Red.
 
 Green.
 
+Wrote a test that the twitter:title can be overwritten by passing a title prop.
 
+This passes as the seo.title is already dynamically set. Green.
+
+Wrote a test that SEO renders a twitter:description metatag. Red.
+
+- Added a metatag with name of twitter:description and content of the seo description.
+
+Green.
 
 ### To Do
 
