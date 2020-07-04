@@ -19,7 +19,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Stubbing Math.random](#stubbing-mathrandom)
   - [Adding a Favicon](#adding-a-favicon)
   - [Linking Pages](#linking-pages)
-  - [Project Summaries](#project-summaries)
+  - [User Story Set 3 - Project Summaries](#user-story-set-3---project-summaries)
   - [Project Cards](#project-cards)
   - [Back to Project Summaries](#back-to-project-summaries)
   - [Restyling](#restyling)
@@ -135,13 +135,13 @@ Create for myself a portfolio site that does the following:
   > So that I can understand why the project was made,  
   > I would like to see a brief explanation.
 
-- [ ] 3.5
+- [x] 3.5
 
   > As a visitor,  
   > So that I can see how the project looks at a glance,  
   > I would like to see some screenshots.
 
-- [ ] 3.6
+- [x] 3.6
 
   > As a visitor,  
   > So that I know the context of the project,  
@@ -419,7 +419,7 @@ Green.
 
 Updated the snapshots for About and Index.
 
-### Project Summaries
+### User Story Set 3 - Project Summaries
 
 - [x] 3
 
@@ -791,9 +791,10 @@ In `src/templates/project.module.scss`:
 - Wrap the links in a div with class name links.
 - Display the immediate children as inline-block and give each a bit of margin to space them out.
 
+Set 3 of the User Stories are complete.
+
 ### To Do
 
-- Add project pages.
 - Use React Helmet to add metadata to the head.
 - Add blog list page.
 - Add contact page.
