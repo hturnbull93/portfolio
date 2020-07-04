@@ -25,6 +25,26 @@ describe("SEO", () => {
     expect(metaTags).toContainEqual(expected)
     mock.mockRestore()
   })
+
+  it("title prop overwrites title metatag", () => {
+    const mock = mockQuery()
+    const wrapper = mount(<SEO title="Overwrite title"/>)
+    const helmet = Helmet.peek()
+    expect(helmet.title).toEqual("Overwrite title / Mock title")
+    mock.mockRestore()
+  })
+
+  it("description prop overwrites description metatag", () => {
+    const mock = mockQuery()
+    const wrapper = mount(<SEO description="Overwrite description"/>)
+    const metaTags = Helmet.peek().metaTags
+    const expected = {
+      name: "description",
+      content: "Overwrite description",
+    }
+    expect(metaTags).toContainEqual(expected)
+    mock.mockRestore()
+  })
 })
 
 const mockQuery = () => {
