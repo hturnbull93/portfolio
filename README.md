@@ -892,6 +892,12 @@ Green.
 
 Also at this point added url and twitterThumbnail to the siteMetadata, and uploaded the twitter thumbnail image.
 
+Wrote a test that the twitter:image can be overwritten by passing a twitterThumbnail prop. Red.
+
+- Assign seo twitterThumbnail using a ternary operator if the twitterThumbnail is passed to use that, unless use the siteMetadata twitterThumbnail.
+
+Green.
+
 ### To Do
 
 - Use React Helmet to add metadata to the head.
