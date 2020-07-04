@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SmartLink from "../components/smartLink"
 import style from "./project.module.scss"
+import SEO from "../components/seo"
 
 const Project = ({ data }) => {
   const project = data.markdownRemark
@@ -33,6 +34,11 @@ const Project = ({ data }) => {
       <section
         className="content"
         dangerouslySetInnerHTML={{ __html: project.html }}
+      />
+      <SEO
+        title={project.frontmatter.title}
+        description={project.frontmatter.description}
+        twitterThumbnail={project.frontmatter.img}
       />
     </Layout>
   )

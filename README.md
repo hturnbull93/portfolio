@@ -1,4 +1,5 @@
 <!-- omit in toc -->
+
 # Personal Portfolio
 
 The site is built with [Gatsby], using React, and is deployed to [harryturnbull.com] via [Netlify].
@@ -6,7 +7,9 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 [![Build Status](https://travis-ci.com/hturnbull93/portfolio.svg?branch=master)](https://travis-ci.com/hturnbull93/portfolio) [![Netlify Status](https://api.netlify.com/api/v1/badges/9f017ae6-45ae-466b-93c0-5936ffe13d7e/deploy-status)](https://app.netlify.com/sites/harryturnbull/deploys)
 
 <!-- omit in toc -->
+
 ## Table of Contents
+
 - [Tech Used](#tech-used)
 - [Development Journal](#development-journal)
   - [User Stories](#user-stories)
@@ -19,7 +22,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Stubbing Math.random](#stubbing-mathrandom)
   - [Adding a Favicon](#adding-a-favicon)
   - [Linking Pages](#linking-pages)
-  - [Project Summaries](#project-summaries)
+  - [User Story Set 3 - Project Summaries](#user-story-set-3---project-summaries)
   - [Project Cards](#project-cards)
   - [Back to Project Summaries](#back-to-project-summaries)
   - [Restyling](#restyling)
@@ -32,16 +35,19 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Project Page Slugs](#project-page-slugs)
   - [Project Pages](#project-pages)
   - [Styling Project Pages](#styling-project-pages)
+  - [Adding Metadata](#adding-metadata)
+  - [Twitter Metatags](#twitter-metatags)
+  - [Adding SEO to Pages](#adding-seo-to-pages)
   - [To Do](#to-do)
 
 ## Tech Used
 
-| Tech       | Description                                                          |
-| ---------- | -------------------------------------------------------------------- |
-| [Gatsby]   | Static site generator, uses React.                                   |
-| [Jest]     | Unit testing framework.                                              |
-| [Enzyme]   | Unit testing library for React.                                      |
-| [Netlify]  | Host, allows for CI/CD workflow, also provides free SSL certificate. |
+| Tech      | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| [Gatsby]  | Static site generator, uses React.                                   |
+| [Jest]    | Unit testing framework.                                              |
+| [Enzyme]  | Unit testing library for React.                                      |
+| [Netlify] | Host, allows for CI/CD workflow, also provides free SSL certificate. |
 
 ## Development Journal
 
@@ -135,13 +141,13 @@ Create for myself a portfolio site that does the following:
   > So that I can understand why the project was made,  
   > I would like to see a brief explanation.
 
-- [ ] 3.5
+- [x] 3.5
 
   > As a visitor,  
   > So that I can see how the project looks at a glance,  
   > I would like to see some screenshots.
 
-- [ ] 3.6
+- [x] 3.6
 
   > As a visitor,  
   > So that I know the context of the project,  
@@ -419,7 +425,7 @@ Green.
 
 Updated the snapshots for About and Index.
 
-### Project Summaries
+### User Story Set 3 - Project Summaries
 
 - [x] 3
 
@@ -560,7 +566,7 @@ Green.
 
 ### Restyling
 
-On reflection, PaperCss is unique and full of character, but it doesn't have the professionalism I want to portray. I have decided to create the styling from scratch with SASS. The new design I have drawn up will also allow me to build much more easily with a mobile first perspective. 
+On reflection, PaperCss is unique and full of character, but it doesn't have the professionalism I want to portray. I have decided to create the styling from scratch with SASS. The new design I have drawn up will also allow me to build much more easily with a mobile first perspective.
 
 First task is to uninstall PaperCss:
 
@@ -731,7 +737,7 @@ In: `src/templates/project.jsx`:
 
 - Import Layout, render it in a stateless functional component named Project.
 
-Green.  
+Green.
 
 A graphql query for markdownRemark where the slug is equal to the slug passed when generating the pages returns the node's html and frontmatter.
 
@@ -791,10 +797,144 @@ In `src/templates/project.module.scss`:
 - Wrap the links in a div with class name links.
 - Display the immediate children as inline-block and give each a bit of margin to space them out.
 
+Set 3 of the User Stories are complete.
+
+### Adding Metadata
+
+There is currently very little Metadata in the head. The most pressing concern is that the title is by default the URL of the current page, not so good.
+
+I'd also like to be able to share this on Twitter and Facebook and get nice card previews.
+
+To add Metadata I'm going to use React Helmet. The plugin is installed with:
+
+```shell
+npm install --save gatsby-plugin-react-helmet react-helmet
+```
+
+And is added to the plugins in `gatsby-config.js`.
+
+The site's Metadata will be exported in the `siteMetadata` section of the config. I have included a title and description to start with.
+
+A new SEO component will handle querying the Metadata, and render the relevant React Helmet.
+
+In `src/components/seo.spec.js`, Wrote a test that the SEO renders a title tag with the mocked metadata title. For this test Gatsby's `useStaticQuery` is mocked with Jest, but to do this had to import the entire module as an object in order to be able to perform the mock. Red.
+
+In `src/components/seo.jsx`:
+
+- Import useStaticQuery and qraphql from Gatsby.
+- Constant query is assigned with graphql to get the siteMetadata.
+- Set up a stateless functional component called SEO.
+- site is destructured from a useStaticQuery call passing in the query.
+- siteMetadata is destructured from site.
+- SEO returns a Helmet component containing a title element with content of the title from siteMetadata.
+
+Green.
+
+Wrote a test that SEO renders a description metatag. Red.
+
+- Added a metatag in Helmet with name of description and content of the description from siteMetadata.
+
+Green.
+
+Wrote a test that the title tag can be overwritten by passing a prop. Red.
+
+- Add a title prop.
+- Added a constant seo, which is an object with title property assigned with a ternary operator based on the title prop, or if that isn't passed, the siteMetadata title.
+
+Green.
+
+Wrote a test that the description tag can be overwritten by passing a prop. Red.
+
+- Add a description prop.
+- In the seo object, the description property is assigned with a ternary operator based on the description prop, or if that isn't passed, the siteMetadata description.
+
+Green.
+
+### Twitter Metatags
+
+Twitter expects meta tags in the following format:
+
+```html
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Example Title " />
+<meta name="twitter:description" content="Example description." />
+<meta name="twitter:image" content=" http://example.com/thumbnail.jpg" />
+```
+
+Wrote a test that SEO renders a twitter:card metatag. Red.
+
+- Added a metatag with name of twitter:card and content of summary.
+
+Green.
+
+Wrote a test that SEO renders a twitter:title metatag. Red.
+
+- Added a metatag with name of twitter:title and content of the seo title.
+
+Green.
+
+Wrote a test that the twitter:title can be overwritten by passing a title prop.
+
+This passes as the seo.title is already dynamically set. Green.
+
+Wrote a test that SEO renders a twitter:description metatag. Red.
+
+- Added a metatag with name of twitter:description and content of the seo description.
+
+Green.
+
+Wrote a test that the twitter:description can be overwritten by passing a description prop.
+
+This passes as the seo.description is already dynamically set. Green.
+
+Wrote a test that SEO renders a twitter:image metatag. For this test I expanded the siteMetata mock to include the url, and twitterThumbnail properties. Red.
+
+- Added property twitterThumbnail to the seo object, which combines the siteMetadata url and twitterThumbnail into a url.
+- Added a meta tag with name of twitter:image.
+
+Green.
+
+Also at this point added url and twitterThumbnail to the siteMetadata, and uploaded the twitter thumbnail image.
+
+Wrote a test that the twitter:image can be overwritten by passing a twitterThumbnail prop. Red.
+
+- Assign seo twitterThumbnail using a ternary operator if the twitterThumbnail is passed to use that, unless use the siteMetadata twitterThumbnail.
+
+Green.
+
+### Adding SEO to Pages
+
+In `src/pages/index.spec.js`, wrote a test that Home renders an SEO component. Red.
+
+In `src/pages/index.jsx`:
+
+- Imported and rendered an SEO component.
+
+Green.
+
+The snapshot test now fails, as useStaticQuery needs to be stubbed, updated the test.
+
+In `src/pages/projects.spec.js`, wrote a test that Projects renders an SEO component. Red.
+
+In `src/pages/projects.jsx`:
+
+- Imported and rendered an SEO component, passing a title and description.
+
+Green.
+
+In `src/templates/project.spec.js`, wrote a test that Projects renders an SEO component. Red.
+
+In `src/templates/project.jsx`:
+
+- Imported and rendered an SEO component.
+
+Green.
+
+Again, the snapshot test now fails, as useStaticQuery needs to be stubbed, updated the test.
+
 ### To Do
 
-- Add project pages.
-- Use React Helmet to add metadata to the head.
+- Add SEO component to pages.
 - Add blog list page.
 - Add contact page.
 
