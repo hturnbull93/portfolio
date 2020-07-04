@@ -808,6 +808,23 @@ npm install --save gatsby-plugin-react-helmet react-helmet
 
 And is added to the plugins in `gatsby-config.js`.
 
+The site's Metadata will be exported in the `siteMetadata` section of the config. I have included a title and description to start with.
+
+A new SEO component will handle querying the Metadata, and render the relevant React Helmet.
+
+In `src/components/seo.spec.js`, Wrote a test that the SEO renders a title tag with the mocked metadata title. For this test Gatsby's `useStaticQuery` is mocked with Jest, but to do this had to import the entire module as an object in order to be able to perform the mock. Red.
+
+In `src/components/seo.jsx`:
+
+- Import useStaticQuery and qraphql from Gatsby.
+- Constant query is assigned with graphql to get the siteMetadata.
+- Set up a stateless functional component called SEO.
+- site is destructured from a useStaticQuery call passing in the query.
+- siteMetadata is destructured from site.
+- SEO returns a Helmet component containing a title element with content of the title from siteMetadata.
+
+Green.
+
 ### To Do
 
 - Use React Helmet to add metadata to the head.
