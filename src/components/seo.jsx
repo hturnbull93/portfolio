@@ -4,7 +4,7 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ title, description, twitterThumbnail }) => {
-  const location = useLocation()
+  // const location = useLocation()
 
   const { site } = useStaticQuery(query)
   const { siteMetadata } = site
