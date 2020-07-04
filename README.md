@@ -34,6 +34,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Styling Project Pages](#styling-project-pages)
   - [Adding Metadata](#adding-metadata)
   - [Twitter Metatags](#twitter-metatags)
+  - [Adding SEO to Pages](#adding-seo-to-pages)
   - [To Do](#to-do)
 
 ## Tech Used
@@ -898,9 +899,21 @@ Wrote a test that the twitter:image can be overwritten by passing a twitterThumb
 
 Green.
 
+### Adding SEO to Pages
+
+In `src/pages/index.spec.js`, wrote a test that Home renders an SEO component. Red.
+
+In `src/pages/index.jsx`:
+
+- Imported and rendered an SEO component.
+
+Green.
+
+The snapshot test now fails, as useStaticQuery needs to be stubbed, updated the test.
+
 ### To Do
 
-- Use React Helmet to add metadata to the head.
+- Add SEO component to pages.
 - Add blog list page.
 - Add contact page.
 
