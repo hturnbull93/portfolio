@@ -879,6 +879,11 @@ Wrote a test that SEO renders a twitter:description metatag. Red.
 
 Green.
 
+Wrote a test that the twitter:description can be overwritten by passing a description prop.
+
+This passes as the seo.description is already dynamically set. Green.
+
+
 ### To Do
 
 - Use React Helmet to add metadata to the head.
