@@ -831,7 +831,19 @@ Wrote a test that SEO renders a description metatag. Red.
 
 Green.
 
-Wrote a test that the title tag can be overwritten by passing a prop. Red
+Wrote a test that the title tag can be overwritten by passing a prop. Red.
+
+- Add a title prop
+- Added a constant seo, which is an object with title property assigned with a ternary operator based on the title prop, or if that isn't passed, the siteMetadata title.
+
+Green.
+
+Wrote a test that the description tag can be overwritten by passing a prop. Red.
+
+- Add a description prop
+- In the seo object, the description property is assigned with a ternary operator based on the description prop, or if that isn't passed, the siteMetadata description.
+
+Green.
 
 ### To Do
 

@@ -2,14 +2,19 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = () => {
+const SEO = ({ title, description }) => {
   const { site } = useStaticQuery(query)
   const { siteMetadata } = site
 
+  const seo = {
+    title: title ? `${title} / ${siteMetadata.title}` : siteMetadata.title,
+    description: description || siteMetadata.description
+  }
+
   return (
     <Helmet>
-      <title>{siteMetadata.title}</title>
-      <meta name="description" content={siteMetadata.description} />
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
     </Helmet>
   )
 }
