@@ -31,6 +31,11 @@ describe("Projects", () => {
 
     expect(wrapper.containsMatchingElement(projectCard)).toEqual(true)
   })
+
+  it("renders an SEO", () => {
+    const wrapper = shallowWithData()
+    expect(wrapper.find("SEO").length).toEqual(1)
+  })
 })
 
 const shallowWithData = () => {
