@@ -38,7 +38,7 @@ const Project = ({ data }) => {
       <SEO
         title={project.frontmatter.title}
         description={project.frontmatter.description}
-        twitterThumbnail={project.frontmatter.img}
+        twitterThumbnail={"projects/" + project.frontmatter.img}
       />
     </Layout>
   )
