@@ -21,6 +21,7 @@ const SEO = ({ title, description }) => {
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={seo.title} />
     </Helmet>
   )
 }

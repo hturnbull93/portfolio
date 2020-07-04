@@ -859,9 +859,16 @@ Twitter expects meta tags in the following format:
 
 Wrote a test that SEO renders a twitter:card metatag. Red.
 
-- Added a metatag with name of twitterLcard and content of summary.
+- Added a metatag with name of twitter:card and content of summary.
 
 Green.
+
+Wrote a test that SEO renders a twitter:title metatag. Red.
+
+- Added a metatag with name of twitter:title and content of the seo title.
+
+Green.
+
 
 
 ### To Do
