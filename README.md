@@ -32,6 +32,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Project Page Slugs](#project-page-slugs)
   - [Project Pages](#project-pages)
   - [Styling Project Pages](#styling-project-pages)
+  - [Adding Metadata](#adding-metadata)
   - [To Do](#to-do)
 
 ## Tech Used
@@ -792,6 +793,20 @@ In `src/templates/project.module.scss`:
 - Display the immediate children as inline-block and give each a bit of margin to space them out.
 
 Set 3 of the User Stories are complete.
+
+### Adding Metadata
+
+There is currently very little Metadata in the head. The most pressing concern is that the title is by default the URL of the current page, not so good.
+
+I'd also like to be able to share this on Twitter and Facebook and get nice card previews.
+
+To add Metadata I'm going to use React Helmet. The plugin is installed with:
+
+```shell
+npm install --save gatsby-plugin-react-helmet react-helmet
+```
+
+And is added to the plugins in `gatsby-config.js`.
 
 ### To Do
 
