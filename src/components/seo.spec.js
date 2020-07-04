@@ -11,7 +11,19 @@ describe("SEO", () => {
     const wrapper = mount(<SEO />)
     const helmet = Helmet.peek()
     expect(helmet.title).toEqual("Mock title")
-    mock.mockRestore() 
+    mock.mockRestore()
+  })
+
+  it("renders a description metatag", () => {
+    const mock = mockQuery()
+    const wrapper = mount(<SEO />)
+    const metaTags = Helmet.peek().metaTags
+    const expected = {
+      name: "description",
+      content: "Mock description",
+    }
+    expect(metaTags).toContainEqual(expected)
+    mock.mockRestore()
   })
 })
 
@@ -20,6 +32,7 @@ const mockQuery = () => {
     site: {
       siteMetadata: {
         title: "Mock title",
+        description: "Mock description",
       },
     },
   }))
