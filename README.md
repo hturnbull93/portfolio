@@ -825,6 +825,14 @@ In `src/components/seo.jsx`:
 
 Green.
 
+Wrote a test that SEO renders a description metatag. Red.
+
+- Added a metatag in Helmet with name of description and content of the description from siteMetadata.
+
+Green.
+
+Wrote a test that the title tag can be overwritten by passing a prop. Red
+
 ### To Do
 
 - Use React Helmet to add metadata to the head.
