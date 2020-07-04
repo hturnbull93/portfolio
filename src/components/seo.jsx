@@ -1,8 +1,11 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ title, description }) => {
+  const location = useLocation()
+
   const { site } = useStaticQuery(query)
   const { siteMetadata } = site
 
@@ -15,6 +18,9 @@ const SEO = ({ title, description }) => {
     <Helmet>
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
+
+      {/* Twitter */}
+      <meta name="twitter:card" content="summary" />
     </Helmet>
   )
 }

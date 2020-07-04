@@ -33,6 +33,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Project Pages](#project-pages)
   - [Styling Project Pages](#styling-project-pages)
   - [Adding Metadata](#adding-metadata)
+  - [Twitter Metatags](#twitter-metatags)
   - [To Do](#to-do)
 
 ## Tech Used
@@ -833,17 +834,35 @@ Green.
 
 Wrote a test that the title tag can be overwritten by passing a prop. Red.
 
-- Add a title prop
+- Add a title prop.
 - Added a constant seo, which is an object with title property assigned with a ternary operator based on the title prop, or if that isn't passed, the siteMetadata title.
 
 Green.
 
 Wrote a test that the description tag can be overwritten by passing a prop. Red.
 
-- Add a description prop
+- Add a description prop.
 - In the seo object, the description property is assigned with a ternary operator based on the description prop, or if that isn't passed, the siteMetadata description.
 
 Green.
+
+### Twitter Metatags
+
+Twitter expects meta tags in the following format:
+
+```html
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Example Title ">
+<meta name="twitter:description" content="Example description.">
+<meta name="twitter:image" content=" http://example.com/thumbnail.jpg">
+```
+
+Wrote a test that SEO renders a twitter:card metatag. Red.
+
+- Added a metatag with name of twitterLcard and content of summary.
+
+Green.
+
 
 ### To Do
 
