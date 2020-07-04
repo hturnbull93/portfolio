@@ -890,6 +890,8 @@ Wrote a test that SEO renders a twitter:image metatag. For this test I expanded 
 
 Green.
 
+Also at this point added url and twitterThumbnail to 
+
 ### To Do
 
 - Use React Helmet to add metadata to the head.

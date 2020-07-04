@@ -14,5 +14,7 @@ module.exports = {
   siteMetadata: {
     title: "Harry Turnbull.",
     description: "Full Stack Developer based in London, UK.",
+    url: "https://harryturnbull.com",
+    twitterThumbnail: "twitter-thumbnail.png",
   },
 }
