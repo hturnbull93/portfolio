@@ -1,6 +1,7 @@
 import React from "react"
 import { shallow, render } from "enzyme"
 import renderer from "react-test-renderer"
+import * as Gatsby from "gatsby"
 import Project from "./project"
 import SmartLink from "../components/smartLink"
 
@@ -11,9 +12,22 @@ describe("Project", () => {
   })
 
   it("renders the html converted from md", () => {
+    const mockedQuery = jest
+      .spyOn(Gatsby, "useStaticQuery")
+      .mockImplementation(() => ({
+        site: {
+          siteMetadata: {
+            title: "Mock title",
+            description: "Mock description",
+            url: "https://mocksite.com",
+            twitterThumbnail: "twitter-thumbnail.png",
+          },
+        },
+      }))
     const wrapper = shallowWithData()
     const render = wrapper.render()
     expect(render.find(".content").html()).toEqual("<p>Test HTML content</p>")
+    mockedQuery.mockRestore()
   })
 
   it("renders a heading containing the title", () => {
@@ -63,6 +77,11 @@ describe("Project", () => {
     const wrapper = shallow(<Project data={data} />)
 
     expect(wrapper.find("SmartLink").length).toEqual(0)
+  })
+
+  it("renders an SEO", () => {
+    const wrapper = shallowWithData()
+    expect(wrapper.find("SEO").length).toEqual(1)
   })
 })
 
