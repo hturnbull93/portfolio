@@ -111,7 +111,7 @@ describe("SEO", () => {
       mockedQuery.mockRestore()
       mockedLocation.mockRestore()
     })
-
+    
     it("description prop overwrites twitter:description metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
@@ -120,6 +120,20 @@ describe("SEO", () => {
       const expected = {
         name: "twitter:description",
         content: "Overwrite description",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+
+    it("renders a twitter:image metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        name: "twitter:image",
+        content: "https://mocksite.com/twitter-thumbnail.png",
       }
       expect(metaTags).toContainEqual(expected)
       mockedQuery.mockRestore()
@@ -134,6 +148,8 @@ const mockQuery = () => {
       siteMetadata: {
         title: "Mock title",
         description: "Mock description",
+        url: "https://mocksite.com",
+        twitterThumbnail: "twitter-thumbnail.png",
       },
     },
   }))
