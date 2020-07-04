@@ -883,6 +883,12 @@ Wrote a test that the twitter:description can be overwritten by passing a descri
 
 This passes as the seo.description is already dynamically set. Green.
 
+Wrote a test that SEO renders a twitter:image metatag. For this test I expanded the siteMetata mock to include the url, and twitterThumbnail properties. Red.
+
+- Added property twitterThumbnail to the seo object, which combines the siteMetadata url and twitterThumbnail into a url.
+- Added a meta tag with name of twitter:image.
+
+Green.
 
 ### To Do
 

@@ -11,7 +11,8 @@ const SEO = ({ title, description }) => {
 
   const seo = {
     title: title ? `${title} / ${siteMetadata.title}` : siteMetadata.title,
-    description: description || siteMetadata.description
+    description: description || siteMetadata.description,
+    twitterThumbnail: `${siteMetadata.url}/${siteMetadata.twitterThumbnail}`
   }
 
   return (
@@ -23,6 +24,7 @@ const SEO = ({ title, description }) => {
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.twitterThumbnail} />
     </Helmet>
   )
 }
@@ -34,6 +36,8 @@ const query = graphql`
       siteMetadata {
         title
         description
+        url
+        twitterThumbnail
       }
     }
   }
