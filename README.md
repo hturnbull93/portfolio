@@ -890,7 +890,7 @@ Wrote a test that SEO renders a twitter:image metatag. For this test I expanded 
 
 Green.
 
-Also at this point added url and twitterThumbnail to 
+Also at this point added url and twitterThumbnail to the siteMetadata, and uploaded the twitter thumbnail image.
 
 ### To Do
 
