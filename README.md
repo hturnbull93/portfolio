@@ -911,6 +911,14 @@ Green.
 
 The snapshot test now fails, as useStaticQuery needs to be stubbed, updated the test.
 
+In `src/pages/projects.spec.js`, wrote a test that Projects renders an SEO component. Red.
+
+In `src/pages/projects.jsx`:
+
+- Imported and rendered an SEO component.
+
+Green.
+
 ### To Do
 
 - Add SEO component to pages.
