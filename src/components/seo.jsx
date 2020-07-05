@@ -27,6 +27,9 @@ const SEO = ({ title, description, twitterThumbnail }) => {
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.twitterThumbnail} />
+
+      {/* Facebook */}
+      <meta property="og:title" content={seo.title} />
     </Helmet>
   )
 }
