@@ -241,6 +241,20 @@ describe("SEO", () => {
       mockedQuery.mockRestore()
       mockedLocation.mockRestore()
     })
+
+    it("renders a og:url metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:url",
+        content: "https://mocksite.com/mock-path",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
   })
 })
 
