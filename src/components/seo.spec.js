@@ -227,6 +227,20 @@ describe("SEO", () => {
       mockedQuery.mockRestore()
       mockedLocation.mockRestore()
     })
+
+    it("twitterThumbnail prop overwrites og:image metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO twitterThumbnail="overwrite.png"/>)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:image",
+        content: "https://mocksite.com/overwrite.png",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
   })
 })
 

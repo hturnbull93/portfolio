@@ -972,6 +972,9 @@ Wrote a test that SEO renders an og:image metatag. Red.
 
 Green.
 
+Wrote a test that the og:image can be overwritten by passing a twitterThumbnail prop.
+
+This passes as the seo.twitterThumbnail is already dynamically set. Green.
 
 ### To Do
 
