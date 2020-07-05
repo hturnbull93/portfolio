@@ -55,6 +55,20 @@ describe("SEO", () => {
     mockedLocation.mockRestore()
   })
 
+  it("renders an og:type metatag", () => {
+    const mockedQuery = mockQuery()
+    const mockedLocation = mockLocation()
+    const wrapper = mount(<SEO />)
+    const metaTags = Helmet.peek().metaTags
+    const expected = {
+      property: "og:type",
+      content: "website",
+    }
+    expect(metaTags).toContainEqual(expected)
+    mockedQuery.mockRestore()
+    mockedLocation.mockRestore()
+  })
+
   describe("Twitter metatags", () => {
     it("renders a twitter:card metatag", () => {
       const mockedQuery = mockQuery()
