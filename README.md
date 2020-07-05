@@ -952,6 +952,10 @@ Wrote a test that SEO renders an og:title metatag. Red.
 
 Green.
 
+Wrote a test that the og:title can be overwritten by passing a title prop.
+
+This passes as the seo.title is already dynamically set. Green.
+
 ### To Do
 
 - Add SEO component to pages.

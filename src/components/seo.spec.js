@@ -168,6 +168,19 @@ describe("SEO", () => {
       mockedLocation.mockRestore()
     })
 
+    it("title prop overwrites og:title metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO title="Overwrite title" />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:title",
+        content: "Overwrite title / Mock title",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
   })
 })
 
