@@ -976,6 +976,17 @@ Wrote a test that the og:image can be overwritten by passing a twitterThumbnail 
 
 This passes as the seo.twitterThumbnail is already dynamically set. Green.
 
+Wrote a test that SEO renders an og:url metatag. Red.
+
+- Import useLocation from @reach/router (This is mocked in the test).
+- Assign constant location with the result of useLocation call.
+- seo url property assigned as a concatenation of the siteMetadata url and location pathname.
+- Add metatag with property of og:url and content of seo url.
+
+Green.
+
+Some snapshot tests now fail because they need to have useLocation stubbed. Fixed those.
+
 ### To Do
 
 - Add SEO component to pages.
