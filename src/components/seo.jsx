@@ -23,6 +23,7 @@ const SEO = ({ title, description, twitterThumbnail }) => {
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en_GB" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary" />

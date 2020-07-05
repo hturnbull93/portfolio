@@ -987,7 +987,20 @@ Green.
 
 Some snapshot tests now fail because they need to have useLocation stubbed. Fixed those.
 
+Finally, some extras
+
 Wrote a test that SEO renders an og:type. Red.
+
+- Added a metatag with property of og:type and content of website.
+
+Green.
+
+Wrote a test that SEO renders an og:locale. Red.
+
+- Added a metatag with property of og:locale and content of en_GB.
+
+Green.
+
 
 ### To Do
 
