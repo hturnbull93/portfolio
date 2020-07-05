@@ -2,6 +2,7 @@ import React from "react"
 import { shallow, render } from "enzyme"
 import renderer from "react-test-renderer"
 import * as Gatsby from "gatsby"
+import * as ReachRouter from "@reach/router"
 import Project from "./project"
 import SmartLink from "../components/smartLink"
 
@@ -24,10 +25,18 @@ describe("Project", () => {
           },
         },
       }))
+    const mockedLocation = jest
+      .spyOn(ReachRouter, "useLocation")
+      .mockImplementation(() => ({
+        pathname: "/mock-path",
+      }))
+
     const wrapper = shallowWithData()
     const render = wrapper.render()
     expect(render.find(".content").html()).toEqual("<p>Test HTML content</p>")
+
     mockedQuery.mockRestore()
+    mockedLocation.mockRestore()
   })
 
   it("renders a heading containing the title", () => {
