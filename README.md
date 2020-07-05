@@ -962,6 +962,10 @@ Wrote a test that SEO renders an og:description metatag. Red.
 
 Green.
 
+Wrote a test that the og:description can be overwritten by passing a description prop.
+
+This passes as the seo.description is already dynamically set. Green.
+
 ### To Do
 
 - Add SEO component to pages.
