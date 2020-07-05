@@ -55,7 +55,7 @@ describe("SEO", () => {
     mockedLocation.mockRestore()
   })
 
-  describe("twitter metatags", () => {
+  describe("Twitter metatags", () => {
     it("renders a twitter:card metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
@@ -111,11 +111,11 @@ describe("SEO", () => {
       mockedQuery.mockRestore()
       mockedLocation.mockRestore()
     })
-    
+
     it("description prop overwrites twitter:description metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
-      const wrapper = mount(<SEO description="Overwrite description"/>)
+      const wrapper = mount(<SEO description="Overwrite description" />)
       const metaTags = Helmet.peek().metaTags
       const expected = {
         name: "twitter:description",
@@ -143,11 +143,113 @@ describe("SEO", () => {
     it("twitterThumbnail prop overwrites twitter:image metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
-      const wrapper = mount(<SEO twitterThumbnail="overwritten-thumbnail.png" />)
+      const wrapper = mount(
+        <SEO twitterThumbnail="overwritten-thumbnail.png" />
+      )
       const metaTags = Helmet.peek().metaTags
       const expected = {
         name: "twitter:image",
         content: "https://mocksite.com/overwritten-thumbnail.png",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+  })
+
+  describe("Facebook metatags", () => {
+    it("renders a og:title metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:title",
+        content: "Mock title",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+
+    it("title prop overwrites og:title metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO title="Overwrite title" />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:title",
+        content: "Overwrite title / Mock title",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+
+    it("renders an og:description metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:description",
+        content: "Mock description",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+
+    it("description prop overwrites og:description metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO description="Overwrite description" />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:description",
+        content: "Overwrite description",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+
+    it("renders a og:image metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:image",
+        content: "https://mocksite.com/twitter-thumbnail.png",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+
+    it("twitterThumbnail prop overwrites og:image metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO twitterThumbnail="overwrite.png"/>)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:image",
+        content: "https://mocksite.com/overwrite.png",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+
+    it("renders a og:url metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:url",
+        content: "https://mocksite.com/mock-path",
       }
       expect(metaTags).toContainEqual(expected)
       mockedQuery.mockRestore()

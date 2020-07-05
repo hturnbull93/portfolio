@@ -10,35 +10,38 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
 
 ## Table of Contents
 
-- [Tech Used](#tech-used)
-- [Development Journal](#development-journal)
-  - [User Stories](#user-stories)
-  - [Gatsby Setup](#gatsby-setup)
-  - [Testing Setup](#testing-setup)
-  - [Travis CI Setup](#travis-ci-setup)
-  - [User Story 1 - About Section](#user-story-1---about-section)
-  - [User Story 2 - Sidebar/Navigation](#user-story-2---sidebarnavigation)
-  - [Adding Basic Styling](#adding-basic-styling)
-  - [Stubbing Math.random](#stubbing-mathrandom)
-  - [Adding a Favicon](#adding-a-favicon)
-  - [Linking Pages](#linking-pages)
-  - [User Story Set 3 - Project Summaries](#user-story-set-3---project-summaries)
-  - [Project Cards](#project-cards)
-  - [Back to Project Summaries](#back-to-project-summaries)
-  - [Restyling](#restyling)
-  - [Refactoring Sidebar](#refactoring-sidebar)
-  - [Merging Home and About](#merging-home-and-about)
-  - [More Restyling](#more-restyling)
-  - [SmartLink Component](#smartlink-component)
-  - [Linking to Projects](#linking-to-projects)
-  - [Adding More Projects](#adding-more-projects)
-  - [Project Page Slugs](#project-page-slugs)
-  - [Project Pages](#project-pages)
-  - [Styling Project Pages](#styling-project-pages)
-  - [Adding Metadata](#adding-metadata)
-  - [Twitter Metatags](#twitter-metatags)
-  - [Adding SEO to Pages](#adding-seo-to-pages)
-  - [To Do](#to-do)
+- [Personal Portfolio](#personal-portfolio)
+  - [Table of Contents](#table-of-contents)
+  - [Tech Used](#tech-used)
+  - [Development Journal](#development-journal)
+    - [User Stories](#user-stories)
+    - [Gatsby Setup](#gatsby-setup)
+    - [Testing Setup](#testing-setup)
+    - [Travis CI Setup](#travis-ci-setup)
+    - [User Story 1 - About Section](#user-story-1---about-section)
+    - [User Story 2 - Sidebar/Navigation](#user-story-2---sidebarnavigation)
+    - [Adding Basic Styling](#adding-basic-styling)
+    - [Stubbing Math.random](#stubbing-mathrandom)
+    - [Adding a Favicon](#adding-a-favicon)
+    - [Linking Pages](#linking-pages)
+    - [User Story Set 3 - Project Summaries](#user-story-set-3---project-summaries)
+    - [Project Cards](#project-cards)
+    - [Back to Project Summaries](#back-to-project-summaries)
+    - [Restyling](#restyling)
+    - [Refactoring Sidebar](#refactoring-sidebar)
+    - [Merging Home and About](#merging-home-and-about)
+    - [More Restyling](#more-restyling)
+    - [SmartLink Component](#smartlink-component)
+    - [Linking to Projects](#linking-to-projects)
+    - [Adding More Projects](#adding-more-projects)
+    - [Project Page Slugs](#project-page-slugs)
+    - [Project Pages](#project-pages)
+    - [Styling Project Pages](#styling-project-pages)
+    - [Adding Metadata](#adding-metadata)
+    - [Twitter Metatags](#twitter-metatags)
+    - [Adding SEO to Pages](#adding-seo-to-pages)
+    - [Adding More Metatags](#adding-more-metatags)
+    - [To Do](#to-do)
 
 ## Tech Used
 
@@ -856,9 +859,9 @@ Twitter expects meta tags in the following format:
 
 ```html
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Example Title " />
+<meta name="twitter:title" content="Example Title" />
 <meta name="twitter:description" content="Example description." />
-<meta name="twitter:image" content=" http://example.com/thumbnail.jpg" />
+<meta name="twitter:image" content="http://example.com/thumbnail.jpg" />
 ```
 
 Wrote a test that SEO renders a twitter:card metatag. Red.
@@ -931,6 +934,58 @@ In `src/templates/project.jsx`:
 Green.
 
 Again, the snapshot test now fails, as useStaticQuery needs to be stubbed, updated the test.
+
+### Adding More Metatags
+
+Facebook uses the Open Graph protocol, and expects metatags such as these:
+
+```html
+<meta property="og:title" content="Example Title">
+<meta property="og:description" content="Example description.">
+<meta property="og:image" content="http://example.com/thumbnail.jpg">
+<meta property="og:url" content="http://example.com/example-path/">
+```
+
+Wrote a test that SEO renders an og:title metatag. Red.
+
+- Added a metatag with property og:title and content of the seo title.
+
+Green.
+
+Wrote a test that the og:title can be overwritten by passing a title prop.
+
+This passes as the seo.title is already dynamically set. Green.
+
+Wrote a test that SEO renders an og:description metatag. Red.
+
+- Added a metatag with property og:description and content of the seo description.
+
+Green.
+
+Wrote a test that the og:description can be overwritten by passing a description prop.
+
+This passes as the seo.description is already dynamically set. Green.
+
+Wrote a test that SEO renders an og:image metatag. Red.
+
+- Added a metatag with property og:image and content of the seo twitterThumbnail. Red. I might change this later if the image needs to be of a different size in practice.
+
+Green.
+
+Wrote a test that the og:image can be overwritten by passing a twitterThumbnail prop.
+
+This passes as the seo.twitterThumbnail is already dynamically set. Green.
+
+Wrote a test that SEO renders an og:url metatag. Red.
+
+- Import useLocation from @reach/router (This is mocked in the test).
+- Assign constant location with the result of useLocation call.
+- seo url property assigned as a concatenation of the siteMetadata url and location pathname.
+- Add metatag with property of og:url and content of seo url.
+
+Green.
+
+Some snapshot tests now fail because they need to have useLocation stubbed. Fixed those.
 
 ### To Do
 

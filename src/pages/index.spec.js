@@ -2,6 +2,7 @@ import React from "react"
 import { shallow } from "enzyme"
 import renderer from "react-test-renderer"
 import * as Gatsby from "gatsby"
+import * as ReachRouter from "@reach/router"
 import Home from "./index"
 
 describe("Home", () => {
@@ -18,9 +19,17 @@ describe("Home", () => {
           },
         },
       }))
+    const mockedLocation = jest
+      .spyOn(ReachRouter, "useLocation")
+      .mockImplementation(() => ({
+        pathname: "/mock-path",
+      }))
+
     const tree = renderer.create(<Home />).toJSON()
     expect(tree).toMatchSnapshot()
+
     mockedQuery.mockRestore()
+    mockedLocation.mockRestore()
   })
 
   it("renders a Layout", () => {
