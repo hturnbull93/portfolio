@@ -156,6 +156,7 @@ describe("SEO", () => {
       mockedLocation.mockRestore()
     })
   })
+
   describe("Facebook metatags", () => {
     it("renders a og:title metatag", () => {
       const mockedQuery = mockQuery()
@@ -191,7 +192,7 @@ describe("SEO", () => {
       const wrapper = mount(<SEO />)
       const metaTags = Helmet.peek().metaTags
       const expected = {
-        name: "og:description",
+        property: "og:description",
         content: "Mock description",
       }
       expect(metaTags).toContainEqual(expected)
@@ -207,6 +208,20 @@ describe("SEO", () => {
       const expected = {
         property: "og:description",
         content: "Overwrite description",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+
+    it("renders a og:image metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        property: "og:image",
+        content: "https://mocksite.com/twitter-thumbnail.png",
       }
       expect(metaTags).toContainEqual(expected)
       mockedQuery.mockRestore()
