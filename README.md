@@ -966,6 +966,13 @@ Wrote a test that the og:description can be overwritten by passing a description
 
 This passes as the seo.description is already dynamically set. Green.
 
+Wrote a test that SEO renders an og:image metatag. Red.
+
+- Added a metatag with property og:image and content of the seo twitterThumbnail. Red. I might change this later if the image needs to be of a different size in practice.
+
+Green.
+
+
 ### To Do
 
 - Add SEO component to pages.
