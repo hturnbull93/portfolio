@@ -987,6 +987,8 @@ Green.
 
 Some snapshot tests now fail because they need to have useLocation stubbed. Fixed those.
 
+Wrote a test that SEO renders an og:type. Red.
+
 ### To Do
 
 - Add SEO component to pages.
