@@ -55,7 +55,7 @@ describe("SEO", () => {
     mockedLocation.mockRestore()
   })
 
-  describe("twitter metatags", () => {
+  describe("Twitter metatags", () => {
     it("renders a twitter:card metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
@@ -111,11 +111,11 @@ describe("SEO", () => {
       mockedQuery.mockRestore()
       mockedLocation.mockRestore()
     })
-    
+
     it("description prop overwrites twitter:description metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
-      const wrapper = mount(<SEO description="Overwrite description"/>)
+      const wrapper = mount(<SEO description="Overwrite description" />)
       const metaTags = Helmet.peek().metaTags
       const expected = {
         name: "twitter:description",
@@ -143,7 +143,9 @@ describe("SEO", () => {
     it("twitterThumbnail prop overwrites twitter:image metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
-      const wrapper = mount(<SEO twitterThumbnail="overwritten-thumbnail.png" />)
+      const wrapper = mount(
+        <SEO twitterThumbnail="overwritten-thumbnail.png" />
+      )
       const metaTags = Helmet.peek().metaTags
       const expected = {
         name: "twitter:image",
@@ -153,7 +155,8 @@ describe("SEO", () => {
       mockedQuery.mockRestore()
       mockedLocation.mockRestore()
     })
-
+  })
+  describe("Facebook metatags", () => {
     it("renders a og:title metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
@@ -181,6 +184,21 @@ describe("SEO", () => {
       mockedQuery.mockRestore()
       mockedLocation.mockRestore()
     })
+
+    it("renders an og:description metatag", () => {
+      const mockedQuery = mockQuery()
+      const mockedLocation = mockLocation()
+      const wrapper = mount(<SEO />)
+      const metaTags = Helmet.peek().metaTags
+      const expected = {
+        name: "og:description",
+        content: "Mock description",
+      }
+      expect(metaTags).toContainEqual(expected)
+      mockedQuery.mockRestore()
+      mockedLocation.mockRestore()
+    })
+  
   })
 })
 
