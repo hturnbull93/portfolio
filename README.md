@@ -948,13 +948,19 @@ Facebook uses the Open Graph protocol, and expects metatags such as these:
 
 Wrote a test that SEO renders an og:title metatag. Red.
 
-- Added a meta tag with property og:title and content of the seo title.
+- Added a metatag with property og:title and content of the seo title.
 
 Green.
 
 Wrote a test that the og:title can be overwritten by passing a title prop.
 
 This passes as the seo.title is already dynamically set. Green.
+
+Wrote a test that SEO renders an og:description metatag. Red.
+
+- Added a metatag with property og:description and content of the seo description.
+
+Green.
 
 ### To Do
 
