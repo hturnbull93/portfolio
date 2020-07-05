@@ -69,6 +69,20 @@ describe("SEO", () => {
     mockedLocation.mockRestore()
   })
 
+  it("renders an og:locale metatag", () => {
+    const mockedQuery = mockQuery()
+    const mockedLocation = mockLocation()
+    const wrapper = mount(<SEO />)
+    const metaTags = Helmet.peek().metaTags
+    const expected = {
+      property: "og:locale",
+      content: "en_GB",
+    }
+    expect(metaTags).toContainEqual(expected)
+    mockedQuery.mockRestore()
+    mockedLocation.mockRestore()
+  })
+
   describe("Twitter metatags", () => {
     it("renders a twitter:card metatag", () => {
       const mockedQuery = mockQuery()
@@ -245,7 +259,7 @@ describe("SEO", () => {
     it("twitterThumbnail prop overwrites og:image metatag", () => {
       const mockedQuery = mockQuery()
       const mockedLocation = mockLocation()
-      const wrapper = mount(<SEO twitterThumbnail="overwrite.png"/>)
+      const wrapper = mount(<SEO twitterThumbnail="overwrite.png" />)
       const metaTags = Helmet.peek().metaTags
       const expected = {
         property: "og:image",
