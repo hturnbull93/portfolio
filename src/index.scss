@@ -7,7 +7,7 @@
   --dark: #000000;
   --main-dark: #9d9d9d;
   --main-med: #c4c4c4;
-  --main-light: #f3f3f3;
+  --main-light: #efefef;
   --off-white: #fafafa;
 }
 
@@ -25,6 +25,10 @@ body {
   font-family: var(--heading-font);
   font-weight: 400;
   color: var(--dark);
+}
+
+section {
+  margin: 8em 0;
 }
 
 // Global Font scaling
@@ -77,3 +81,4 @@ a {
     border-bottom: var(--dark) 2px solid;
   }
 }
+
