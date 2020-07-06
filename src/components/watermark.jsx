@@ -1,10 +1,11 @@
 import React from "react"
+import style from "./watermark.module.scss"
 
 const Watermark = ({ children }) => {
   return (
-    <div>
+    <div className={style.watermark}>
       {children}
-      <div className="watermark" aria-hidden="true">
+      <div className={style.watermark_text} aria-hidden="true">
         {children.props.children}
       </div>
     </div>

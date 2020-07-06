@@ -1025,6 +1025,11 @@ Green.
 
 Now the Watermark can be wrapped around title on pages. This affected a snapshot, so updated that also.
 
+Added some style for Watermark in `src/components/watermark.module.scss`:
+
+- Gave the watermark container position relative.
+- This allows the watermark text to be positioned absolute, behind the heading.
+
 ### To Do
 
 - Add watermarks.
