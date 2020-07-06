@@ -1018,9 +1018,12 @@ Green.
 
 Wrote a test that it should also render an element with class watermark containing the text of the passed child element.
 
-- Added a div with classname of watermark containing the children's children (the text node it contains).
+- Added a div with class name of watermark containing the children's children (the text node it contains).
+- It also has an aria-hidden attribute of true, as the text is for decoration, and doesn't need to be read by screen readers.
 
 Green.
+
+Now the Watermark can be wrapped around title on pages. This affected a snapshot, so updated that also.
 
 ### To Do
 

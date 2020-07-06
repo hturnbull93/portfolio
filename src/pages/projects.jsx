@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import ProjectCard from "../components/projectCard"
 import style from "./projects.module.scss"
 import SEO from "../components/seo"
+import Watermark from "../components/watermark"
 
 const Projects = ({ data }) => {
   const cards = data.allMarkdownRemark.edges.map(edge => (
@@ -11,7 +12,9 @@ const Projects = ({ data }) => {
   ))
   return (
     <Layout>
-      <h1>Projects.</h1>
+      <Watermark>
+        <h1>Projects.</h1>
+      </Watermark>
       <section className={style.projectsGrid}>{cards}</section>
       <SEO
         title="Projects"
