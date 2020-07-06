@@ -9,4 +9,10 @@ describe("Watermark", () => {
     const wrapper = shallow(<Watermark>{child}</Watermark>)
     expect(wrapper.find("h1").text()).toEqual("Child")
   })
+
+  it('renders div with text of children', () => {
+    const child = <h1>Child</h1>
+    const wrapper = shallow(<Watermark>{child}</Watermark>)
+    expect(wrapper.find(".watermark").text()).toEqual("Child")
+  });
 })
