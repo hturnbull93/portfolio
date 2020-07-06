@@ -1032,7 +1032,6 @@ Added some style for Watermark in `src/components/watermark.module.scss`:
 
 ### To Do
 
-- Add watermarks.
 - Add blog list page.
 - Add contact page.
 

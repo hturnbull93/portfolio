@@ -39,13 +39,15 @@ exports[`Home matches snapshot 1`] = `
     </span>
   </h3>
   <section>
-    <div>
+    <div
+      className="watermark_container"
+    >
       <h2>
         About.
       </h2>
       <div
         aria-hidden="true"
-        className="watermark"
+        className="watermark_text"
       >
         About.
       </div>
