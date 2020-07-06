@@ -1016,6 +1016,12 @@ In `src/components/watermark.jsx`:
 
 Green.
 
+Wrote a test that it should also render an element with class watermark containing the text of the passed child element.
+
+- Added a div with classname of watermark containing the children's children (the text node it contains).
+
+Green.
+
 ### To Do
 
 - Add watermarks.
