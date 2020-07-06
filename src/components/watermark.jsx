@@ -4,7 +4,9 @@ const Watermark = ({ children }) => {
   return (
     <div>
       {children}
-      <div className="watermark">{children.props.children}</div>
+      <div className="watermark" aria-hidden="true">
+        {children.props.children}
+      </div>
     </div>
   )
 }
