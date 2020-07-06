@@ -41,6 +41,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
     - [Twitter Metatags](#twitter-metatags)
     - [Adding SEO to Pages](#adding-seo-to-pages)
     - [Adding More Metatags](#adding-more-metatags)
+    - [Watermark Styling](#watermark-styling)
     - [To Do](#to-do)
 
 ## Tech Used
@@ -1001,10 +1002,36 @@ Wrote a test that SEO renders an og:locale. Red.
 
 Green.
 
+### Watermark Styling
+
+Part of the style is a large watermark that lies under each title.
+
+I think I can achieve this with a Watermark component.
+
+In `src/components/watermark.spec.js`, wrote a test that Watermark should render its children. Red.
+
+In `src/components/watermark.jsx`:
+
+- Added a stateless function component, taking props of children rendering them in a div.
+
+Green.
+
+Wrote a test that it should also render an element with class watermark containing the text of the passed child element.
+
+- Added a div with class name of watermark containing the children's children (the text node it contains).
+- It also has an aria-hidden attribute of true, as the text is for decoration, and doesn't need to be read by screen readers.
+
+Green.
+
+Now the Watermark can be wrapped around title on pages. This affected a snapshot, so updated that also.
+
+Added some style for Watermark in `src/components/watermark.module.scss`:
+
+- Gave the watermark container position relative.
+- This allows the watermark text to be positioned absolute, behind the heading.
 
 ### To Do
 
-- Add SEO component to pages.
 - Add blog list page.
 - Add contact page.
 

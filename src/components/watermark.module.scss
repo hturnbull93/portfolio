@@ -1,0 +1,13 @@
+.watermark_container {
+  position: relative;
+  .watermark_text {
+    text-transform: lowercase;
+    position: absolute;
+    font-size: clamp(8em, 20vw, 18em);
+    color: var(--main-light);
+    z-index: -10;
+    white-space: nowrap;
+    top: -0.25em;
+    left: 0.5em;
+  }
+}

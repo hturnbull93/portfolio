@@ -39,9 +39,19 @@ exports[`Home matches snapshot 1`] = `
     </span>
   </h3>
   <section>
-    <h2>
-      About.
-    </h2>
+    <div
+      className="watermark_container"
+    >
+      <h2>
+        About.
+      </h2>
+      <div
+        aria-hidden="true"
+        className="watermark_text"
+      >
+        About.
+      </div>
+    </div>
     <p>
       I am a Full Stack developer, looking for opportunities to continue to learn, challenge myself and work with great people to build useful apps that consumers enjoy using.
     </p>

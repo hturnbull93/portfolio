@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Watermark from "../components/watermark"
 
 const Home = () => {
   return (
@@ -14,7 +15,9 @@ const Home = () => {
         <span>Based in London UK.</span>
       </h3>
       <section>
-        <h2>About.</h2>
+        <Watermark>
+          <h2>About.</h2>
+        </Watermark>
         <p>
           I am a Full Stack developer, looking for opportunities to continue to
           learn, challenge myself and work with great people to build useful
