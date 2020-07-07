@@ -42,6 +42,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
     - [Adding SEO to Pages](#adding-seo-to-pages)
     - [Adding More Metatags](#adding-more-metatags)
     - [Watermark Styling](#watermark-styling)
+    - [Blog](#blog)
     - [To Do](#to-do)
 
 ## Tech Used
@@ -1030,9 +1031,23 @@ Added some style for Watermark in `src/components/watermark.module.scss`:
 - Gave the watermark container position relative.
 - This allows the watermark text to be positioned absolute, behind the heading.
 
+### Blog
+
+My blog is hosted on Medium, and to bring over the posts I have decided to use the plugin gatsby-source-medium-feed, installed with:
+
+```shell
+npm install --save gatsby-source-medium-feed
+```
+
+And configured in `gatsby-config.js`.
+
+
+
+
 ### To Do
 
 - Add blog list page.
+- Consider different images for facebook.
 - Add contact page.
 
 <!-- Links -->

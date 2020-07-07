@@ -18,6 +18,7 @@
     "gatsby-plugin-react-helmet": "^3.3.9",
     "gatsby-plugin-sass": "^2.3.4",
     "gatsby-source-filesystem": "^2.3.12",
+    "gatsby-source-medium-feed": "^1.0.6",
     "gatsby-transformer-remark": "^2.8.17",
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
