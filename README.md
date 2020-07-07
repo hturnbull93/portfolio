@@ -1041,8 +1041,40 @@ npm install --save gatsby-source-medium-feed
 
 And configured in `gatsby-config.js`.
 
+- [ ] 4
 
+  > As a visitor,  
+  > So that I can read what the developers has written about,  
+  > I would like to see a blog section.
 
+In `src/pages/blog.spec.js`, wrote a test that the Blog component renders a layout. For this test data is passed into the component under test in the form of a graphql query for allMediumFeed nodes returning the id, link, title and date (formatted as Nth Month, Year). Red.
+
+In `src/pages/blog.jsx`:
+
+- Imported Layout
+- Added a stateless functional component that renders a Layout.
+
+Green.
+
+<!--
+- [ ] 4.1
+
+  > As a visitor,  
+  > So that I can choose a blog post to read,  
+  > I would like to see each blog post's title.
+
+- [ ] 4.2
+
+  > As a visitor,  
+  > So that I can tell how up to date the blog posts are,  
+  > I would like to see each blog post's date.
+
+- [ ] 4.3
+
+  > As a visitor,  
+  > So that I can read the blog once I have chosen it,  
+  > I would like blog post to have a link to Medium.
+-->
 
 ### To Do
 
