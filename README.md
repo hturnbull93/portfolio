@@ -176,7 +176,7 @@ Create for myself a portfolio site that does the following:
   > So that I can tell how up to date the blog posts are,  
   > I would like to see each blog post's date.
 
-- [ ] 4.3
+- [x] 4.3
 
   > As a visitor,  
   > So that I can read the blog once I have chosen it,  
@@ -1086,7 +1086,7 @@ Wrote a test that BlogPost renders the date. Red.
 
 Green.
 
-- [ ] 4.3
+- [x] 4.3
 
   > As a visitor,
   > So that I can read the blog once I have chosen it,
@@ -1099,9 +1099,16 @@ Wrote a test that BlogPost renders a SmartLink with href of the link. Red.
 
 Green.
 
+Wrote a test that Blog renders a BlogPost for each post. Red.
+
+- Passed a prop of data to Blog.
+- Constant posts is assigned by mapping through the edges nested within data.
+- The map returns a BlogPost for each node.
+
+Green.
+
 ### To Do
 
-- Add blog list page.
 - Consider different images for facebook.
 - Add contact page.
 
