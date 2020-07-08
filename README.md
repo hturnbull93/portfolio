@@ -164,13 +164,13 @@ Create for myself a portfolio site that does the following:
   > So that I can read what the developers has written about,  
   > I would like to see a blog section.
 
-- [ ] 4.1
+- [x] 4.1
 
   > As a visitor,  
   > So that I can choose a blog post to read,  
   > I would like to see each blog post's title.
 
-- [ ] 4.2
+- [x] 4.2
 
   > As a visitor,  
   > So that I can tell how up to date the blog posts are,  
@@ -942,10 +942,10 @@ Again, the snapshot test now fails, as useStaticQuery needs to be stubbed, updat
 Facebook uses the Open Graph protocol, and expects metatags such as these:
 
 ```html
-<meta property="og:title" content="Example Title">
-<meta property="og:description" content="Example description.">
-<meta property="og:image" content="http://example.com/thumbnail.jpg">
-<meta property="og:url" content="http://example.com/example-path/">
+<meta property="og:title" content="Example Title" />
+<meta property="og:description" content="Example description." />
+<meta property="og:image" content="http://example.com/thumbnail.jpg" />
+<meta property="og:url" content="http://example.com/example-path/" />
 ```
 
 Wrote a test that SEO renders an og:title metatag. Red.
@@ -1056,7 +1056,7 @@ In `src/pages/blog.jsx`:
 
 Green.
 
-- [ ] 4.1
+- [x] 4.1
 
   > As a visitor,  
   > So that I can choose a blog post to read,  
@@ -1070,22 +1070,27 @@ In `src/components/blogPost.jsx`:
 
 - Added a stateless functional component BlogPost.
 - Added details as a prop to the BlogPost component.
-- The article contains an h4 with class title.
+- The article contains an h4 with details title.
 
 Green.
 
-<!--
-
-- [ ] 4.2
+- [x] 4.2
 
   > As a visitor,  
   > So that I can tell how up to date the blog posts are,  
   > I would like to see each blog post's date.
 
+Wrote a test that BlogPost renders the date. Red.
+
+- Added a p rendering the details date.
+
+Green.
+
+<!--
 - [ ] 4.3
 
-  > As a visitor,  
-  > So that I can read the blog once I have chosen it,  
+  > As a visitor,
+  > So that I can read the blog once I have chosen it,
   > I would like blog post to have a link to Medium.
 -->
 
