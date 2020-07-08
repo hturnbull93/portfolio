@@ -1,21 +1,28 @@
 import React from "react"
-import { shallow } from "enzyme"
+import { shallow, mount } from "enzyme"
 import renderer from "react-test-renderer"
 import BlogPost from "./blogPost"
+import SmartLink from "./smartLink"
 
 describe("BlogPost", () => {
   it("renders the title", () => {
-    const wrapper = shallowWithData()
+    const wrapper = mountWithData()
     expect(wrapper.text()).toContain("Blog abc")
   })
 
   it("renders the date", () => {
-    const wrapper = shallowWithData()
+    const wrapper = mountWithData()
     expect(wrapper.text()).toContain("7th July, 2020")
+  })
+
+  it("renders a SmartLink", () => {
+    const wrapper = mountWithData()
+    const link = wrapper.find('SmartLink')
+    expect(link.props().href).toEqual("https://example.com/abc")
   })
 })
 
-const shallowWithData = () => {
+const mountWithData = () => {
   const details = {
     id: "abc",
     link: "https://example.com/abc",
@@ -23,5 +30,5 @@ const shallowWithData = () => {
     date: "7th July, 2020",
   }
 
-  return shallow(<BlogPost details={details} />)
+  return mount(<BlogPost details={details} />)
 }
