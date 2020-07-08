@@ -17,10 +17,11 @@
 // Global resets
 html {
   background-color: var(--off-white);
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
-  // overflow-x: hidden;
   margin: 0 0 4rem 0;
   padding: 0 1rem;
 }
