@@ -9,5 +9,8 @@
     white-space: nowrap;
     top: -0.25em;
     left: 0.5em;
+    overflow-x: hidden;
+    width: calc(100vw - 2rem - 0.5em);
+    max-width: calc(var(--full-width) - 0.5em)
   }
 }
