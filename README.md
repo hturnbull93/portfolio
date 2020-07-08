@@ -1056,12 +1056,25 @@ In `src/pages/blog.jsx`:
 
 Green.
 
-<!--
 - [ ] 4.1
 
   > As a visitor,  
   > So that I can choose a blog post to read,  
   > I would like to see each blog post's title.
+
+Similar to how the Projects component renders ProjectCards, the Blog component should render BlogPosts.
+
+In `src/components/blogPost.spec.js`, wrote a test that BlogPost renders the title. Red.
+
+In `src/components/blogPost.jsx`:
+
+- Added a stateless functional component BlogPost.
+- Added details as a prop to the BlogPost component.
+- The article contains an h4 with class title.
+
+Green.
+
+<!--
 
 - [ ] 4.2
 
