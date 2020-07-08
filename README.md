@@ -1107,6 +1107,8 @@ Wrote a test that Blog renders a BlogPost for each post. Red.
 
 Green.
 
+Also added a Watermark wrapped title to Blog, and a section to wrap the posts.
+
 ### To Do
 
 - Consider different images for facebook.
