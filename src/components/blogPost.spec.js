@@ -4,9 +4,14 @@ import renderer from "react-test-renderer"
 import BlogPost from "./blogPost"
 
 describe("BlogPost", () => {
-  it("renders the title ", () => {
+  it("renders the title", () => {
     const wrapper = shallowWithData()
     expect(wrapper.text()).toContain("Blog abc")
+  })
+
+  it("renders the date", () => {
+    const wrapper = shallowWithData()
+    expect(wrapper.text()).toContain("7th July, 2020")
   })
 })
 
