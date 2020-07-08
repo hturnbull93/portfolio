@@ -1111,6 +1111,8 @@ Also added a Watermark wrapped title to Blog, and a section to wrap the posts.
 
 Added some styling in `src/components/blogPost.module.scss`.
 
+Now to add the Blog page to the nav. Wrote a test that Navbar renders Link to blog. Red.
+
 ### To Do
 
 - Consider different images for facebook.
