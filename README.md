@@ -1109,6 +1109,8 @@ Green.
 
 Also added a Watermark wrapped title to Blog, and a section to wrap the posts.
 
+Added some styling in `src/components/blogPost.module.scss`.
+
 ### To Do
 
 - Consider different images for facebook.
