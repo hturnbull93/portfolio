@@ -14,6 +14,11 @@ const Blog = ({ data }) => {
       <Watermark>
         <h1>Blog.</h1>
       </Watermark>
+      <p>
+        I write about what I'm learning in a blog on{" "}
+        <a href="https://medium.com/@hturnbull93">Medium</a>.
+      </p>
+      <p>Here are some of my recent blog posts.</p>
       <section>{posts}</section>
     </Layout>
   )
