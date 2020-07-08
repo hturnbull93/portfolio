@@ -10,5 +10,6 @@
     top: -0.25em;
     left: 0.5em;
     overflow-x: hidden;
+    max-width: calc(100vw - 0.5em - 1rem);
   }
 }
