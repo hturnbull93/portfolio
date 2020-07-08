@@ -16,6 +16,7 @@ describe("Navbar", () => {
     const link = <Link to="/projects">Projects</Link>
     expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
+
   it("renders Link to blog", () => {
     const wrapper = shallow(<Navbar />)
     const link = <Link to="/blog">Blog</Link>
