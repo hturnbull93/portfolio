@@ -10,6 +10,13 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: `gatsby-source-medium-feed`,
+      options: {
+        userName: `@hturnbull93`,
+        name: `MediumFeed`, 
+      },
+    },
   ],
   siteMetadata: {
     title: "Harry Turnbull.",

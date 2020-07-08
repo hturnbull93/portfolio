@@ -42,6 +42,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
     - [Adding SEO to Pages](#adding-seo-to-pages)
     - [Adding More Metatags](#adding-more-metatags)
     - [Watermark Styling](#watermark-styling)
+    - [Blog](#blog)
     - [To Do](#to-do)
 
 ## Tech Used
@@ -163,19 +164,19 @@ Create for myself a portfolio site that does the following:
   > So that I can read what the developers has written about,  
   > I would like to see a blog section.
 
-- [ ] 4.1
+- [x] 4.1
 
   > As a visitor,  
   > So that I can choose a blog post to read,  
   > I would like to see each blog post's title.
 
-- [ ] 4.2
+- [x] 4.2
 
   > As a visitor,  
   > So that I can tell how up to date the blog posts are,  
   > I would like to see each blog post's date.
 
-- [ ] 4.3
+- [x] 4.3
 
   > As a visitor,  
   > So that I can read the blog once I have chosen it,  
@@ -941,10 +942,10 @@ Again, the snapshot test now fails, as useStaticQuery needs to be stubbed, updat
 Facebook uses the Open Graph protocol, and expects metatags such as these:
 
 ```html
-<meta property="og:title" content="Example Title">
-<meta property="og:description" content="Example description.">
-<meta property="og:image" content="http://example.com/thumbnail.jpg">
-<meta property="og:url" content="http://example.com/example-path/">
+<meta property="og:title" content="Example Title" />
+<meta property="og:description" content="Example description." />
+<meta property="og:image" content="http://example.com/thumbnail.jpg" />
+<meta property="og:url" content="http://example.com/example-path/" />
 ```
 
 Wrote a test that SEO renders an og:title metatag. Red.
@@ -1030,9 +1031,91 @@ Added some style for Watermark in `src/components/watermark.module.scss`:
 - Gave the watermark container position relative.
 - This allows the watermark text to be positioned absolute, behind the heading.
 
+### Blog
+
+My blog is hosted on Medium, and to bring over the posts I have decided to use the plugin gatsby-source-medium-feed, installed with:
+
+```shell
+npm install --save gatsby-source-medium-feed
+```
+
+And configured in `gatsby-config.js`.
+
+- [ ] 4
+
+  > As a visitor,  
+  > So that I can read what the developers has written about,  
+  > I would like to see a blog section.
+
+In `src/pages/blog.spec.js`, wrote a test that the Blog component renders a layout. For this test data is passed into the component under test in the form of a graphql query for allMediumFeed nodes returning the id, link, title and date (formatted as Nth Month, Year). Red.
+
+In `src/pages/blog.jsx`:
+
+- Imported Layout
+- Added a stateless functional component that renders a Layout.
+
+Green.
+
+- [x] 4.1
+
+  > As a visitor,  
+  > So that I can choose a blog post to read,  
+  > I would like to see each blog post's title.
+
+Similar to how the Projects component renders ProjectCards, the Blog component should render BlogPosts.
+
+In `src/components/blogPost.spec.js`, wrote a test that BlogPost renders the title. Red.
+
+In `src/components/blogPost.jsx`:
+
+- Added a stateless functional component BlogPost.
+- Added details as a prop to the BlogPost component.
+- The article contains an h4 with details title.
+
+Green.
+
+- [x] 4.2
+
+  > As a visitor,  
+  > So that I can tell how up to date the blog posts are,  
+  > I would like to see each blog post's date.
+
+Wrote a test that BlogPost renders the date. Red.
+
+- Added a p rendering the details date.
+
+Green.
+
+- [x] 4.3
+
+  > As a visitor,
+  > So that I can read the blog once I have chosen it,
+  > I would like blog post to have a link to Medium.
+
+Wrote a test that BlogPost renders a SmartLink with href of the link. Red.
+
+- Imported SmartLink, wrapped that around the title.
+- Passed href prop of the details link.
+
+Green.
+
+Wrote a test that Blog renders a BlogPost for each post. Red.
+
+- Passed a prop of data to Blog.
+- Constant posts is assigned by mapping through the edges nested within data.
+- The map returns a BlogPost for each node.
+
+Green.
+
+Also added a Watermark wrapped title to Blog, and a section to wrap the posts.
+
+Added some styling in `src/components/blogPost.module.scss`.
+
+Now to add the Blog page to the nav. Wrote a test that Navbar renders Link to blog. Red.
+
 ### To Do
 
-- Add blog list page.
+- Consider different images for facebook.
 - Add contact page.
 
 <!-- Links -->

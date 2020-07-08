@@ -12,6 +12,9 @@ const Navbar = () => {
         <li>
           <Link activeClassName={style.active} to="/projects">Projects</Link>
         </li>
+        <li>
+          <Link activeClassName={style.active} to="/blog">Blog</Link>
+        </li>
       </ul>
     </nav>
   )
