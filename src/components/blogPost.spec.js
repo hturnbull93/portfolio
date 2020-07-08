@@ -1,8 +1,7 @@
 import React from "react"
-import { shallow, mount } from "enzyme"
+import { mount } from "enzyme"
 import renderer from "react-test-renderer"
 import BlogPost from "./blogPost"
-import SmartLink from "./smartLink"
 
 describe("BlogPost", () => {
   it("renders the title", () => {
