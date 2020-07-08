@@ -1086,13 +1086,18 @@ Wrote a test that BlogPost renders the date. Red.
 
 Green.
 
-<!--
 - [ ] 4.3
 
   > As a visitor,
   > So that I can read the blog once I have chosen it,
   > I would like blog post to have a link to Medium.
--->
+
+Wrote a test that BlogPost renders a SmartLink with href of the link. Red.
+
+- Imported SmartLink, wrapped that around the title.
+- Passed href prop of the details link.
+
+Green.
 
 ### To Do
 
