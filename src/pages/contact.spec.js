@@ -8,4 +8,10 @@ describe("Contact", () => {
     const wrapper = shallow(<Contact />)
     expect(wrapper.find("Layout").length).toEqual(1)
   })
+
+  it("renders a link to my twitter", () => {
+    const wrapper = shallow(<Contact />)
+    const link = "a[href='https://twitter.com/hturnbull']"
+    expect(wrapper.find(link).length).toEqual(1)
+  })
 })
