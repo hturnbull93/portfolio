@@ -1,49 +1,44 @@
-<!-- omit in toc -->
-
-# Personal Portfolio
+# Personal Portfolio <!-- omit in toc -->
 
 The site is built with [Gatsby], using React, and is deployed to [harryturnbull.com] via [Netlify].
 
 [![Build Status](https://travis-ci.com/hturnbull93/portfolio.svg?branch=master)](https://travis-ci.com/hturnbull93/portfolio) [![Netlify Status](https://api.netlify.com/api/v1/badges/9f017ae6-45ae-466b-93c0-5936ffe13d7e/deploy-status)](https://app.netlify.com/sites/harryturnbull/deploys)
 
-<!-- omit in toc -->
+## Table of Contents <!-- omit in toc -->
 
-## Table of Contents
-
-- [Personal Portfolio](#personal-portfolio)
-  - [Table of Contents](#table-of-contents)
-  - [Tech Used](#tech-used)
-  - [Development Journal](#development-journal)
-    - [User Stories](#user-stories)
-    - [Gatsby Setup](#gatsby-setup)
-    - [Testing Setup](#testing-setup)
-    - [Travis CI Setup](#travis-ci-setup)
-    - [User Story 1 - About Section](#user-story-1---about-section)
-    - [User Story 2 - Sidebar/Navigation](#user-story-2---sidebarnavigation)
-    - [Adding Basic Styling](#adding-basic-styling)
-    - [Stubbing Math.random](#stubbing-mathrandom)
-    - [Adding a Favicon](#adding-a-favicon)
-    - [Linking Pages](#linking-pages)
-    - [User Story Set 3 - Project Summaries](#user-story-set-3---project-summaries)
-    - [Project Cards](#project-cards)
-    - [Back to Project Summaries](#back-to-project-summaries)
-    - [Restyling](#restyling)
-    - [Refactoring Sidebar](#refactoring-sidebar)
-    - [Merging Home and About](#merging-home-and-about)
-    - [More Restyling](#more-restyling)
-    - [SmartLink Component](#smartlink-component)
-    - [Linking to Projects](#linking-to-projects)
-    - [Adding More Projects](#adding-more-projects)
-    - [Project Page Slugs](#project-page-slugs)
-    - [Project Pages](#project-pages)
-    - [Styling Project Pages](#styling-project-pages)
-    - [Adding Metadata](#adding-metadata)
-    - [Twitter Metatags](#twitter-metatags)
-    - [Adding SEO to Pages](#adding-seo-to-pages)
-    - [Adding More Metatags](#adding-more-metatags)
-    - [Watermark Styling](#watermark-styling)
-    - [Blog](#blog)
-    - [To Do](#to-do)
+- [Tech Used](#tech-used)
+- [Development Journal](#development-journal)
+  - [User Stories](#user-stories)
+  - [Gatsby Setup](#gatsby-setup)
+  - [Testing Setup](#testing-setup)
+  - [Travis CI Setup](#travis-ci-setup)
+  - [User Story 1 - About Section](#user-story-1---about-section)
+  - [User Story 2 - Sidebar/Navigation](#user-story-2---sidebarnavigation)
+  - [Adding Basic Styling](#adding-basic-styling)
+  - [Stubbing Math.random](#stubbing-mathrandom)
+  - [Adding a Favicon](#adding-a-favicon)
+  - [Linking Pages](#linking-pages)
+  - [User Story Set 3 - Project Summaries](#user-story-set-3---project-summaries)
+  - [Project Cards](#project-cards)
+  - [Back to Project Summaries](#back-to-project-summaries)
+  - [Restyling](#restyling)
+  - [Refactoring Sidebar](#refactoring-sidebar)
+  - [Merging Home and About](#merging-home-and-about)
+  - [More Restyling](#more-restyling)
+  - [SmartLink Component](#smartlink-component)
+  - [Linking to Projects](#linking-to-projects)
+  - [Adding More Projects](#adding-more-projects)
+  - [Project Page Slugs](#project-page-slugs)
+  - [Project Pages](#project-pages)
+  - [Styling Project Pages](#styling-project-pages)
+  - [Adding Metadata](#adding-metadata)
+  - [Twitter Metatags](#twitter-metatags)
+  - [Adding SEO to Pages](#adding-seo-to-pages)
+  - [Adding More Metatags](#adding-more-metatags)
+  - [Watermark Styling](#watermark-styling)
+  - [Blog](#blog)
+  - [Contact page](#contact-page)
+  - [To Do](#to-do)
 
 ## Tech Used
 
@@ -86,31 +81,31 @@ Create for myself a portfolio site that does the following:
   > So that I can read a bit about this developer,  
   > I would like there to be an about section.
 
-- [x] 2.1
+- [ ] 2.1
 
   > As a visitor,  
   > So that I might hire this developer,  
   > I would like a link to his CV.
 
-- [x] 2.2
+- [ ] 2.2
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
   > I would like a link to his Twitter.
 
-- [x] 2.3
+- [ ] 2.3
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
   > I would like a link to his LinkedIn.
 
-- [x] 2.4
+- [ ] 2.4
 
   > As a visitor,  
   > So that I can explore the things this developer has built,  
   > I would like a link to his GitHub.
 
-- [x] 2.5
+- [ ] 2.5
 
   > As a visitor,  
   > So that I can read what this developer has written about things,  
@@ -158,7 +153,7 @@ Create for myself a portfolio site that does the following:
   > So that I know the context of the project,  
   > I would like it to be labelled as either personal or commercial.
 
-- [ ] 4
+- [x] 4
 
   > As a visitor,  
   > So that I can read what the developers has written about,  
@@ -182,7 +177,7 @@ Create for myself a portfolio site that does the following:
   > So that I can read the blog once I have chosen it,  
   > I would like blog post to have a link to Medium.
 
-- [ ] 5
+- [ ] 6
 
   > As a visitor,  
   > So that I am impressed by the site,  
@@ -1041,7 +1036,7 @@ npm install --save gatsby-source-medium-feed
 
 And configured in `gatsby-config.js`.
 
-- [ ] 4
+- [x] 4
 
   > As a visitor,  
   > So that I can read what the developers has written about,  
@@ -1112,6 +1107,19 @@ Also added a Watermark wrapped title to Blog, and a section to wrap the posts.
 Added some styling in `src/components/blogPost.module.scss`.
 
 Now to add the Blog page to the nav. Wrote a test that Navbar renders Link to blog. Red.
+
+### Contact page
+
+I'd like a contact page where links to my social and GitHub will live (these previously appeared in what used to be the Sidebar component).
+
+In `src/pages/contact.spec.js` wrote a test that the Sidebar Component renders a Layout. Red.
+
+In `src/pages/contact.jsx`:
+
+- Wrote a stateless function component called Contact.
+- Imported Layout and rendered it.
+
+Green.
 
 ### To Do
 
