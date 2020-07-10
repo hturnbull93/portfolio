@@ -26,4 +26,10 @@ describe("Contact", () => {
     const link = "a[href='https://github.com/hturnbull93/']"
     expect(wrapper.find(link).length).toEqual(1)
   })
+
+  it("renders a link to email me", () => {
+    const wrapper = shallow(<Contact />)
+    const link = "a[href='mailto:hturnbull@live.co.uk']"
+    expect(wrapper.find(link).length).toEqual(1)
+  })
 })
