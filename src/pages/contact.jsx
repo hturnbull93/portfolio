@@ -5,6 +5,10 @@ const Contact = () => {
   return (
     <Layout>
       <p>
+        email at {" "}
+        <a href="mailto:hturnbull@live.co.uk">hturnbull@live.co.uk</a>.
+      </p>
+      <p>
         tweet at {" "}
         <a href="https://twitter.com/hturnbull">@hturnbull93</a>.
       </p>
