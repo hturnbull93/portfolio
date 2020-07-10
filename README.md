@@ -1112,12 +1112,20 @@ Now to add the Blog page to the nav. Wrote a test that Navbar renders Link to bl
 
 I'd like a contact page where links to my social and GitHub will live (these previously appeared in what used to be the Sidebar component).
 
-In `src/pages/contact.spec.js` wrote a test that the Sidebar Component renders a Layout. Red.
+In `src/pages/contact.spec.js` wrote a test that the Contact Component renders a Layout. Red.
 
 In `src/pages/contact.jsx`:
 
 - Wrote a stateless function component called Contact.
 - Imported Layout and rendered it.
+
+Green.
+
+Wrote a test that the Contact renders a link to my twitter. Red.
+
+In `src/pages/contact.jsx`:
+
+- Added a paragraph containing an a tag to my twitter.
 
 Green.
 
