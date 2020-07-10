@@ -1137,6 +1137,14 @@ In `src/pages/contact.jsx`:
 
 Green.
 
+Wrote a test that the Contact renders a link to my GitHub. Red.
+
+In `src/pages/contact.jsx`:
+
+- Added a paragraph containing an a tag to my GitHub.
+
+Green.
+
 ### To Do
 
 - Consider different images for facebook.
