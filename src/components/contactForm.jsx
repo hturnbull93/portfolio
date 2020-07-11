@@ -10,28 +10,41 @@ class ContactForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: "",
-      email: "",
-      message: "",
+      form: {
+        name: "",
+        email: "",
+        message: "",
+      },
+      submitSuccess: false,
     }
   }
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value })
+    this.setState({ form: { [e.target.name]: e.target.value } })
   }
 
   handleSubmit = e => {
     if (e) e.preventDefault()
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state }),
+      body: encode({ "form-name": "contact", ...this.state.form }),
     })
-      .then(res => console.log("res :> ", res))
+      .then(res => {
+        if (res.status === 200) {
+          this.setState({ submitSuccess: true })
+        }
+      })
       .catch(error => alert(error))
   }
 
   render = () => {
+    console.log("this.state.submitSuccess :>> ", this.state.submitSuccess)
+    if (this.state.submitSuccess) {
+      return <p>Thanks</p>
+    }
+
     return (
       <form
         name="contact"
@@ -40,33 +53,56 @@ class ContactForm extends React.Component {
         data-netlify-honeypot="bot-field"
         onSubmit={this.handleSubmit}
       >
-        <input type="hidden" name="form-name" value="contact" />
+        <input
+          aria-label="form-name"
+          type="hidden"
+          name="form-name"
+          value="contact"
+        />
         <p hidden>
-          <label htmlFor="bot-field">
+          <label id="bot-field-label" htmlFor="bot-field">
             Don’t fill this out:{" "}
-            <input name="bot-field" onChange={this.handleChange} />
           </label>
+          <input
+            aria-labelledby="name-label"
+            name="bot-field"
+            onChange={this.handleChange}
+          />
         </p>
         <p>
-          <label htmlFor="name">
-            Your name:
-            <br />
-            <input type="text" name="name" onChange={this.handleChange} />
+          <label id="name-label" htmlFor="name">
+            Name.
           </label>
+          <br />
+          <input
+            aria-labelledby="name-label"
+            type="text"
+            name="name"
+            onChange={this.handleChange}
+          />
         </p>
         <p>
-          <label htmlFor="email">
-            Your email:
-            <br />
-            <input type="email" name="email" onChange={this.handleChange} />
+          <label id="email-label" htmlFor="email">
+            Email.
           </label>
+          <br />
+          <input
+            aria-labelledby="email-label"
+            type="email"
+            name="email"
+            onChange={this.handleChange}
+          />
         </p>
         <p>
-          <label htmlFor="message">
-            Message:
-            <br />
-            <textarea name="message" onChange={this.handleChange} />
+          <label id="message-label" htmlFor="message">
+            Message.
           </label>
+          <br />
+          <textarea
+            aria-labelledby="message-label"
+            name="message"
+            onChange={this.handleChange}
+          />
         </p>
         <p>
           <button type="submit">Send</button>
