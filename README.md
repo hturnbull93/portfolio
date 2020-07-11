@@ -1168,7 +1168,14 @@ npm install --save axios
 
 In `src/components/contactForm.jsx`:
 
-- 
+- Added a class ContactForm that extends React Component.
+- It's state is constructed with mane, email and message as empty strings.
+- The handleChange method takes an event and sets the state with the event target's name as the event target's value (for input fields).
+- The handleSumbit method takes an event, prevents it's defauly action, then calls axios to post to the root path with headers of content type: application/x-www-form-urlencoded, and body of the form-name of contact, plus the state encoded into a url query string.
+- Helper method encode performs the encoding of an object's keys and values into a query string.
+- The ContactForm renders a form with name, email and message inputs, plus a hidden input for a bot honeypot.
+
+Green.
 
 ### To Do
 
