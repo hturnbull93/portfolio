@@ -23,14 +23,19 @@ class ContactForm extends React.Component {
 
   handleSubmit = e => {
     if (e) e.preventDefault()
-    axios
-      .post("/", {
-        headers: { "content-type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "contact",
-          ...this.state,
-        }),
-      })
+    // axios
+    //   .post("/", {
+    //     headers: { "content-type": "application/x-www-form-urlencoded" },
+    //     body: encode({
+    //       "form-name": "contact",
+    //       ...this.state,
+    //     }),
+    //   })
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state }),
+    })
       .then(res => console.log("res :> ", res))
       .catch(error => alert(error))
   }
