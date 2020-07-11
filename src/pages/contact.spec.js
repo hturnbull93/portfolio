@@ -32,4 +32,9 @@ describe("Contact", () => {
     const link = "a[href='mailto:hturnbull@live.co.uk']"
     expect(wrapper.find(link).length).toEqual(1)
   })
+
+  it("renders a ContactForm", () => {
+    const wrapper = shallow(<Contact />)
+    expect(wrapper.find("ContactForm").length).toEqual(1)
+  })
 })
