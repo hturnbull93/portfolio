@@ -1214,6 +1214,14 @@ Wrote a test that ContactForm validates presence of message on submit. Red.
 
 Green.
 
+Wrote a test that ContactForm validates presence of message on submit. Red.
+
+- In validateForm added an else if statement performing some basic regex on email, checking for soem characters, an "@", then more characters. If this fails set the emailValidationError to "Are you sure your email is correct?" and set anyError to true.
+- efactor the email presence validation to assign emailValidationError with a different appropriate string rather than setting it to true.
+- Then in render assign the email label text conditionally with the string held in emailValidationError, or the default label.
+
+Green.
+
 Wrote a test that Contact renders a ContactForm. Red.
 
 - Imported and render a ContactForm.

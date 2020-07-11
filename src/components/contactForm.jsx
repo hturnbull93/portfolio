@@ -34,7 +34,12 @@ class ContactForm extends React.Component {
       anyError = true
     }
     if (email === "") {
-      this.setState({ emailValidationError: true })
+      this.setState({ emailValidationError: "Please enter your email" })
+      anyError = true
+    } else if (!/\S+@\S+/.test(email)) {
+      this.setState({
+        emailValidationError: "Are you sure your email is correct?",
+      })
       anyError = true
     }
     if (message === "") {
@@ -110,7 +115,7 @@ class ContactForm extends React.Component {
         </p>
         <p>
           <label id="email-label" htmlFor="email">
-            {emailValidationError ? "Please enter your email" : "email"}.
+            {emailValidationError ? emailValidationError : "Email."}
           </label>
           <br />
           <input
