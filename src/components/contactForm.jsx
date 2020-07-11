@@ -1,5 +1,4 @@
 import React from "react"
-import axios from "axios"
 
 const encode = data => {
   return Object.keys(data)
@@ -23,14 +22,6 @@ class ContactForm extends React.Component {
 
   handleSubmit = e => {
     if (e) e.preventDefault()
-    // axios
-    //   .post("/", {
-    //     headers: { "content-type": "application/x-www-form-urlencoded" },
-    //     body: encode({
-    //       "form-name": "contact",
-    //       ...this.state,
-    //     }),
-    //   })
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },

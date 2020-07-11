@@ -1,11 +1,10 @@
 import React from "react"
 import { shallow, mount } from "enzyme"
-import axios from "axios"
 import ContactForm from "./contactForm"
 import fetchMock from "jest-fetch-mock"
 
 describe("ContactForm", () => {
-  it("form submit causes axios post", done => {
+  it("form submit causes fetch post", done => {
     const mockSuccessResponse = { status: 200 }
     const mockFetchPromise = Promise.resolve(mockSuccessResponse)
     jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise)
