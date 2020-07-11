@@ -1,20 +1,22 @@
 import React from "react"
-import { shallow, mount } from "enzyme"
-import axios from "axios"
+import { shallow } from "enzyme"
 import ContactForm from "./contactForm"
 import fetchMock from "jest-fetch-mock"
+import waitUntil from "async-wait-until"
 
 describe("ContactForm", () => {
-  it("form submit causes axios post", done => {
+  it("form submit causes fetch post", done => {
     const mockSuccessResponse = { status: 200 }
     const mockFetchPromise = Promise.resolve(mockSuccessResponse)
     jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise)
 
-    const wrapper = mount(<ContactForm />)
+    const wrapper = shallow(<ContactForm />)
     wrapper.setState({
-      name: "test",
-      email: "test@example.com",
-      message: "hello world",
+      form: {
+        name: "test",
+        email: "test@example.com",
+        message: "hello world",
+      },
     })
     const form = wrapper.find("form")
     form.simulate("submit")
@@ -29,5 +31,109 @@ describe("ContactForm", () => {
 
     global.fetch.mockClear()
     done()
+  })
+
+  it("form submission shows success message", async done => {
+    const mockSuccessResponse = { status: 200 }
+    const mockFetchPromise = Promise.resolve(mockSuccessResponse)
+    jest.spyOn(global, "fetch").mockImplementation(() => mockFetchPromise)
+
+    const wrapper = shallow(<ContactForm />)
+    wrapper.setState({
+      form: {
+        name: "test",
+        email: "test@example.com",
+        message: "hello world",
+      },
+    })
+    const form = wrapper.find("form")
+    form.simulate("submit")
+
+    await waitUntil(() => wrapper.state("submitSuccess") === true)
+
+    expect(wrapper.text()).toContain("Thanks")
+
+    global.fetch.mockClear()
+    done()
+  })
+
+  it("validates presence of name", () => {
+    jest.spyOn(global, "fetch")
+
+    const wrapper = shallow(<ContactForm />)
+    wrapper.setState({
+      form: {
+        name: "",
+        email: "test@example.com",
+        message: "hello world",
+      },
+    })
+    const form = wrapper.find("form")
+    form.simulate("submit")
+
+    expect(wrapper.text()).toContain("Please enter your name")
+    expect(global.fetch).toHaveBeenCalledTimes(0)
+
+    global.fetch.mockClear()
+  })
+
+  it("validates presence of email", () => {
+    jest.spyOn(global, "fetch")
+
+    const wrapper = shallow(<ContactForm />)
+    wrapper.setState({
+      form: {
+        name: "test",
+        email: "",
+        message: "hello world",
+      },
+    })
+    const form = wrapper.find("form")
+    form.simulate("submit")
+
+    expect(wrapper.text()).toContain("Please enter your email")
+    expect(global.fetch).toHaveBeenCalledTimes(0)
+
+    global.fetch.mockClear()
+  })
+
+  it("validates incorrect emails", () => {
+    jest.spyOn(global, "fetch")
+
+    const wrapper = shallow(<ContactForm />)
+    wrapper.setState({
+      form: {
+        name: "test",
+        email: "not an email",
+        message: "hello world",
+      },
+    })
+    const form = wrapper.find("form")
+    form.simulate("submit")
+
+    expect(wrapper.text()).toContain("Are you sure your email is correct?")
+    expect(global.fetch).toHaveBeenCalledTimes(0)
+
+    global.fetch.mockClear()
+  })
+
+  it("validates presence of message", () => {
+    jest.spyOn(global, "fetch")
+
+    const wrapper = shallow(<ContactForm />)
+    wrapper.setState({
+      form: {
+        name: "test",
+        email: "test@example.com",
+        message: "",
+      },
+    })
+    const form = wrapper.find("form")
+    form.simulate("submit")
+
+    expect(wrapper.text()).toContain("Please enter a message")
+    expect(global.fetch).toHaveBeenCalledTimes(0)
+
+    global.fetch.mockClear()
   })
 })

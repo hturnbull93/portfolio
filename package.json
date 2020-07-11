@@ -14,7 +14,6 @@
     "test": "jest --watch"
   },
   "dependencies": {
-    "axios": "^0.19.2",
     "gatsby": "^2.23.4",
     "gatsby-plugin-react-helmet": "^3.3.9",
     "gatsby-plugin-sass": "^2.3.4",
@@ -29,6 +28,7 @@
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
+    "async-wait-until": "^1.2.4",
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^0.4.9",
     "enzyme": "^3.11.0",

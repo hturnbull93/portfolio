@@ -9,7 +9,7 @@
   --main-med: #c4c4c4;
   --main-light: #efefef;
   --off-white: #fafafa;
-
+  --error: #ce1515;
   // Breakpoints
   --full-width: 1600px;
 }
@@ -17,8 +17,7 @@
 // Global resets
 html {
   background-color: var(--off-white);
-  // width: 100vw;
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -87,3 +86,39 @@ a {
   }
 }
 
+// Forms
+input,
+textarea {
+  border: none;
+  background: var(--main-med);
+  padding: 0.5em;
+  border-bottom: 3px solid var(--off-white);
+  &:hover {
+    border-bottom: 3px solid var(--main-dark);
+  }
+  &:focus {
+    outline: none;
+    border-bottom: 3px solid var(--dark);
+  }
+}
+
+textarea {
+  height: 10em;
+  resize: vertical;
+}
+
+label {
+  text-transform: lowercase;
+}
+
+button {
+  text-transform: lowercase;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: var(--main-dark) 2px solid;
+  cursor: pointer;
+  &:hover {
+    border-bottom: var(--dark) 2px solid;
+  }
+}

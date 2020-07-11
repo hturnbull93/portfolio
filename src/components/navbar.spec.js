@@ -22,4 +22,10 @@ describe("Navbar", () => {
     const link = <Link to="/blog">Blog</Link>
     expect(wrapper.containsMatchingElement(link)).toEqual(true)
   })
+
+  it("renders Link to contact", () => {
+    const wrapper = shallow(<Navbar />)
+    const link = <Link to="/contact">Contact</Link>
+    expect(wrapper.containsMatchingElement(link)).toEqual(true)
+  })
 })

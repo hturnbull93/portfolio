@@ -1158,12 +1158,12 @@ Green.
 
 I'd also like to add a contact form that submits using AJAX. Netlify provides a sort of serverless form submission functionality for this so that's what I'll be using for now (could always change later on).
 
-In `src/components/contactForm.spec.js` wrote a test that the ContactForm form submit causes axios post.
+In `src/components/contactForm.spec.js` wrote a test that the ContactForm form submit causes a fetch post. The fetch response is mocked with `jest-fetch-mock`.
 
-Installed axios with:
+Installed `jest-fetch-mock` with:
 
 ```shell
-npm install --save axios
+npm install --save-dev jest-fetch-mock
 ```
 
 In `src/components/contactForm.jsx`:
@@ -1171,15 +1171,83 @@ In `src/components/contactForm.jsx`:
 - Added a class ContactForm that extends React Component.
 - It's state is constructed with mane, email and message as empty strings.
 - The handleChange method takes an event and sets the state with the event target's name as the event target's value (for input fields).
-- The handleSumbit method takes an event, prevents it's defauly action, then calls axios to post to the root path with headers of content type: application/x-www-form-urlencoded, and body of the form-name of contact, plus the state encoded into a url query string.
+- The handleSumbit method takes an event, prevents it's default action, then calls fetch to the root path with headers of method: POST, content type: application/x-www-form-urlencoded, and body of the form-name of contact, plus the state encoded into a url query string.
 - Helper method encode performs the encoding of an object's keys and values into a query string.
 - The ContactForm renders a form with name, email and message inputs, plus a hidden input for a bot honeypot.
 
 Green.
 
+Wrote a test that ContactForm renders text saying "Thanks" if submission is successful. Red.
+
+For this test I used `async-wait-until`, installed with:
+
+```shell
+npm install --save-dev async-wait-until
+```
+
+- Moved the name, email and message state to their own form object.
+- Added a submitSuccess state of false.
+- When resolving the promise returned by fetch if the status is 200 set state submitSuccess to true.
+
+Wrote a test that ContactForm validates presence of name on submit. Red.
+
+- Add to state a property nameValidationError assigned with false.
+- Added a method validateForm, which assigns variable anyError with false.
+- This destructures name from state.form, and if it is an empty string setState nameValidationError to true, and assigns anyError with true.
+- Then return anyError
+- In handleSubmit added a guard statement to return if validateForm returns true (i.e. an error in validation).
+- In render, destructured nameValidationError from state, and conditionally render the content of the name label based on that.
+
+Green.
+
+Wrote a test that ContactForm validates presence of email on submit. Red.
+
+- Add to state a property emailValidationError assigned with false.
+- In validateForm destructure email from state.form and if it is an empty string setState emailValidationError to true, and assign anyError with true.
+- In render, destructured emailValidationError from state, and conditionally render the content of the email label based on that.
+
+Wrote a test that ContactForm validates presence of message on submit. Red.
+
+- Add to state a property messageValidationError assigned with false.
+- In validateForm destructure message from state.form and if it is an empty string setState messageValidationError to true, and assign anyError with true.
+- In render, destructured messageValidationError from state, and conditionally render the content of the message label based on that.
+
+Green.
+
+Wrote a test that ContactForm validates presence of message on submit. Red.
+
+- In validateForm added an else if statement performing some basic regex on email, checking for soem characters, an "@", then more characters. If this fails set the emailValidationError to "Are you sure your email is correct?" and set anyError to true.
+- Refactor the email presence validation to assign emailValidationError with a different appropriate string rather than setting it to true.
+- Then in render assign the email label text conditionally with the string held in emailValidationError, or the default label.
+
+Green.
+
+Refactors:
+
+- In validateForm setState once at the end rather than in each if block.
+- Switched to guard clauses to assign errors with error messages.
+- Added a constant errors that is an array of the errors, return the result of the higher order function some, checking if the error is not false (i.e. if there are any errors).
+- Extracted a method validateEmail to check the email.
+- In handleChange added constant newState assigned with the state. Then add to that and spread it into setState so form isn't overwritten.
+
+Added some styles in `src/components/contactForm.module.scss`:
+
+- A container with a flex column with items spaced out.
+- error class that is dynamically applied based on the errors.
+
+Also added generic styling for form elements in `src/index.scss`.
+
 Wrote a test that Contact renders a ContactForm. Red.
 
 - Imported and render a ContactForm.
+
+Green.
+
+As there is now a form, removed the link to email, and the corresponding test.
+
+Wrote a test that the Navbar renders a link to contact. Red.
+
+- Added a link to the contact page.
 
 Green.
 
