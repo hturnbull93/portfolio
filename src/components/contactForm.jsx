@@ -17,6 +17,7 @@ class ContactForm extends React.Component {
       },
       submitSuccess: false,
       nameValidationError: false,
+      emailValidationError: false,
     }
   }
 
@@ -25,10 +26,14 @@ class ContactForm extends React.Component {
   }
 
   validateForm = () => {
-    const { name } = this.state.form
+    const { name, email } = this.state.form
     let anyError = false
     if (name === "") {
       this.setState({ nameValidationError: true })
+      anyError = true
+    }
+    if (email === "") {
+      this.setState({ emailValidationError: true })
       anyError = true
     }
     return anyError
@@ -52,7 +57,11 @@ class ContactForm extends React.Component {
   }
 
   render = () => {
-    const { submitSuccess, nameValidationError } = this.state
+    const {
+      submitSuccess,
+      nameValidationError,
+      emailValidationError,
+    } = this.state
     if (submitSuccess) {
       return <div>Thanks.</div>
     }
@@ -95,7 +104,7 @@ class ContactForm extends React.Component {
         </p>
         <p>
           <label id="email-label" htmlFor="email">
-            Email.
+          {emailValidationError ? "Please enter your email" : "email"}.
           </label>
           <br />
           <input
