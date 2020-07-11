@@ -49,11 +49,31 @@ describe("ContactForm", () => {
     const form = wrapper.find("form")
     form.simulate("submit")
 
-    await waitUntil(() => wrapper.state("submitSuccess") === true);
+    await waitUntil(() => wrapper.state("submitSuccess") === true)
 
     expect(wrapper.text()).toContain("Thanks")
 
     global.fetch.mockClear()
     done()
+  })
+
+  it("validates presence of name", () => {
+    jest.spyOn(global, "fetch")
+
+    const wrapper = shallow(<ContactForm />)
+    wrapper.setState({
+      form: {
+        name: "",
+        email: "test@example.com",
+        message: "hello world",
+      },
+    })
+    const form = wrapper.find("form")
+    form.simulate("submit")
+
+    expect(wrapper.text()).toContain("Please enter your name")
+    expect(global.fetch).toHaveBeenCalledTimes(0)
+
+    global.fetch.mockClear()
   })
 })
