@@ -1,4 +1,5 @@
 import React from "react"
+import style from "./contactForm.module.scss"
 
 const encode = data => {
   return Object.keys(data)
@@ -34,11 +35,11 @@ class ContactForm extends React.Component {
     let emailError = false
     let nameError = false
 
-    if (name === "") nameError = "Please enter your name"
+    if (name === "") nameError = "Please enter your name."
     if (email !== "" && this.validateEmail(email))
       emailError = "Are you sure your email is correct?"
-    if (email === "") emailError = "Please enter your email"
-    if (message === "") messageError = "Please enter a message"
+    if (email === "") emailError = "Please enter your email."
+    if (message === "") messageError = "Please enter a message."
 
     this.setState({
       messageError,
@@ -77,6 +78,7 @@ class ContactForm extends React.Component {
 
     return (
       <form
+        className={style.container}
         name="contact"
         method="post"
         data-netlify="true"
@@ -89,7 +91,7 @@ class ContactForm extends React.Component {
           name="form-name"
           value="contact"
         />
-        <p hidden>
+        <div hidden>
           <label id="bot-field-label" htmlFor="bot-field">
             Don’t fill this out:{" "}
           </label>
@@ -98,48 +100,43 @@ class ContactForm extends React.Component {
             name="bot-field"
             onChange={this.handleChange}
           />
-        </p>
-        <p>
-          <label id="name-label" htmlFor="name">
-            {nameError ? nameError : "Name"}.
-          </label>
-          <br />
-          <input
-            aria-labelledby="name-label"
-            type="text"
-            name="name"
-            onChange={this.handleChange}
-            className={messageError ? "derp" : null}
-          />
-        </p>
-        <p>
-          <label id="email-label" htmlFor="email">
-            {emailError ? emailError : "Email."}
-          </label>
-          <br />
-          <input
-            aria-labelledby="email-label"
-            type="email"
-            name="email"
-            onChange={this.handleChange}
-            className={messageError ? "derp" : null}
-          />
-        </p>
-        <p>
-          <label id="message-label" htmlFor="message">
-            {messageError ? messageError : "Message"}.
-          </label>
-          <br />
-          <textarea
-            aria-labelledby="message-label"
-            name="message"
-            onChange={this.handleChange}
-            className={messageError ? "derp" : null}
-          />
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
+        </div>
+
+        <label id="name-label" htmlFor="name">
+          {nameError ? nameError : "Name."}
+        </label>
+        <input
+          aria-labelledby="name-label"
+          type="text"
+          name="name"
+          onChange={this.handleChange}
+          className={messageError ? style.error : null}
+        />
+
+        <label id="email-label" htmlFor="email">
+          {emailError ? emailError : "Email."}
+        </label>
+        <input
+          aria-labelledby="email-label"
+          type="email"
+          name="email"
+          onChange={this.handleChange}
+          className={messageError ? style.error : null}
+        />
+
+        <label id="message-label" htmlFor="message">
+          {messageError ? messageError : "Message."}
+        </label>
+        <textarea
+          aria-labelledby="message-label"
+          name="message"
+          onChange={this.handleChange}
+          className={messageError ? style.error : null}
+        />
+
+        <span>
+          <button type="submit">Send</button>.
+        </span>
       </form>
     )
   }

@@ -1230,7 +1230,12 @@ Refactors:
 - Extracted a method validateEmail to check the email.
 - In handleChange added constant newState assigned with the state. Then add to that and spread it into setState so form isn't overwritten.
 
-Added some styles in `src/components/contactForm.module.scss`
+Added some styles in `src/components/contactForm.module.scss`:
+
+- A container with a flex column with items spaced out.
+- error class that is dynamically applied based on the errors.
+
+Also added generic styling for form elements in `src/index.scss`.
 
 Wrote a test that Contact renders a ContactForm. Red.
 
