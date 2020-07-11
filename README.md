@@ -1245,6 +1245,12 @@ Green.
 
 As there is now a form, removed the link to email, and the corresponding test.
 
+Wrote a test that the Navbar renders a link to contact. Red.
+
+- Added a link to the contact page.
+
+Green.
+
 ### To Do
 
 - Consider different images for facebook.
