@@ -1217,10 +1217,17 @@ Green.
 Wrote a test that ContactForm validates presence of message on submit. Red.
 
 - In validateForm added an else if statement performing some basic regex on email, checking for soem characters, an "@", then more characters. If this fails set the emailValidationError to "Are you sure your email is correct?" and set anyError to true.
-- efactor the email presence validation to assign emailValidationError with a different appropriate string rather than setting it to true.
+- Refactor the email presence validation to assign emailValidationError with a different appropriate string rather than setting it to true.
 - Then in render assign the email label text conditionally with the string held in emailValidationError, or the default label.
 
 Green.
+
+Refactors:
+
+- In validateForm setState once at the end rather than in each if block.
+- Switched to guard clauses to assign errors with error messages.
+- Added a constant errors that is an array of the errors, return the result of the higher order function some, checking if the error is not false (i.e. if there are any errors).
+- Extracted a method validateEmail to check the email.
 
 Wrote a test that Contact renders a ContactForm. Red.
 

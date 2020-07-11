@@ -16,9 +16,9 @@ class ContactForm extends React.Component {
         message: "",
       },
       submitSuccess: false,
-      nameValidationError: false,
-      emailValidationError: false,
-      messageValidationError: false,
+      nameError: false,
+      emailError: false,
+      messageError: false,
     }
   }
 
@@ -28,26 +28,27 @@ class ContactForm extends React.Component {
 
   validateForm = () => {
     const { name, email, message } = this.state.form
-    let anyError = false
-    if (name === "") {
-      this.setState({ nameValidationError: true })
-      anyError = true
-    }
-    if (email === "") {
-      this.setState({ emailValidationError: "Please enter your email" })
-      anyError = true
-    } else if (!/\S+@\S+/.test(email)) {
-      this.setState({
-        emailValidationError: "Are you sure your email is correct?",
-      })
-      anyError = true
-    }
-    if (message === "") {
-      this.setState({ messageValidationError: true })
-      anyError = true
-    }
-    return anyError
+    let messageError = false
+    let emailError = false
+    let nameError = false
+
+    if (name === "") nameError = "Please enter your name"
+    if (email !== "" && this.validateEmail(email))
+      emailError = "Are you sure your email is correct?"
+    if (email === "") emailError = "Please enter your email"
+    if (message === "") messageError = "Please enter a message"
+
+    this.setState({
+      messageError,
+      emailError,
+      nameError,
+    })
+
+    const errors = [messageError, emailError, nameError]
+    return errors.some(error => error !== false)
   }
+
+  validateEmail = email => !/\S+@\S+/.test(email)
 
   handleSubmit = e => {
     if (e) e.preventDefault()
@@ -67,12 +68,7 @@ class ContactForm extends React.Component {
   }
 
   render = () => {
-    const {
-      submitSuccess,
-      nameValidationError,
-      emailValidationError,
-      messageValidationError,
-    } = this.state
+    const { submitSuccess, nameError, emailError, messageError } = this.state
     if (submitSuccess) {
       return <div>Thanks.</div>
     }
@@ -103,7 +99,7 @@ class ContactForm extends React.Component {
         </p>
         <p>
           <label id="name-label" htmlFor="name">
-            {nameValidationError ? "Please enter your name" : "Name"}.
+            {nameError ? nameError : "Name"}.
           </label>
           <br />
           <input
@@ -115,7 +111,7 @@ class ContactForm extends React.Component {
         </p>
         <p>
           <label id="email-label" htmlFor="email">
-            {emailValidationError ? emailValidationError : "Email."}
+            {emailError ? emailError : "Email."}
           </label>
           <br />
           <input
@@ -127,7 +123,7 @@ class ContactForm extends React.Component {
         </p>
         <p>
           <label id="message-label" htmlFor="message">
-            {messageValidationError ? "Please enter a message" : "Message"}.
+            {messageError ? messageError : "Message"}.
           </label>
           <br />
           <textarea
