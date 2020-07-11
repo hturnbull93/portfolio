@@ -76,4 +76,24 @@ describe("ContactForm", () => {
 
     global.fetch.mockClear()
   })
+
+  it("validates presence of email", () => {
+    jest.spyOn(global, "fetch")
+
+    const wrapper = shallow(<ContactForm />)
+    wrapper.setState({
+      form: {
+        name: "test",
+        email: "",
+        message: "hello world",
+      },
+    })
+    const form = wrapper.find("form")
+    form.simulate("submit")
+
+    expect(wrapper.text()).toContain("Please enter your email")
+    expect(global.fetch).toHaveBeenCalledTimes(0)
+
+    global.fetch.mockClear()
+  })
 })
