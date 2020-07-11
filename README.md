@@ -1243,6 +1243,8 @@ Wrote a test that Contact renders a ContactForm. Red.
 
 Green.
 
+As there is now a form, removed the link to email, and the corresponding test.
+
 ### To Do
 
 - Consider different images for facebook.

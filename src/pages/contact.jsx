@@ -10,18 +10,16 @@ const Contact = () => {
         <h1>Contact.</h1>
       </Watermark>
       <p>
-        email at <a href="mailto:hturnbull@live.co.uk">hturnbull@live.co.uk</a>.
+        Tweet at <a href="https://twitter.com/hturnbull">@hturnbull93</a>.
       </p>
       <p>
-        tweet at <a href="https://twitter.com/hturnbull">@hturnbull93</a>.
-      </p>
-      <p>
-        connect on{" "}
+        Connect on{" "}
         <a href="https://www.linkedin.com/in/harry-turnbull/">LinkedIn</a>.
       </p>
       <p>
-        follow on <a href="https://github.com/hturnbull93/">GitHub</a>.
+        Follow on <a href="https://github.com/hturnbull93/">GitHub</a>.
       </p>
+      <p>Or fill in the form.</p>
       <ContactForm />
     </Layout>
   )
