@@ -38,6 +38,7 @@ The site is built with [Gatsby], using React, and is deployed to [harryturnbull.
   - [Watermark Styling](#watermark-styling)
   - [Blog](#blog)
   - [Contact page](#contact-page)
+  - [Contact Form](#contact-form)
   - [To Do](#to-do)
 
 ## Tech Used
@@ -1152,6 +1153,22 @@ In `src/pages/contact.jsx`:
 - Added a paragraph containing an a tag to mail to my email.
 
 Green.
+
+### Contact Form
+
+I'd also like to add a contact form that submits using AJAX. Netlify provides a sort of serverless form submission functionality for this so that's what I'll be using for now (could always change later on).
+
+In `src/components/contactForm.spec.js` wrote a test that the ContactForm form submit causes axios post.
+
+Installed axios with:
+
+```shell
+npm install --save axios
+```
+
+In `src/components/contactForm.jsx`:
+
+- 
 
 ### To Do
 
