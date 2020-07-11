@@ -1189,6 +1189,17 @@ npm install --save-dev async-wait-until
 - Added a submitSuccess state of false.
 - When resolving the promise returned by fetch if the status is 200 set state submitSuccess to true.
 
+Wrote a test that ContactForm validates presence of name on submit. Red.
+
+- Add to state a property nameValidationError assigned with false.
+- Added a method validateForm, which assigns variable anyError with false.
+- This destructures name from state.form, and if it is an empty string setState nameValidationError to true, and assigns anyError with true.
+- Then return anyError
+- In handleSubmit added a guard statement to return if validateForm returns true (i.e. an error in validation).
+- In render, destructured nameValidationError from state, and conditionally render the content of the name label based on that.
+
+Green.
+
 Wrote a test that Contact renders a ContactForm. Red.
 
 - Imported and render a ContactForm.

@@ -16,6 +16,7 @@ class ContactForm extends React.Component {
         message: "",
       },
       submitSuccess: false,
+      nameValidationError: false,
     }
   }
 
@@ -23,8 +24,19 @@ class ContactForm extends React.Component {
     this.setState({ form: { [e.target.name]: e.target.value } })
   }
 
+  validateForm = () => {
+    const { name } = this.state.form
+    let anyError = false
+    if (name === "") {
+      this.setState({ nameValidationError: true })
+      anyError = true
+    }
+    return anyError
+  }
+
   handleSubmit = e => {
     if (e) e.preventDefault()
+    if (this.validateForm()) return
 
     fetch("/", {
       method: "POST",
@@ -40,9 +52,9 @@ class ContactForm extends React.Component {
   }
 
   render = () => {
-    console.log("this.state.submitSuccess :>> ", this.state.submitSuccess)
-    if (this.state.submitSuccess) {
-      return <p>Thanks</p>
+    const { submitSuccess, nameValidationError } = this.state
+    if (submitSuccess) {
+      return <div>Thanks.</div>
     }
 
     return (
@@ -71,7 +83,7 @@ class ContactForm extends React.Component {
         </p>
         <p>
           <label id="name-label" htmlFor="name">
-            Name.
+            {nameValidationError ? "Please enter your name" : "Name"}.
           </label>
           <br />
           <input
