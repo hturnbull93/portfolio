@@ -1206,6 +1206,14 @@ Wrote a test that ContactForm validates presence of email on submit. Red.
 - In validateForm destructure email from state.form and if it is an empty string setState emailValidationError to true, and assign anyError with true.
 - In render, destructured emailValidationError from state, and conditionally render the content of the email label based on that.
 
+Wrote a test that ContactForm validates presence of message on submit. Red.
+
+- Add to state a property messageValidationError assigned with false.
+- In validateForm destructure message from state.form and if it is an empty string setState messageValidationError to true, and assign anyError with true.
+- In render, destructured messageValidationError from state, and conditionally render the content of the message label based on that.
+
+Green.
+
 Wrote a test that Contact renders a ContactForm. Red.
 
 - Imported and render a ContactForm.
