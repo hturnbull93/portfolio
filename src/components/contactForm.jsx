@@ -23,7 +23,9 @@ class ContactForm extends React.Component {
   }
 
   handleChange = e => {
-    this.setState({ form: { [e.target.name]: e.target.value } })
+    const newState = this.state
+    newState.form[e.target.name] = e.target.value
+    this.setState({ ...newState })
   }
 
   validateForm = () => {
@@ -107,6 +109,7 @@ class ContactForm extends React.Component {
             type="text"
             name="name"
             onChange={this.handleChange}
+            className={messageError ? "derp" : null}
           />
         </p>
         <p>
@@ -119,6 +122,7 @@ class ContactForm extends React.Component {
             type="email"
             name="email"
             onChange={this.handleChange}
+            className={messageError ? "derp" : null}
           />
         </p>
         <p>
@@ -130,6 +134,7 @@ class ContactForm extends React.Component {
             aria-labelledby="message-label"
             name="message"
             onChange={this.handleChange}
+            className={messageError ? "derp" : null}
           />
         </p>
         <p>

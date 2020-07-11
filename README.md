@@ -1228,6 +1228,9 @@ Refactors:
 - Switched to guard clauses to assign errors with error messages.
 - Added a constant errors that is an array of the errors, return the result of the higher order function some, checking if the error is not false (i.e. if there are any errors).
 - Extracted a method validateEmail to check the email.
+- In handleChange added constant newState assigned with the state. Then add to that and spread it into setState so form isn't overwritten.
+
+Added some styles in `src/components/contactForm.module.scss`
 
 Wrote a test that Contact renders a ContactForm. Red.
 
