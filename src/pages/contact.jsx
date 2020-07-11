@@ -21,6 +21,10 @@ const Contact = () => {
       </p>
       <p>Or fill in the form.</p>
       <ContactForm />
+      <SEO
+        title="Contact"
+        description="Get in touch."
+      />
     </Layout>
   )
 }
