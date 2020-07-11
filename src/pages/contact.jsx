@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import ContactForm from "../components/contactForm"
 
 const Contact = () => {
   return (
@@ -18,6 +19,7 @@ const Contact = () => {
       <p>
         follow on <a href="https://github.com/hturnbull93/">GitHub</a>.
       </p>
+      <ContactForm />
     </Layout>
   )
 }

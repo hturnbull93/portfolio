@@ -1177,6 +1177,12 @@ In `src/components/contactForm.jsx`:
 
 Green.
 
+Wrote a test that Contact renders a ContactForm. Red.
+
+- Imported and render a ContactForm.
+
+Green.
+
 ### To Do
 
 - Consider different images for facebook.
