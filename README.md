@@ -82,31 +82,31 @@ Create for myself a portfolio site that does the following:
   > So that I can read a bit about this developer,  
   > I would like there to be an about section.
 
-- [ ] 2.1
+- [x] 2.1
 
   > As a visitor,  
   > So that I might hire this developer,  
   > I would like a link to his CV.
 
-- [ ] 2.2
+- [x] 2.2
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
   > I would like a link to his Twitter.
 
-- [ ] 2.3
+- [x] 2.3
 
   > As a visitor,  
   > So that I might follow this developer on social media,  
   > I would like a link to his LinkedIn.
 
-- [ ] 2.4
+- [x] 2.4
 
   > As a visitor,  
   > So that I can explore the things this developer has built,  
   > I would like a link to his GitHub.
 
-- [ ] 2.5
+- [x] 2.5
 
   > As a visitor,  
   > So that I can read what this developer has written about things,  
@@ -178,7 +178,7 @@ Create for myself a portfolio site that does the following:
   > So that I can read the blog once I have chosen it,  
   > I would like blog post to have a link to Medium.
 
-- [ ] 6
+- [x] 6
 
   > As a visitor,  
   > So that I am impressed by the site,  
@@ -238,7 +238,7 @@ The About section is a separate page. In `src/pages/about.spec.js` wrote a test 
 
 In `src/pages/about.jsx`:
 
-- Wrote a stateless function component that renders a div with a h1 containing "About".
+- Wrote a stateless function component that renders a div with a `h1` containing "About".
 
 Green.
 
@@ -260,8 +260,8 @@ In `src/components/sidebar.spec.js` wrote a test that the Sidebar Component rend
 
 In `src/components/sidebar.jsx`:
 
-- Wrote a stateless function component called Sidebar.
-- It renders a div, containing an a tag linking to my CV.
+- Wrote a stateless function component called `Sidebar`.
+- It renders a div, containing an `a` tag linking to my CV.
 
 Green.
 
@@ -273,7 +273,7 @@ Green.
 
 Wrote a test that Sidebar renders a link to my Twitter. Red.
 
-- Added another a tag linking to my Twitter.
+- Added another `a` tag linking to my Twitter.
 
 Green.
 
@@ -285,7 +285,7 @@ Green.
 
 Wrote a test that Sidebar renders a link to my LinkedIn. Red.
 
-- Added another a tag linking to my LinkedIn.
+- Added another `a` tag linking to my LinkedIn.
 
 Green.
 
@@ -297,7 +297,7 @@ Green.
 
 Wrote a test that Sidebar renders a link to my GitHub. Red.
 
-- Added another a tag linking to my GitHub.
+- Added another `a` tag linking to my GitHub.
 
 Green.
 
@@ -309,7 +309,7 @@ Green.
 
 Wrote a test that Sidebar renders a link to my Medium blog. Red.
 
-- Added another a tag linking to my Medium blog.
+- Added another `a` tag linking to my Medium blog.
 
 Green.
 
@@ -327,22 +327,22 @@ Green.
 
 Wrote a test that Layout renders the children that are contained within it. Red.
 
-- Passed children as a prop to Layout.
-- Rendered the children prop underneath the Sidebar.
+- Passed `children` as a prop to `Layout`.
+- Rendered the `children` prop underneath the `Sidebar`.
 
 Green.
 
 Wrote a test that About renders the Layout component. Red.
 
 - Imported Layout.
-- Switched out the div rendered in About for a Layout.
+- Switched out the div rendered in `About` for a `Layout`.
 
 Green. Also updated the snapshot.
 
 Wrote a test that the Home renders the Layout component. Red.
 
 - Imported Layout.
-- Switched out the div rendered in Home for a Layout.
+- Switched out the div rendered in `Home` for a `Layout`.
 
 Green. Also updated the snapshot.
 
@@ -414,13 +414,13 @@ Wrote a test that the Sidebar should contain a Link component to the About page.
 
 For this I needed to add a mock for Gatsby's Link component, in `__mocks__/gatsby.js`.
 
-- Added a Link element in Sidebar, with a `to` prop of "/about".
+- Added a `Link` element in `Sidebar`, with a `to` prop of "/about".
 
 Green.
 
 Wrote a test that the Sidebar should contain a Link component to the Home page. Red.
 
-- Added a Link element in Sidebar, with a `to` prop of "/about".
+- Added a `Link` element in `Sidebar`, with a `to` prop of "/about".
 
 Green.
 
@@ -458,13 +458,13 @@ In `src/pages/projects/index.spec.js`, wrote a test that the Project page render
 
 In `src/pages/projects/index.jsx`:
 
-- Added a stateless functional component, Projects, that returns a Layout component.
+- Added a stateless functional component, `Projects`, that returns a `Layout` component.
 
 Green.
 
 Wrote a test that the Project page renders a h1 containing "Projects". Red.
 
-- Added a h1 within the Layout with the text "Projects".
+- Added a `h1` within the `Layout` with the text "Projects".
 
 Green.
 
@@ -487,39 +487,39 @@ In `src/components/projectCard.spec.jsx`, wrote a test that the ProjectCard rend
 
 In `src/components/projectCard.jsx`:
 
-- Added a stateless functional component that takes a prop called details.
-- It renders a h4 containing the details title.
+- Added a stateless functional component that takes a prop called `details`.
+- It renders a h4 containing the `details.title`.
 
 Green.
 
 Wrote a test that ProjectCard renders a h5 containing the prop tech. Red.
 
-- ProjectCard renders a div containing the h4, and also a h5 containing the prop tech.
+- ProjectCard renders a div containing the `h4`, and also a `h5` containing the prop `tech`.
 
 Green.
 
 Wrote a test that ProjectCard renders a p containing the prop description. Red.
 
-- Added a p tag that contains the details description.
+- Added a p tag that contains the `details.description`.
 
 Green.
 
 Wrote a test that ProjectCard renders a link to the prop repoLink. Red.
 
-- Added an a tag with href to the details repoLink.
+- Added an `a` tag with href to the `details.repoLink`.
 
 Green.
 
 Wrote a test that ProjectCard renders a link to the prop deployLink. Red.
 
-- Added an a tag with href to the details deployLink.
+- Added an `a` tag with href to the `details.deployLink`.
 
 Green.
 
 Wrote a test that ProjectCard renders an img, src of the prop img. Red.
 
-- Added a img tag with the src as details img.
-- Also added an alt of the details title.
+- Added a img tag with the src as `details.img`.
+- Also added an alt of the `details.title`.
 
 Green.
 
@@ -527,22 +527,22 @@ Not all project of mine are deployed, and not all have associated GitHub repos.
 
 Wrote a test that the ProjectCard renders okay if there are no links in the props. Red.
 
-- Extracted the a tags to variables.
-- These are assigned conditionally based on the existence of repoLink and deployLink, which are then rendered.
+- Extracted the `a` tags to variables.
+- These are assigned conditionally based on the existence of `repoLink` and `deployLink`, which are then rendered.
 
 Green.
 
 Wrote a test that ProjectCard renders a Link to the page of the project. Red.
 
-- Added a Link component with a to prop of details link.
+- Added a `Link` component with a `to` prop of `details.link`.
 
 Green.
 
 Wrote a test that ProjectCard renders a commercial/personal label. Red.
 
-- Added another h5 with contents of the details label.
-- Distinguished the tech and label h5s with class names.
-- Updated tests that had failed due to ambiguity on h5s.
+- Added another `h5` with contents of the details label.
+- Distinguished the tech and label `h5`s with class names.
+- Updated tests that had failed due to ambiguity on `h5`s.
 
 Green.
 
@@ -554,14 +554,14 @@ In this test some mock data is passed manually to the Project component, however
 
 In `src/pages/projects.jsx`:
 
-- Passed data in as a prop to the Projects component.
-- Export a query getting all markdown remark, eddges, nodes, their id and frontmatter.
-- Declare constant cards.
-- cards is assigned by mapping through the data's edges, and for each node:
-  - Return a ProjectCard.
-  - The ProjectCard has a key prop of the node's id.
-  - The ProjectCard has a details prop of the node's frontmatter.
-- The cards array is rendered within the Project's render.
+- Passed `data` in as a prop to the `Projects` component.
+- Export a `query` getting all markdown remark, edges, nodes, their `id` and `frontmatter`.
+- Declare constant `cards`.
+- `cards` is assigned by mapping through `data`'s edges, and for each node:
+  - Return a `ProjectCard`.
+  - The `ProjectCard` has a `key` prop of the node's `id`.
+  - The `ProjectCard` has a `details` prop of the node's `frontmatter`.
+- The `cards` array is rendered within the `Project`'s render.
 
 Green.
 
@@ -598,9 +598,9 @@ Also, as the border on the layout is no longer randomly chosen, removed the Math
 
 In the new design there is a navbar instead of a sidebar, which also only contains internal navigation.
 
-- Renamed the Sidebar component (and its files) to Navbar.
+- Renamed the `Sidebar` component (and its files) to `Navbar`.
 - Removed external links (and tests for these).
-- Updated test that Navbar renders Link to home/about page (as these will be merged).
+- Updated test that `Navbar` renders `Link` to home/about page (as these will be merged).
 
 In `src/components/layout.jsx`:
 
@@ -620,7 +620,7 @@ In `src/index.scss`:
 - Added Headings reset.
 - Added individual headings font scaling with clamp.
 - Added max width and absolute font size to paragraphs.
-- Added bottom border and hover to a tags
+- Added bottom border and hover to `a` tags
 
 In `src/components/navbar.jsx`:
 
@@ -638,19 +638,19 @@ In `src/components/navbar.module.scss`:
 
 In `src/components/layout.jsx`:
 
-- Added className of container.
+- Added className of `container`.
 
 In `src/components/layout.module.scss`:
 
-- container class has a max width, and side margins to auto.
+- `container` has a max width, and side margins to auto.
 
 In `src/pages/projects.jsx`:
 
-- Wrapped the cards in a section with className projectsGrid.
+- Wrapped the cards in a section with className `projectsGrid`.
 
 In `src/pages/projects.module.scss`:
 
-- projectsGrid is a css grid.
+- `projectsGrid` is a css grid.
 - It auto-fits columns with max width of 500px.
 
 In `src/components/projectCard.module.scss`:
@@ -665,28 +665,28 @@ In `src/components/projectCard.module.scss`:
 
 Part of the styling is that links have a "." after them, but the underline does not extend past the end of the text. The simplest way I have found to wrap a link in a span and have the link containing the text, and a "." outside of the link tag.
 
-Doing this all over place isn't very dry, so there should a component for it. This element should be able to work with regular a tags, and Gatsby Link components.
+Doing this all over place isn't very dry, so there should a component for it. This element should be able to work with regular `a` tags, and Gatsby Link components.
 
 In `src/components/smartLink.spec.js`, wrote a test that the SmartLink renders a Link when passed a to prop. Red.
 
 In `src/components/smartLink.spec.js`:
 
-- Added a stateless functional component SmartLink.
-- It returns a Link, passing through the to prop
-- It also takes a children prop and renders them within the Link.
+- Added a stateless functional component `SmartLink`.
+- It returns a `Link`, passing through the `to` prop.
+- It also takes a `children` prop and renders that within the `Link`.
 
 Green.
 
-Wrote a test that SmartLink renders an a tag when passed a href prop. Red.
+Wrote a test that SmartLink renders an `a` tag when passed a href prop. Red.
 
 - Added a guard clause to return the Link if the to prop is passed.
-- Added a guard clause to return an a tag with href of the href prop if href is passed.
+- Added a guard clause to return an `a` tag with href of the href prop if href is passed.
 
 Green.
 
 I refactored the guard statements to assign a variable link. The link variable is then wrapped with a span and the "." in the return statement.
 
-Went through and replaced a tags and Link components with SmartLinks where appropriate. This broke some tests so fixed those.
+Went through and replaced `a` tags and Link components with SmartLinks where appropriate. This broke some tests so fixed those.
 
 ### Linking to Projects
 
@@ -713,7 +713,7 @@ In `gatsby-node.js`:
 - Used Gatsby's `onCreateNode` API to create a function that will process the GraphQL nodes as they are built.
 - Check each node's internal type is MarkdownRemark (i.e. one of the project pages).
 - If so, create a slug using the `createFilePath` API passing the node, getNode, and a base path of "pages".
-- `createNodeField` is destructured from actions, and is used to create a field on the node called slug, with the value of the created slug.
+- `createNodeField` is destructured from `actions`, and is used to create a field on the node called slug, with the value of the created slug.
 
 Now that the slug is generated and added in GraphQL, the Project pages no longer need the link path in their frontmatter.
 
@@ -727,7 +727,7 @@ In `gatsby-node.js`:
 
 - Export a `createPages` function, (one of Gatsby's APIs).
 - It is async, as it must await the result graphql query for the MarkdownRemark nodes returning their slugs.
-- `createPage` is destructured from actions.
+- `createPage` is destructured from `actions`.
 - For each of the nodes returned in the query `createPage` is called, passing in an object with the path as the node's slug, component (template to render into) with the Node path module resolving the path to a new file `src/templates/project.jsx`, and the context object with a slug property passing the node's slug.
 
 Now to write the component that the routes render into.
@@ -736,7 +736,7 @@ In: `src/templates/project.spec.js`, wrote a test that the Project component ren
 
 In: `src/templates/project.jsx`:
 
-- Import Layout, render it in a stateless functional component named Project.
+- Import `Layout`, render it in a stateless functional component named `Project`.
 
 Green.
 
@@ -750,37 +750,37 @@ Green.
 
 Wrote a test that Project renders a heading containing the title. Red.
 
-- Added an h1 rendering the title from the frontmatter.
+- Added an `h1` rendering the `title` from the `frontmatter`.
 
 Green.
 
 Wrote a test that Project renders a heading containing the tech stack. Red.
 
-- Added a h3 element that renders the tech from the frontmatter.
+- Added a `h3` element that renders the `tech` from the `frontmatter`.
 
 Green.
 
 Wrote a test that Project renders a heading containing the label. Red.
 
-- Added a h3 element that renders the label from the frontmatter.
+- Added a `h3` element that renders the `label` from the `frontmatter`.
 
 Green.
 
 Wrote a test that Project renders a SmartLink to the repoLink. Red.
 
-- Added SmartLink component with href prop of the repoLink from the frontmatter.
+- Added `SmartLink` component with `href` prop of the `repoLink` from the `frontmatter`.
 
 Green.
 
 Wrote a test that Project renders a SmartLink to the deployLink. Red.
 
-- Added SmartLink component with href prop of the deployLink from the frontmatter.
+- Added `SmartLink` component with `href` prop of the `deployLink` from the `frontmatter`.
 
 Green.
 
 Wrote a test that Project renders okay with no links. Red.
 
-- Conditionally rendered the SmartLinks based on their presence in the frontmatter.
+- Conditionally rendered the `SmartLink`s based on their presence in the `frontmatter`.
 
 Green.
 
@@ -822,32 +822,32 @@ In `src/components/seo.spec.js`, Wrote a test that the SEO renders a title tag w
 
 In `src/components/seo.jsx`:
 
-- Import useStaticQuery and qraphql from Gatsby.
-- Constant query is assigned with graphql to get the siteMetadata.
-- Set up a stateless functional component called SEO.
-- site is destructured from a useStaticQuery call passing in the query.
-- siteMetadata is destructured from site.
-- SEO returns a Helmet component containing a title element with content of the title from siteMetadata.
+- Import `useStaticQuery` and `qraphql` from Gatsby.
+- Constant `query` is assigned with `graphql` to get the `siteMetadata`.
+- Set up a stateless functional component called `SEO`.
+- `site` is destructured from a `useStaticQuery` call passing in the `query`.
+- `siteMetadata` is destructured from `site`.
+- `SEO` returns a Helmet component containing a title element with content of the title from `siteMetadata`.
 
 Green.
 
 Wrote a test that SEO renders a description metatag. Red.
 
-- Added a metatag in Helmet with name of description and content of the description from siteMetadata.
+- Added a metatag in Helmet with name of description and content of the `description` from `siteMetadata`.
 
 Green.
 
 Wrote a test that the title tag can be overwritten by passing a prop. Red.
 
 - Add a title prop.
-- Added a constant seo, which is an object with title property assigned with a ternary operator based on the title prop, or if that isn't passed, the siteMetadata title.
+- Added a constant `seo`, which is an object with `title` property assigned with a ternary operator based on the title prop, or if that isn't passed, the `siteMetadata.title`.
 
 Green.
 
 Wrote a test that the description tag can be overwritten by passing a prop. Red.
 
-- Add a description prop.
-- In the seo object, the description property is assigned with a ternary operator based on the description prop, or if that isn't passed, the siteMetadata description.
+- Add a `description` prop.
+- In the `seo` object, the `description` property is assigned with a ternary operator based on the description prop, or if that isn't passed, the `siteMetadata.description`.
 
 Green.
 
@@ -870,27 +870,27 @@ Green.
 
 Wrote a test that SEO renders a twitter:title metatag. Red.
 
-- Added a metatag with name of twitter:title and content of the seo title.
+- Added a metatag with name of twitter:title and content of the `seo.title`.
 
 Green.
 
 Wrote a test that the twitter:title can be overwritten by passing a title prop.
 
-This passes as the seo.title is already dynamically set. Green.
+This passes as the `seo.title` is already dynamically set. Green.
 
 Wrote a test that SEO renders a twitter:description metatag. Red.
 
-- Added a metatag with name of twitter:description and content of the seo description.
+- Added a metatag with name of twitter:description and content of the `seo.description`.
 
 Green.
 
 Wrote a test that the twitter:description can be overwritten by passing a description prop.
 
-This passes as the seo.description is already dynamically set. Green.
+This passes as the `seo.description` is already dynamically set. Green.
 
 Wrote a test that SEO renders a twitter:image metatag. For this test I expanded the siteMetata mock to include the url, and twitterThumbnail properties. Red.
 
-- Added property twitterThumbnail to the seo object, which combines the siteMetadata url and twitterThumbnail into a url.
+- Added property `twitterThumbnail` to the seo object, which combines the `siteMetadata`'s `url` and `twitterThumbnail` into a url.
 - Added a meta tag with name of twitter:image.
 
 Green.
@@ -899,7 +899,7 @@ Also at this point added url and twitterThumbnail to the siteMetadata, and uploa
 
 Wrote a test that the twitter:image can be overwritten by passing a twitterThumbnail prop. Red.
 
-- Assign seo twitterThumbnail using a ternary operator if the twitterThumbnail is passed to use that, unless use the siteMetadata twitterThumbnail.
+- Assign `seo.twitterThumbnail` using a ternary operator if the `twitterThumbnail` is passed to use that, unless use the `siteMetadata.twitterThumbnail`.
 
 Green.
 
@@ -931,7 +931,7 @@ In `src/templates/project.jsx`:
 
 Green.
 
-Again, the snapshot test now fails, as useStaticQuery needs to be stubbed, updated the test.
+Again, the snapshot test now fails, as `useStaticQuery` needs to be stubbed, updated the test.
 
 ### Adding More Metatags
 
@@ -946,27 +946,27 @@ Facebook uses the Open Graph protocol, and expects metatags such as these:
 
 Wrote a test that SEO renders an og:title metatag. Red.
 
-- Added a metatag with property og:title and content of the seo title.
+- Added a metatag with property og:title and content of the `seo.title`.
 
 Green.
 
 Wrote a test that the og:title can be overwritten by passing a title prop.
 
-This passes as the seo.title is already dynamically set. Green.
+This passes as the `seo.title` is already dynamically set. Green.
 
 Wrote a test that SEO renders an og:description metatag. Red.
 
-- Added a metatag with property og:description and content of the seo description.
+- Added a metatag with property og:description and content of the `seo.description`.
 
 Green.
 
 Wrote a test that the og:description can be overwritten by passing a description prop.
 
-This passes as the seo.description is already dynamically set. Green.
+This passes as the `seo.description` is already dynamically set. Green.
 
 Wrote a test that SEO renders an og:image metatag. Red.
 
-- Added a metatag with property og:image and content of the seo twitterThumbnail. Red. I might change this later if the image needs to be of a different size in practice.
+- Added a metatag with property og:image and content of the `seo.twitterThumbnail`. Red. I might change this later if the image needs to be of a different size in practice.
 
 Green.
 
@@ -976,10 +976,10 @@ This passes as the seo.twitterThumbnail is already dynamically set. Green.
 
 Wrote a test that SEO renders an og:url metatag. Red.
 
-- Import useLocation from @reach/router (This is mocked in the test).
-- Assign constant location with the result of useLocation call.
-- seo url property assigned as a concatenation of the siteMetadata url and location pathname.
-- Add metatag with property of og:url and content of seo url.
+- Import `useLocation` from @reach/router (This is mocked in the test).
+- Assign constant `location` with the result of `useLocation` call.
+- `seo.url` property assigned as a concatenation of the `siteMetadata.url` and `location.pathname`.
+- Add metatag with property of og:url and content of `seo.url`.
 
 Green.
 
@@ -1016,7 +1016,7 @@ Green.
 Wrote a test that it should also render an element with class watermark containing the text of the passed child element.
 
 - Added a div with class name of watermark containing the children's children (the text node it contains).
-- It also has an aria-hidden attribute of true, as the text is for decoration, and doesn't need to be read by screen readers.
+- It also has an `aria-hidden` attribute of true, as the text is for decoration, and doesn't need to be read by screen readers.
 
 Green.
 
@@ -1029,7 +1029,7 @@ Added some style for Watermark in `src/components/watermark.module.scss`:
 
 ### Blog
 
-My blog is hosted on Medium, and to bring over the posts I have decided to use the plugin gatsby-source-medium-feed, installed with:
+My blog is hosted on Medium, and to bring over the posts I have decided to use the plugin `gatsby-source-medium-feed`, installed with:
 
 ```shell
 npm install --save gatsby-source-medium-feed
@@ -1047,8 +1047,8 @@ In `src/pages/blog.spec.js`, wrote a test that the Blog component renders a layo
 
 In `src/pages/blog.jsx`:
 
-- Imported Layout
-- Added a stateless functional component that renders a Layout.
+- Imported `Layout`.
+- Added a stateless functional component that renders a `Layout`.
 
 Green.
 
@@ -1090,15 +1090,15 @@ Green.
 
 Wrote a test that BlogPost renders a SmartLink with href of the link. Red.
 
-- Imported SmartLink, wrapped that around the title.
-- Passed href prop of the details link.
+- Imported `SmartLink`, wrapped that around the title.
+- Passed `href` prop of the details link.
 
 Green.
 
 Wrote a test that Blog renders a BlogPost for each post. Red.
 
-- Passed a prop of data to Blog.
-- Constant posts is assigned by mapping through the edges nested within data.
+- Passed a prop of `data` to Blog.
+- Constant `posts` is assigned by mapping through the edges nested within `data`.
 - The map returns a BlogPost for each node.
 
 Green.
@@ -1109,6 +1109,10 @@ Added some styling in `src/components/blogPost.module.scss`.
 
 Now to add the Blog page to the nav. Wrote a test that Navbar renders Link to blog. Red.
 
+- Added the blog link.
+
+Green.
+
 ### Contact page
 
 I'd like a contact page where links to my social and GitHub will live (these previously appeared in what used to be the Sidebar component).
@@ -1117,8 +1121,8 @@ In `src/pages/contact.spec.js` wrote a test that the Contact Component renders a
 
 In `src/pages/contact.jsx`:
 
-- Wrote a stateless function component called Contact.
-- Imported Layout and rendered it.
+- Wrote a stateless function component called `Contact`.
+- Imported `Layout` and rendered it.
 
 Green.
 
@@ -1126,7 +1130,7 @@ Wrote a test that the Contact renders a link to my twitter. Red.
 
 In `src/pages/contact.jsx`:
 
-- Added a paragraph containing an a tag to my twitter.
+- Added a paragraph containing an `a` tag to my twitter.
 
 Green.
 
@@ -1134,7 +1138,7 @@ Wrote a test that the Contact renders a link to my LinkedIn. Red.
 
 In `src/pages/contact.jsx`:
 
-- Added a paragraph containing an a tag to my LinkedIn.
+- Added a paragraph containing an `a` tag to my LinkedIn.
 
 Green.
 
@@ -1142,7 +1146,7 @@ Wrote a test that the Contact renders a link to my GitHub. Red.
 
 In `src/pages/contact.jsx`:
 
-- Added a paragraph containing an a tag to my GitHub.
+- Added a paragraph containing an `a` tag to my GitHub.
 
 Green.
 
@@ -1150,7 +1154,7 @@ Wrote a test that the Contact renders a link to email me. Red.
 
 In `src/pages/contact.jsx`:
 
-- Added a paragraph containing an a tag to mail to my email.
+- Added a paragraph containing an `a` tag to mail to my email.
 
 Green.
 
@@ -1168,10 +1172,10 @@ npm install --save-dev jest-fetch-mock
 
 In `src/components/contactForm.jsx`:
 
-- Added a class ContactForm that extends React Component.
-- It's state is constructed with mane, email and message as empty strings.
-- The handleChange method takes an event and sets the state with the event target's name as the event target's value (for input fields).
-- The handleSumbit method takes an event, prevents it's default action, then calls fetch to the root path with headers of method: POST, content type: application/x-www-form-urlencoded, and body of the form-name of contact, plus the state encoded into a url query string.
+- Added a class `ContactForm` that extends React Component.
+- It's state is constructed with `name`, `email` and `message` as empty strings.
+- The `handleChange` method takes an event and sets the state with the event target's name as the event target's value (for input fields).
+- The `handleSumbit` method takes an event, prevents it's default action, then calls `fetch` to the root path with headers of method: POST, content type: application/x-www-form-urlencoded, and body of the form-name of contact, plus the state encoded into a url query string.
 - Helper method encode performs the encoding of an object's keys and values into a query string.
 - The ContactForm renders a form with name, email and message inputs, plus a hidden input for a bot honeypot.
 
@@ -1185,50 +1189,50 @@ For this test I used `async-wait-until`, installed with:
 npm install --save-dev async-wait-until
 ```
 
-- Moved the name, email and message state to their own form object.
-- Added a submitSuccess state of false.
-- When resolving the promise returned by fetch if the status is 200 set state submitSuccess to true.
+- Moved the `name`, `email` and `message` state to their own `form` object.
+- Added a `submitSuccess` state of false.
+- When resolving the promise returned by fetch if the status is 200 set state `submitSuccess` to true.
 
 Wrote a test that ContactForm validates presence of name on submit. Red.
 
-- Add to state a property nameValidationError assigned with false.
-- Added a method validateForm, which assigns variable anyError with false.
-- This destructures name from state.form, and if it is an empty string setState nameValidationError to true, and assigns anyError with true.
-- Then return anyError
-- In handleSubmit added a guard statement to return if validateForm returns true (i.e. an error in validation).
-- In render, destructured nameValidationError from state, and conditionally render the content of the name label based on that.
+- Add to state a property `nameValidationError` assigned with false.
+- Added a method `validateForm`, which assigns variable `anyError` with false.
+- This destructures name from `state.form`, and if it is an empty string `setState` `nameValidationError` to true, and assigns `anyError` with true.
+- Then return `anyError`
+- In handleSubmit added a guard statement to return if `validateForm` returns true (i.e. an error in validation).
+- In render, destructured `nameValidationError` from state, and conditionally render the content of the name label based on that.
 
 Green.
 
 Wrote a test that ContactForm validates presence of email on submit. Red.
 
-- Add to state a property emailValidationError assigned with false.
-- In validateForm destructure email from state.form and if it is an empty string setState emailValidationError to true, and assign anyError with true.
-- In render, destructured emailValidationError from state, and conditionally render the content of the email label based on that.
+- Add to state a property `emailValidationError` assigned with false.
+- In `validateForm` destructure email from `state.form` and if it is an empty string `setState` `emailValidationError` to true, and assign `anyError` with true.
+- In render, destructured `emailValidationError` from state, and conditionally render the content of the email label based on that.
 
 Wrote a test that ContactForm validates presence of message on submit. Red.
 
-- Add to state a property messageValidationError assigned with false.
-- In validateForm destructure message from state.form and if it is an empty string setState messageValidationError to true, and assign anyError with true.
-- In render, destructured messageValidationError from state, and conditionally render the content of the message label based on that.
+- Add to state a property `messageValidationError` assigned with false.
+- In `validateForm` destructure message from `state.form` and if it is an empty string `setState` `messageValidationError` to true, and assign `anyError` with true.
+- In render, destructured `messageValidationError` from state, and conditionally render the content of the message label based on that.
 
 Green.
 
 Wrote a test that ContactForm validates presence of message on submit. Red.
 
-- In validateForm added an else if statement performing some basic regex on email, checking for soem characters, an "@", then more characters. If this fails set the emailValidationError to "Are you sure your email is correct?" and set anyError to true.
-- Refactor the email presence validation to assign emailValidationError with a different appropriate string rather than setting it to true.
-- Then in render assign the email label text conditionally with the string held in emailValidationError, or the default label.
+- In `validateForm` added an else if statement performing some basic regex on email, checking for some characters, an "@", then more characters. If this fails set the `emailValidationError` to "Are you sure your email is correct?" and set `anyError` to true.
+- Refactor the email presence validation to assign `emailValidationError` with a different appropriate string rather than setting it to true.
+- Then in render assign the email label text conditionally with the string held in `emailValidationError`, or the default label.
 
 Green.
 
 Refactors:
 
-- In validateForm setState once at the end rather than in each if block.
+- In `validateForm` use `setState` once at the end rather than in each `if` block.
 - Switched to guard clauses to assign errors with error messages.
-- Added a constant errors that is an array of the errors, return the result of the higher order function some, checking if the error is not false (i.e. if there are any errors).
-- Extracted a method validateEmail to check the email.
-- In handleChange added constant newState assigned with the state. Then add to that and spread it into setState so form isn't overwritten.
+- Added a constant `errors` that is an array of the errors, return the result of the higher order function `some`, checking if the error is not false (i.e. if there are any errors).
+- Extracted a method `validateEmail` to check the email.
+- In handleChange added constant `newState` assigned with the `state`. Then add to that and spread it into `setState` so `form` isn't overwritten.
 
 Added some styles in `src/components/contactForm.module.scss`:
 
@@ -1239,22 +1243,23 @@ Also added generic styling for form elements in `src/index.scss`.
 
 Wrote a test that Contact renders a ContactForm. Red.
 
-- Imported and render a ContactForm.
+- Imported and render a `ContactForm`.
 
 Green.
 
 As there is now a form, removed the link to email, and the corresponding test.
 
-Wrote a test that the Navbar renders a link to contact. Red.
+Wrote a test that the Navbar renders a Link to contact. Red.
 
-- Added a link to the contact page.
+- Added a `Link` to the contact page.
 
 Green.
+
+I've also set up a Zapier link to create a draft email for me based on form submissions.
 
 ### To Do
 
 - Consider different images for facebook.
-- Add contact page.
 
 <!-- Links -->
 
