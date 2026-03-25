@@ -5,8 +5,8 @@ Personal portfolio site for Harry Turnbull.
 ## Stack
 
 - [Astro](https://astro.build/) — static site generator
-- SCSS — styling
-- Deployed on [Netlify](https://netlify.com/)
+- CSS — styling
+- Deployed on [Netlify](https://app.netlify.com/projects/harryturnbull/overview) (sign in with GitHub)
 
 ## Pages
 
