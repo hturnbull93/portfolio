@@ -1,0 +1,61 @@
+---
+const path = Astro.url.pathname;
+---
+
+<nav class="navbar">
+  <ul>
+    <li>
+      <a href="/" class={path === '/' ? 'active' : ''}>About</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .navbar {
+    text-transform: lowercase;
+    position: sticky;
+    right: 0;
+    top: 0;
+    bottom: unset;
+    @media (pointer: coarse) {
+      position: fixed;
+      top: unset;
+      bottom: 0;
+    }
+    display: flex;
+    justify-content: flex-end;
+
+    ul {
+      background-color: var(--off-white);
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      line-height: 1.6;
+      margin: 0;
+      padding: 1em;
+      list-style-type: none;
+
+      li {
+        font-size: clamp(0.8em, 2vw, 1em);
+        margin: 0 0.5ch;
+
+        &::after {
+          content: ".";
+        }
+
+        a {
+          text-decoration: none;
+          border-bottom: none;
+
+          &:hover {
+            border-bottom: var(--main-dark) 2px solid;
+          }
+
+          &.active {
+            border-bottom: var(--dark) 2px solid;
+          }
+        }
+      }
+    }
+  }
+</style>

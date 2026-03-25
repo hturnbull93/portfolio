@@ -1,0 +1,92 @@
+@font-face {
+  font-family: "B612 Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/b612mono-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/montserrat-regular.woff2") format("woff2");
+}
+
+:root {
+  --heading-font: "B612 Mono", monospace;
+  --body-font: "Montserrat", sans-serif;
+
+  --dark: #000000;
+  --main-dark: #9d9d9d;
+  --main-med: #c4c4c4;
+  --main-light: #efefef;
+  --off-white: #fafafa;
+  --full-width: 1600px;
+}
+
+html {
+  background-color: var(--off-white);
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0 0 4rem 0;
+  padding: 0 1rem;
+}
+
+* {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  color: var(--dark);
+}
+
+section {
+  margin: 8em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: lowercase;
+
+  & span {
+    display: block;
+  }
+}
+
+h1 {
+  font-size: clamp(2.5em, 6vw, 5em);
+
+  & span {
+    color: var(--main-dark);
+  }
+}
+
+h2 {
+  font-size: clamp(2.5em, 6vw, 5em);
+}
+
+h3 {
+  font-size: clamp(1.4em, 3.2vw, 2em);
+}
+
+p {
+  font-size: 1rem;
+  font-family: var(--body-font);
+  line-height: 1.6;
+  max-width: 70ch;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: var(--main-dark) 2px solid;
+
+  &:hover {
+    border-bottom: var(--dark) 2px solid;
+  }
+}
+
+.container {
+  max-width: var(--full-width);
+  margin: 0 auto;
+}

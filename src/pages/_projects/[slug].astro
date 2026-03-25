@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Watermark from '../../components/Watermark.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const { title, tech, label, repoLink, deployLink, description } = project.data;
+---
+
+<Layout title={title} description={description}>
+  <Watermark text={title}>
+    <h1>{title}.</h1>
+  </Watermark>
+  <div class="labels">
+    <h3>{tech}</h3>
+    <h3>{label}</h3>
+  </div>
+  <div class="links">
+    {repoLink && <a href={repoLink} target="_blank" rel="noopener noreferrer">GitHub Repo</a>}
+    {deployLink && <a href={deployLink} target="_blank" rel="noopener noreferrer">See it live</a>}
+  </div>
+  <section class="content">
+    <Content />
+  </section>
+</Layout>
+
+<style lang="scss">
+  .labels {
+    h3 {
+      display: inline;
+      &:not(:last-child)::after {
+        content: " / ";
+      }
+    }
+  }
+
+  .links {
+    a {
+      display: inline-block;
+      margin: 1em 1em 0 0;
+    }
+  }
+</style>

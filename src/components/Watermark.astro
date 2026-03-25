@@ -1,0 +1,30 @@
+---
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<div class="watermark-container">
+  <slot />
+  <div class="watermark-text" aria-hidden="true">{text}</div>
+</div>
+
+<style>
+  .watermark-container {
+    position: relative;
+  }
+
+  .watermark-text {
+    text-transform: lowercase;
+    position: absolute;
+    font-size: clamp(8em, 20vw, 18em);
+    color: var(--main-light);
+    z-index: -10;
+    white-space: nowrap;
+    top: -0.25em;
+    left: 0.5em;
+    overflow-x: hidden;
+    max-width: calc(100vw - 0.5em - 1rem);
+  }
+</style>

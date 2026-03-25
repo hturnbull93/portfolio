@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Watermark from '../../components/Watermark.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+
+const projects = await getCollection('projects');
+---
+
+<Layout title="Projects" description="A collection of projects, both commercial and personal.">
+  <Watermark text="projects">
+    <h1>Projects.</h1>
+  </Watermark>
+  <section class="projects-grid">
+    {projects.map(project => (
+      <ProjectCard
+        title={project.data.title}
+        slug={project.slug}
+        tech={project.data.tech}
+        label={project.data.label}
+        description={project.data.description}
+        img={project.data.img}
+        repoLink={project.data.repoLink}
+        deployLink={project.data.deployLink}
+      />
+    ))}
+  </section>
+</Layout>
+
+<style>
+  .projects-grid {
+    display: grid;
+    gap: 3em;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 500px));
+    align-items: stretch;
+  }
+</style>
