@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "24"
 
+[[edge_functions]]
+  path = "/*"
+  function = "gate"
+
 [[headers]]
   for = "/*"
   [headers.values]
