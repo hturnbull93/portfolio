@@ -53,6 +53,10 @@ typings/
 
 # dotenv environment variable files
 .env*
+!.env.example
+
+# local-only notes, not for the public repo
+PRIVATE_NOTES/
 
 # astro files
 .astro/

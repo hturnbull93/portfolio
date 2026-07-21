@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const slug = import.meta.env.REMOTE_PAGE_SLUG;
+
+  if (!slug) {
+    throw new Error(
+      'REMOTE_PAGE_SLUG must be set to build the remote access page.',
+    );
+  }
+
+  return [{ params: { slug } }];
+}
+
+const remoteUrl = import.meta.env.PUBLIC_REMOTE_URL;
+---
+
+<Layout title="Remote Access" noindex>
+  <section>
+    <h1>Remote access.</h1>
+    {
+      remoteUrl ? (
+        <p>
+          <a href={remoteUrl}>Open terminal</a>
+        </p>
+      ) : (
+        <p>PUBLIC_REMOTE_URL is not set.</p>
+      )
+    }
+  </section>
+</Layout>
