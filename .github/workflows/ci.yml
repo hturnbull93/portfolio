@@ -15,5 +15,3 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-        env:
-          REMOTE_PAGE_SLUG: ci-placeholder
